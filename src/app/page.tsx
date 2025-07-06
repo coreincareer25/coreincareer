@@ -32,20 +32,20 @@ export default function Home() {
     <main className="bg-white overflow-x-hidden">
       <section className="text-center pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="container mx-auto px-4">
-          <p className="font-semibold uppercase tracking-widest text-gray-500">
+          <p className="font-semibold uppercase tracking-widest text-gray-500 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-200">
             EMPOWER YOUR FUTURE
           </p>
-          <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-gray-900 leading-tight">
+          <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-gray-900 leading-tight animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-300">
             <Balancer>
               Discover the Core of Your
               <br />
               <span className="text-primary">Career Path</span>
             </Balancer>
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-400">
             We provide expert guidance and personalized support to help you navigate your educational and professional journey with confidence.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-500">
             <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
               <Link href="/contact">
                 Get your free consult today
@@ -55,7 +55,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-4 animate-in fade-in duration-700 fill-mode-backwards delay-500">
         <div className="relative h-40 md:h-64 lg:h-96 w-full max-w-6xl mx-auto">
            <Image
               src="https://placehold.co/1200x400.png"
@@ -69,7 +69,7 @@ export default function Home() {
 
       <section className="py-20 bg-[#F3FAF7]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
             <p className="font-semibold uppercase tracking-widest text-primary">
               WHAT WE OFFER
             </p>
@@ -82,9 +82,10 @@ export default function Home() {
               <Card
                 key={index}
                 className={cn(
-                  'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2',
+                  'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards',
                   advantage.highlight ? 'bg-purple-100 border-primary' : 'bg-card'
                 )}
+                 style={{ animationDelay: `${500 + index * 150}ms` }}
               >
                 <CardContent className="p-0 flex flex-col items-center flex-1">
                   <p className="text-primary font-bold text-2xl">{advantage.number}</p>
@@ -100,10 +101,10 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
+            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg animate-in fade-in slide-in-from-left-16 duration-700 fill-mode-backwards">
                 <Image src="https://placehold.co/600x400.png" alt="Counseling session" layout="fill" objectFit="cover" data-ai-hint="counseling session" />
             </div>
-            <div>
+            <div className="animate-in fade-in slide-in-from-right-16 duration-700 fill-mode-backwards">
               <p className="font-semibold uppercase tracking-widest text-primary">ABOUT US</p>
               <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Your Trusted Partner in Career Guidance</h2>
               <p className="mt-4 text-muted-foreground">Core in Career was founded with a simple yet powerful mission: to empower individuals to find their true calling. We believe that with the right guidance, everyone can achieve their academic and professional dreams.</p>
@@ -121,7 +122,7 @@ export default function Home() {
       </section>
 
       <section className="py-20 bg-secondary">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
               <div className="text-center mb-12">
                   <p className="font-semibold uppercase tracking-widest text-primary">TESTIMONIALS</p>
                   <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">What Our Students Say</h2>
@@ -134,7 +135,7 @@ export default function Home() {
                       {testimonials.map((testimonial, index) => (
                           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                               <div className="p-1">
-                                  <Card className="h-full flex flex-col">
+                                  <Card className="h-full flex flex-col transition-shadow hover:shadow-xl">
                                       <CardContent className="p-6 flex-grow flex flex-col justify-between">
                                           <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
                                           <div className="mt-6 flex items-center gap-4">
@@ -161,15 +162,15 @@ export default function Home() {
       
       <section className="py-20">
         <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
                 <p className="font-semibold uppercase tracking-widest text-primary">OUR SERVICES</p>
                 <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Comprehensive Support for Your Future</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {services.map((service) => {
+                {services.map((service, index) => {
                     const IconComponent = iconMap[service.icon];
                     return (
-                        <Card key={service.title} className="text-center p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl">
+                        <Card key={service.title} className="text-center p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${200 + index * 150}ms` }}>
                              <div className="flex justify-center mb-4">
                                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                                     {IconComponent && <IconComponent className="h-8 w-8" />}
@@ -181,7 +182,7 @@ export default function Home() {
                     );
                 })}
             </div>
-             <div className="text-center mt-12">
+             <div className="text-center mt-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `500ms` }}>
                 <Button asChild size="lg">
                     <Link href="/services">View All Services</Link>
                 </Button>
@@ -190,7 +191,7 @@ export default function Home() {
       </section>
       
       <section className="py-20 bg-secondary">
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className="container mx-auto px-4 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
               <div className="text-center mb-12">
                   <p className="font-semibold uppercase tracking-widest text-primary">FAQs</p>
                   <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Frequently Asked Questions</h2>

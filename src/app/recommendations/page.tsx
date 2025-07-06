@@ -71,7 +71,7 @@ export default function RecommendationsPage() {
 
   return (
     <div className="bg-background">
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-secondary animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards">
         <div className="container mx-auto max-w-7xl px-4 text-center">
             <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
                 <Balancer>
@@ -86,7 +86,7 @@ export default function RecommendationsPage() {
 
       <section className="py-20">
         <div className="container mx-auto max-w-7xl px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
             <Card className="shadow-lg sticky top-24">
                 <CardHeader>
                 <CardTitle className="font-headline text-2xl">Tell Us About You</CardTitle>
@@ -152,7 +152,7 @@ export default function RecommendationsPage() {
                 </div>
                 )}
                 {recommendations && (
-                <Accordion type="multiple" defaultValue={['courses', 'colleges', 'scholarships']} className="w-full space-y-4">
+                <Accordion type="multiple" defaultValue={['courses', 'colleges', 'scholarships']} className="w-full space-y-4 animate-in fade-in duration-500">
                     <AccordionItem value="courses" className="border rounded-lg bg-card px-4 shadow-sm">
                     <AccordionTrigger className="text-lg font-headline hover:no-underline"><BookOpen className="mr-3 h-5 w-5 text-primary"/> Course Recommendations</AccordionTrigger>
                     <AccordionContent>

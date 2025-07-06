@@ -7,7 +7,7 @@ import Balancer from "react-wrap-balancer";
 export default function CoursesPage() {
   return (
     <div className="bg-background">
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-secondary animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards">
         <div className="container mx-auto max-w-7xl px-4 text-center">
           <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
             <Balancer>
@@ -23,8 +23,8 @@ export default function CoursesPage() {
       <section className="py-20">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {courses.map((course) => (
-              <Card key={course.title} className="flex flex-col overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl">
+            {courses.map((course, index) => (
+              <Card key={course.title} className="flex flex-col overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${200 + index * 150}ms` }}>
                 <div className="relative h-48 w-full">
                   <Image
                     src={course.image}
