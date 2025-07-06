@@ -5,16 +5,20 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Sparkles } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Mail } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const navLinks = [
-  { href: '/courses', label: 'Courses' },
-  { href: '/colleges', label: 'Colleges' },
-  { href: '/scholarships', label: 'Scholarships' },
-  { href: '/services', label: 'Services' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'HOME' },
+  { href: '/about', label: 'ABOUT' },
+  { href: '/services', label: 'SERVICES' },
 ];
 
 export function Header() {
@@ -23,64 +27,94 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+      <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
         <Logo />
         
-        <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                pathname === link.href ? "text-primary" : "text-muted-foreground"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden lg:flex items-center gap-10">
+            <nav className="flex items-center gap-6 text-sm font-medium">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "transition-colors hover:text-primary",
+                    pathname === link.href ? "text-primary font-semibold" : "text-muted-foreground"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-primary focus:outline-none">
+                  COURSE INFORMATION <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem asChild><Link href="/courses">Courses</Link></DropdownMenuItem>
+                  <DropdownMenuItem asChild><Link href="/colleges">Colleges</Link></DropdownMenuItem>
+                  <DropdownMenuItem asChild><Link href="/scholarships">Scholarships</Link></DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </nav>
+            <Button asChild className="bg-[#D000F7] hover:bg-[#D000F7]/90 text-white rounded-md px-5 py-2">
+                <Link href="/contact">
+                    CONTACT US
+                </Link>
+            </Button>
+        </div>
 
-        <div className="flex items-center gap-2">
-           <Button asChild className="hidden sm:flex">
-             <Link href="/recommendations">
-                <Sparkles className="mr-2 h-4 w-4"/>
-                Get Recommendations
-             </Link>
-           </Button>
+        <div className="hidden xl:block absolute top-1 right-4 transform translate-y-0">
+            <div className="p-2 rounded-b-lg bg-gradient-to-r from-cyan-50 to-purple-100 shadow-sm">
+                <div className="flex items-center gap-2 text-xs font-medium">
+                    <Phone className="h-4 w-4 text-gray-700"/>
+                    <span className="text-gray-700">+91 9123783438</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-medium mt-1">
+                    <Mail className="h-4 w-4 text-gray-700"/>
+                    <span className="text-gray-700">coreincareer2025@gmail.com</span>
+                </div>
+            </div>
+        </div>
 
-          <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="outline" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <div className="mt-8 flex flex-col gap-6">
-                <Logo />
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(
-                        "text-lg font-medium transition-colors hover:text-primary",
-                        pathname === link.href ? "text-primary" : "text-foreground"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <Button asChild className="mt-4">
-                    <Link href="/recommendations" onClick={() => setMenuOpen(false)}>
-                        <Sparkles className="mr-2 h-4 w-4"/>
-                        Get Recommendations
-                    </Link>
+        <div className="lg:hidden">
+            <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
+                <SheetTrigger asChild>
+                <Button variant="outline" size="icon">
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Open menu</span>
                 </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <div className="mt-8 flex flex-col gap-y-6">
+                    <Logo />
+                    {navLinks.map((link) => (
+                    <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMenuOpen(false)}
+                        className={cn(
+                            "text-lg font-medium transition-colors hover:text-primary",
+                            pathname === link.href ? "text-primary" : "text-foreground"
+                        )}
+                    >
+                        {link.label}
+                    </Link>
+                    ))}
+                    <div className="space-y-2">
+                        <p className="text-lg font-medium text-foreground">COURSE INFORMATION</p>
+                        <div className="flex flex-col gap-y-2 pl-4">
+                            <Link href="/courses" onClick={() => setMenuOpen(false)} className="text-md text-muted-foreground hover:text-primary">Courses</Link>
+                            <Link href="/colleges" onClick={() => setMenuOpen(false)} className="text-md text-muted-foreground hover:text-primary">Colleges</Link>
+                            <Link href="/scholarships" onClick={() => setMenuOpen(false)} className="text-md text-muted-foreground hover:text-primary">Scholarships</Link>
+                        </div>
+                    </div>
+                    <Button asChild className="mt-4 bg-[#D000F7] hover:bg-[#D000F7]/90 text-white">
+                        <Link href="/contact" onClick={() => setMenuOpen(false)}>
+                            CONTACT US
+                        </Link>
+                    </Button>
+                </div>
+                </SheetContent>
+            </Sheet>
         </div>
       </div>
     </header>
