@@ -1,35 +1,31 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import Balancer from 'react-wrap-balancer';
+import { advantages, testimonials, faqs, services } from '@/lib/data';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { CheckCircle, Award, FileText, Plane, School, Sparkles, UserCheck } from 'lucide-react';
+import React from 'react';
 
-const advantages = [
-  {
-    number: '01.',
-    title: 'Experienced Mentors',
-    description: 'Our team of seasoned professionals provides personalized guidance, ensuring each student receives tailored support throughout their learning journey.',
-    highlight: true,
-  },
-  {
-    number: '02.',
-    title: 'Student-Centric Approach',
-    description: 'Our focus is on the needs of our students, prioritizing their success through interactive learning and continuous feedback.',
-    highlight: false,
-  },
-  {
-    number: '03.',
-    title: 'Psychometric Assessments',
-    description: 'Not sure what your strengths are? Our fun, science-based tests help you understand your personality, interests, and skills—so you can make smarter career choices.',
-    highlight: false,
-  },
-  {
-    number: '04.',
-    title: 'Scholarship Endorsement',
-    description: 'We offer guidance and official support to help students successfully apply for both government-funded and private scholarships.',
-    highlight: false,
-  },
-];
+const iconMap: { [key: string]: React.ElementType } = {
+  UserCheck,
+  School,
+  FileText,
+  Award,
+  Plane,
+  Sparkles,
+};
+
 
 export default function Home() {
   return (
@@ -39,13 +35,18 @@ export default function Home() {
           <p className="font-semibold uppercase tracking-widest text-gray-500">
             EMPOWER YOUR FUTURE
           </p>
-          <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
-            Discover the Core of Your
-            <br />
-            Career Path
+          <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-gray-900 leading-tight">
+            <Balancer>
+              Discover the Core of Your
+              <br />
+              <span className="text-primary">Career Path</span>
+            </Balancer>
           </h1>
+          <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
+            We provide expert guidance and personalized support to help you navigate your educational and professional journey with confidence.
+          </p>
           <div className="mt-10">
-            <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-8 shadow-lg hover:opacity-90 transition-opacity">
+            <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
               <Link href="/contact">
                 Get your free consult today
               </Link>
@@ -57,7 +58,7 @@ export default function Home() {
       <section className="container mx-auto px-4">
         <div className="relative h-40 md:h-64 lg:h-96 w-full max-w-6xl mx-auto">
            <Image
-              src="https://placehold.co/1200x350.png"
+              src="https://placehold.co/1200x400.png"
               alt="A diverse group of professionals in various uniforms"
               fill
               className="object-contain"
@@ -69,10 +70,10 @@ export default function Home() {
       <section className="py-20 bg-[#F3FAF7]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <p className="font-semibold uppercase tracking-widest text-gray-700">
+            <p className="font-semibold uppercase tracking-widest text-primary">
               WHAT WE OFFER
             </p>
-            <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-gray-900">
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
               Our Unique Advantages Set Us Apart
             </h2>
           </div>
@@ -81,19 +82,130 @@ export default function Home() {
               <Card
                 key={index}
                 className={cn(
-                  'p-8 text-center flex flex-col items-center shadow-lg',
-                  advantage.highlight ? 'bg-secondary' : 'bg-card'
+                  'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2',
+                  advantage.highlight ? 'bg-purple-100 border-primary' : 'bg-card'
                 )}
               >
                 <CardContent className="p-0 flex flex-col items-center flex-1">
-                  <p className="text-primary font-bold text-lg">{advantage.number}</p>
+                  <p className="text-primary font-bold text-2xl">{advantage.number}</p>
                   <h3 className="mt-4 text-xl font-bold text-foreground">{advantage.title}</h3>
-                  <p className="mt-4 text-muted-foreground">{advantage.description}</p>
+                  <p className="mt-4 text-muted-foreground flex-grow">{advantage.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
+                <Image src="https://placehold.co/600x400.png" alt="Counseling session" layout="fill" objectFit="cover" data-ai-hint="counseling session" />
+            </div>
+            <div>
+              <p className="font-semibold uppercase tracking-widest text-primary">ABOUT US</p>
+              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Your Trusted Partner in Career Guidance</h2>
+              <p className="mt-4 text-muted-foreground">Core in Career was founded with a simple yet powerful mission: to empower individuals to find their true calling. We believe that with the right guidance, everyone can achieve their academic and professional dreams.</p>
+              <ul className="mt-6 space-y-3">
+                <li className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-green-500" /> Personalized and unbiased advice</li>
+                <li className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-green-500" /> Backed by psychometric analysis</li>
+                <li className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-green-500" /> A dedicated team of experts</li>
+              </ul>
+              <Button asChild className="mt-8">
+                <Link href="/about">Know More</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-secondary">
+          <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                  <p className="font-semibold uppercase tracking-widest text-primary">TESTIMONIALS</p>
+                  <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">What Our Students Say</h2>
+              </div>
+              <Carousel
+                  opts={{ align: "start", loop: true }}
+                  className="w-full max-w-5xl mx-auto"
+              >
+                  <CarouselContent>
+                      {testimonials.map((testimonial, index) => (
+                          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                              <div className="p-1">
+                                  <Card className="h-full flex flex-col">
+                                      <CardContent className="p-6 flex-grow flex flex-col justify-between">
+                                          <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
+                                          <div className="mt-6 flex items-center gap-4">
+                                              <Avatar>
+                                                  <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
+                                                  <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                                              </Avatar>
+                                              <div>
+                                                  <p className="font-semibold">{testimonial.name}</p>
+                                                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                                              </div>
+                                          </div>
+                                      </CardContent>
+                                  </Card>
+                              </div>
+                          </CarouselItem>
+                      ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2" />
+                  <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2" />
+              </Carousel>
+          </div>
+      </section>
+      
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+                <p className="font-semibold uppercase tracking-widest text-primary">OUR SERVICES</p>
+                <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Comprehensive Support for Your Future</h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {services.map((service) => {
+                    const IconComponent = iconMap[service.icon];
+                    return (
+                        <Card key={service.title} className="text-center p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl">
+                             <div className="flex justify-center mb-4">
+                                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                    {IconComponent && <IconComponent className="h-8 w-8" />}
+                                </div>
+                            </div>
+                            <h3 className="text-xl font-bold">{service.title}</h3>
+                            <p className="mt-2 text-muted-foreground">{service.description}</p>
+                        </Card>
+                    );
+                })}
+            </div>
+             <div className="text-center mt-12">
+                <Button asChild size="lg">
+                    <Link href="/services">View All Services</Link>
+                </Button>
+            </div>
+        </div>
+      </section>
+      
+      <section className="py-20 bg-secondary">
+          <div className="container mx-auto px-4 max-w-4xl">
+              <div className="text-center mb-12">
+                  <p className="font-semibold uppercase tracking-widest text-primary">FAQs</p>
+                  <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Frequently Asked Questions</h2>
+              </div>
+              <Accordion type="single" collapsible className="w-full">
+                  {faqs.map((faq, index) => (
+                      <AccordionItem key={index} value={`item-${index}`} className="border-b">
+                          <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">{faq.question}</AccordionTrigger>
+                          <AccordionContent className="text-base text-muted-foreground">
+                              {faq.answer}
+                          </AccordionContent>
+                      </AccordionItem>
+                  ))}
+              </Accordion>
+          </div>
       </section>
     </main>
   );
