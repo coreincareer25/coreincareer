@@ -715,6 +715,11 @@ const bscBiotechnologyOthersColleges = [
     'GNIPST'
 ];
 
+const bscForensicScienceColleges = [
+    'ADAMAS UNIVERSITY',
+    'SNU',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -782,6 +787,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'M.Sc. (Master of Science)', colleges: [] },
     { name: 'B.Sc. in Microbiology', colleges: bscMicrobiologyColleges },
     { name: 'B.Sc. in Biotechnology', colleges: bscBiotechnologyOthersColleges },
+    { name: 'B.Sc. in Forensic Science', colleges: bscForensicScienceColleges },
     { name: 'LLB (Bachelor of Laws)', colleges: llbColleges },
     { name: 'BBA LLB', colleges: bbaLlbColleges },
     { name: 'BA LLB', colleges: baLlbColleges },
