@@ -5,6 +5,7 @@ import { Award, FileText, Plane, School, Sparkles, UserCheck, Snowflake } from "
 import React from "react";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
+import Link from "next/link";
 
 const iconMap: { [key: string]: React.ElementType } = {
   UserCheck,
@@ -18,7 +19,8 @@ const iconMap: { [key: string]: React.ElementType } = {
 const admissionProcessSteps = [
     {
         title: "Psychometric Testing",
-        description: "We assess your personality, interests, and aptitude using science-based tools (like the Holland RIASEC model) to understand your strengths and ideal career path. Read more..."
+        description: "We assess your personality, interests, and aptitude using science-based tools (like the Holland RIASEC model) to understand your strengths and ideal career path.",
+        readMoreLink: "/psychometric-testing"
     },
     {
         title: "Subject & Course Selection",
@@ -77,6 +79,11 @@ export default function ServicesPage() {
                         <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">{step.title}</AccordionTrigger>
                         <AccordionContent className="text-base text-muted-foreground">
                             {step.description}
+                            {step.readMoreLink && (
+                                <Link href={step.readMoreLink} className="text-primary hover:underline font-medium ml-1">
+                                    Read more...
+                                </Link>
+                            )}
                         </AccordionContent>
                     </AccordionItem>
                 ))}
