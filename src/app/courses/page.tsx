@@ -344,6 +344,16 @@ const btechAgricultureColleges = [
   'Shiv Nadar Institution of Eminence',
 ];
 
+const diplomaPolytechnicColleges = [
+  'Sister Nivedita University (SNU)',
+  'JIS College of Engineering, Kalyani',
+  'JIS University',
+  'SurTech',
+  'Swami Vivekananda University (SVU)',
+  'Supreme Knowledge Foundation',
+  'Guru Nanak Institute of Technology (GNIT)',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -366,7 +376,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Tech. in Civil Engineering', colleges: [] },
     { name: 'B.Tech. in Food Technology', colleges: [] },
     { name: 'B.Tech. in Marine Engineering', colleges: [] },
-    { name: 'Diploma / Polytechnic', colleges: [] },
+    { name: 'Diploma / Polytechnic', colleges: diplomaPolytechnicColleges },
   ],
   medical: [
     { name: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)', colleges: [] },
