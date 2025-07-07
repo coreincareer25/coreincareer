@@ -360,6 +360,13 @@ const btechMarineEngineeringColleges = [
   'Mahaveer Academy of Technology and Science University',
 ];
 
+const btechFoodTechnologyColleges = [
+  'Maulana Abul Kalam Azad University of Technology',
+  'Hemnalini Memorial College of Engineering',
+  'Guru Nanak Institute of Technology',
+  'Techno India University',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -380,7 +387,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Tech. in Biomedical Engineering', colleges: btechBiomedicalColleges },
     { name: 'B.Tech. in Agricultural Engineering', colleges: btechAgricultureColleges },
     { name: 'B.Tech. in Civil Engineering', colleges: [] },
-    { name: 'B.Tech. in Food Technology', colleges: [] },
+    { name: 'B.Tech. in Food Technology', colleges: btechFoodTechnologyColleges },
     { name: 'B.Tech. in Marine Engineering', colleges: btechMarineEngineeringColleges },
     { name: 'Diploma / Polytechnic', colleges: diplomaPolytechnicColleges },
   ],
