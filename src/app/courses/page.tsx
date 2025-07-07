@@ -464,6 +464,18 @@ const bscAnimationColleges = [
     'Sister Nivedita University (SNU)',
 ];
 
+const bscMediaScienceColleges = [
+    'Swami Vivekananda University (SVU)',
+    'Brainware University',
+    'EIILM',
+    'Sister Nivedita University (SNU)',
+    'iLEAD Kolkata',
+    'NSHM Knowledge Campus, Kolkata',
+    'Adamas University',
+    'Supreme Knowledge Foundation',
+    'Amity University',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -508,6 +520,7 @@ const courseData: { [key: string]: Course[] } = {
   ],
   computational: [
     { name: 'B.Sc. in Animation', colleges: bscAnimationColleges },
+    { name: 'B.Sc. in Media Science', colleges: bscMediaScienceColleges },
     { name: 'BCA (Bachelor of Computer Applications)', colleges: [] },
     { name: 'MCA (Master of Computer Applications)', colleges: [] },
     { name: 'B.Sc. in Computer Science', colleges: [] },
