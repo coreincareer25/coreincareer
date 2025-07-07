@@ -258,6 +258,25 @@ export default function ContactPage() {
                 </div>
             </div>
       </section>
+
+      <section className="pb-20 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '500ms' }}>
+        <div className="container mx-auto max-w-7xl px-4">
+            <h2 className="text-3xl font-bold font-headline text-center mb-12">
+                Find Us On The <span className="text-primary">Map</span>
+            </h2>
+            <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl border">
+                <iframe
+                    className="absolute top-0 left-0 h-full w-full"
+                    src="https://maps.google.com/maps?q=Haridradanga%20Daspukur%20Dhar%20Prantik,%20Chandannagar,Hooghly,%20West%20Bengal-712136&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    frameBorder="0"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    aria-hidden="false"
+                    tabIndex={0}
+                ></iframe>
+            </div>
+        </div>
+      </section>
     </div>
   );
 }
