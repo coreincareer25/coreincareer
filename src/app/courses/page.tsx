@@ -578,6 +578,17 @@ const bbaTravelTourismManagementColleges = [
     'Techno India Salt Lake',
 ];
 
+const bbaDigitalMarketingColleges = [
+    'Sister Nivedita University (SNU)',
+    'EIILM',
+    'Swami Vivekananda University (SVU)',
+    'Brainware University',
+    'iLEAD Kolkata',
+    'NSHM Knowledge Campus, Kolkata',
+    'IEM Salt Lake & Newtown',
+    'Techno India Salt Lake',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -631,6 +642,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'BBA (Bachelor of Business Administration)', colleges: bbaColleges },
     { name: 'BBA Sports Management', colleges: bbaSportsManagementColleges },
     { name: 'BBA Travel & tourism Management', colleges: bbaTravelTourismManagementColleges },
+    { name: 'BBA Digital Marketing', colleges: bbaDigitalMarketingColleges },
     { name: 'BHM (Bachelor of Hospital Management)', colleges: bhmColleges },
     { name: 'Bachelor of Hotel and Hospitality Management', colleges: hotelManagementColleges },
     { name: 'MBA (Master of Business Administration)', colleges: [] },
