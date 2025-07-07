@@ -1,10 +1,64 @@
+
+"use client";
+
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import emailjs from '@emailjs/browser';
+import { useToast } from '@/hooks/use-toast';
 import { Logo } from '@/components/logo';
 import Link from 'next/link';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Send } from 'lucide-react';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
+
+const newsletterFormSchema = z.object({
+  email: z.string().email({ message: "Please enter a valid email." }),
+});
+
 
 export function Footer() {
+  const { toast } = useToast();
+  
+  const form = useForm<z.infer<typeof newsletterFormSchema>>({
+    resolver: zodResolver(newsletterFormSchema),
+    defaultValues: {
+      email: "",
+    },
+  });
+
+  async function onSubmit(values: z.infer<typeof newsletterFormSchema>) {
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_NEWSLETTER_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast({
+        variant: "destructive",
+        title: "Configuration Error",
+        description: "The newsletter service is not set up correctly.",
+      });
+      return;
+    }
+
+    try {
+      await emailjs.send(serviceId, templateId, values, publicKey);
+      toast({
+        title: "Subscribed!",
+        description: "Thank you for subscribing to our newsletter.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      toast({
+        variant: "destructive",
+        title: "Subscription Failed",
+        description: "There was an error. Please try again.",
+      });
+    }
+  }
+
   const quickLinks = [
     { href: '/courses', label: 'Courses' },
     { href: '/colleges', label: 'Colleges' },
@@ -59,12 +113,27 @@ export function Footer() {
             <p className="mt-4 text-sm text-gray-400">
               Subscribe to our newsletter for the latest updates on courses, scholarships, and more.
             </p>
-            <form className="mt-4 flex gap-2">
-              <Input type="email" placeholder="Enter your email" className="bg-gray-800 border-gray-700 text-white placeholder-gray-500" />
-              <Button type="submit" size="icon" aria-label="Subscribe">
-                <Send className="h-4 w-4" />
-              </Button>
-            </form>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="mt-4 space-y-2">
+                <div className="flex items-start gap-2">
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem className="flex-grow">
+                        <FormControl>
+                          <Input type="email" placeholder="Enter your email" {...field} className="bg-gray-800 border-gray-700 text-white placeholder-gray-500" />
+                        </FormControl>
+                        <FormMessage className="text-red-500"/>
+                      </FormItem>
+                    )}
+                  />
+                  <Button type="submit" size="icon" aria-label="Subscribe" disabled={form.formState.isSubmitting}>
+                    <Send className="h-4 w-4" />
+                  </Button>
+                </div>
+              </form>
+            </Form>
           </div>
         </div>
 
