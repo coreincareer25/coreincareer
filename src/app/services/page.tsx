@@ -153,6 +153,57 @@ export default function ServicesPage() {
           </div>
       </section>
 
+      <section className="py-20 bg-white">
+          <div className="container mx-auto max-w-7xl px-4">
+              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+                  <div>
+                      <p className="text-lg font-bold text-primary">03.</p>
+                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">Scholarship Assistance</h3>
+                      <p className="mt-4 text-muted-foreground">
+                          At Core in Career, we proudly endorse students who demonstrate exceptional talent, determination, and a strong commitment to their future. Our scholarship endorsement recognizes individuals who not only meet academic excellence but also show clear purpose in their chosen career paths. Whether you're applying for a university scholarship, a competitive fellowship, or need support securing educational funding, Core in Career is here to champion your journey.
+                      </p>
+                      <ul className="mt-4 list-disc list-inside space-y-2 font-semibold text-gray-800">
+                          <li>Swami Vivekananda Scholarship</li>
+                          <li>Kanyashree Scholarship</li>
+                          <li>Nabanna Scholarship</li>
+                      </ul>
+                  </div>
+                  <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl">
+                      <Image
+                          src="https://placehold.co/600x400.png"
+                          alt="Scholarship assistance illustration"
+                          fill
+                          className="object-cover"
+                          data-ai-hint="scholarship money illustration"
+                      />
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section className="py-20 bg-white">
+          <div className="container mx-auto max-w-7xl px-4">
+              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+                  <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
+                      <Image
+                          src="https://placehold.co/600x400.png"
+                          alt="Student loan guidance"
+                          fill
+                          className="object-cover"
+                          data-ai-hint="student loan concept"
+                      />
+                  </div>
+                  <div>
+                      <p className="text-lg font-bold text-primary">04.</p>
+                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">Education Loan Guidance</h3>
+                      <p className="mt-4 text-muted-foreground">
+                          At Core in Career, we provide personalized support to help students and parents secure education loans from government and private institutions. From selecting the right bank or scheme to understanding interest rates, documentation, and eligibility, we guide you through every step—ensuring a smooth and hassle-free loan application process for studies in India or abroad.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
+
       <section className="py-20">
         <div className="container mx-auto max-w-7xl px-4">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
