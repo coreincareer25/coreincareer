@@ -63,11 +63,13 @@ export default function ServicesPage() {
 
       <section className="py-20 bg-white">
         <div className="container mx-auto max-w-7xl px-4">
+          <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+            <h2 className="text-3xl font-black tracking-tight text-gray-900">
+              Admission Process <span className="text-primary">Support</span>
+            </h2>
+          </div>
           <div className="grid md:grid-cols-2 gap-16 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '500ms' }}>
             <div>
-              <h2 className="text-3xl font-black tracking-tight text-gray-900 mb-8">
-                Admission Process <span className="text-primary">Support</span>
-              </h2>
               <ul className="space-y-4">
                 {admissionProcessSteps.map((step, index) => (
                     <li key={index} className="flex items-center p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-card">
