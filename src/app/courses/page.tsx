@@ -955,6 +955,14 @@ export default function CoursesPage() {
                                                 )}
                                             </div>
                                         )}
+                                        {tabName === 'others' && ['LLB (Bachelor of Laws)', 'BBA LLB', 'BA LLB', 'B.Com LLB'].includes(course.name) && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility & Entrance:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li><strong>Entrance exam:</strong> CLAT, AILET, LSAT, and DU LLB</li>
+                                                </ul>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
