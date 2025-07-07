@@ -45,10 +45,33 @@ const btechCseColleges = [
   'Graphic Era Deemed to be University',
 ];
 
+const btechCseAimColleges = [
+  'IEM Salt Lake & Newtown',
+  'Manipal University',
+  'Adamas University',
+  'Sister Nivedita University (SNU)',
+  'Techno Main Salt Lake & Newtown',
+  'Heritage Institute of Technology',
+  'Amity University, Kolkata',
+  'JIS University',
+  'Brainware University',
+  'Guru Nanak Institute of Technology (GNIT)',
+  'KIIT',
+  'SOA',
+  'AMITY NOIDA',
+  'JAIN (Deemed-to-be University)',
+  'Sathyabama University',
+  'Galgotias University',
+  'Sarhad University',
+  'Shiv Nadar Institution of Eminence',
+  'Shivalik College, Dehradun',
+  'Graphic Era Deemed to be University',
+];
+
 const courseData: { [key: string]: Course[] } = {
   engineering: [
     { name: 'B.Tech. in Computer Science Engineering (CSE)', colleges: btechCseColleges },
-    { name: 'B.Tech. in CSE (AI & ML)', colleges: [] },
+    { name: 'B.Tech. in CSE (AI & ML)', colleges: btechCseAimColleges },
     { name: 'B.Tech. in CSE (Robotics)', colleges: [] },
     { name: 'B.Tech. in CSE (Cloud Computing)', colleges: [] },
     { name: 'B.Tech. in CSE (Internet of Things - IoT)', colleges: [] },
