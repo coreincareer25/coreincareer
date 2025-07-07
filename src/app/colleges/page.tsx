@@ -146,7 +146,7 @@ export default function CollegesPage() {
                                     <CardTitle className="text-lg font-semibold">{college}</CardTitle>
                                   </CardHeader>
                                   <CardFooter>
-                                    <Button asChild className="w-full">
+                                    <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
                                       <Link href="/contact">Apply Now</Link>
                                     </Button>
                                   </CardFooter>
@@ -169,7 +169,7 @@ export default function CollegesPage() {
                                 <CardTitle className="text-lg font-semibold">{college}</CardTitle>
                               </CardHeader>
                               <CardFooter>
-                                <Button asChild className="w-full">
+                                <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
                                   <Link href="/contact">Apply Now</Link>
                                 </Button>
                               </CardFooter>
