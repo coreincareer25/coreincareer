@@ -511,6 +511,18 @@ const bcaColleges = [
     'Adamas University',
     'Supreme Knowledge Foundation',
     'Amity University',
+    'jis university',
+];
+
+const mcaColleges = [
+    'IEM',
+    'JIS university',
+    'Brainware University',
+    'Adamas university',
+    'Techno India Salt Lake',
+    'GNIT',
+    'Heritage',
+    'Future',
 ];
 
 const bbaColleges = [
@@ -566,7 +578,7 @@ const bbaSportsManagementColleges = [
     'Sister Nivedita University (SNU)',
     'iLEAD Kolkata',
     'NSHM Knowledge Campus, Kolkata',
-    'IEM Salt Lake & Newtown',
+    'IEM',
     'Techno India Salt Lake',
 ];
 
@@ -574,7 +586,7 @@ const bbaTravelTourismManagementColleges = [
     'Sister Nivedita University (SNU)',
     'iLEAD Kolkata',
     'NSHM Knowledge Campus, Kolkata',
-    'IEM Salt Lake & Newtown',
+    'IEM',
     'Techno India Salt Lake',
 ];
 
@@ -585,7 +597,7 @@ const bbaDigitalMarketingColleges = [
     'Brainware University',
     'iLEAD Kolkata',
     'NSHM Knowledge Campus, Kolkata',
-    'IEM Salt Lake & Newtown',
+    'IEM',
     'Techno India Salt Lake',
 ];
 
@@ -696,6 +708,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Sc. in Animation', colleges: bscAnimationColleges },
     { name: 'B.Sc. in Media Science', colleges: bscMediaScienceColleges },
     { name: 'BCA (Bachelor of Computer Applications)', colleges: bcaColleges },
+    { name: 'MCA (Master of Computer Applications)', colleges: mcaColleges },
     { name: 'B.Sc. in Data Science', colleges: bscDataScienceComputationalColleges },
     { name: 'B.Sc. in Cyber Security', colleges: bscCyberSecurityComputationalColleges },
   ],
