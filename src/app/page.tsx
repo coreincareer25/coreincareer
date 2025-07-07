@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import Balancer from 'react-wrap-balancer';
-import { advantages, testimonials, faqs, services } from '@/lib/data';
+import { advantages, testimonials, faqs, services, partners } from '@/lib/data';
 import {
   Carousel,
   CarouselContent,
@@ -249,6 +249,44 @@ export default function Home() {
                 </CardFooter>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-in fade-in slide-in-from-left-16 duration-700 fill-mode-backwards">
+              <p className="font-semibold uppercase tracking-widest text-primary">
+                OUR PARTNERS
+              </p>
+              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+                Our Partner Colleges And Institutions
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                We offer reliable guidance on higher education opportunities across various states, including Odisha, Pune, Bangalore, Uttar Pradesh, Mumbai, and many more. At Core in Career, our commitment is to provide high-quality career counselling and services by thoroughly understanding the needs of both students and institutions. Our mission is to uplift educational standards across the nation — because we believe in "Sabka Saath, Sabka Education."
+              </p>
+              <Button asChild size="lg" className="mt-8 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
+                <Link href="/colleges">Read More</Link>
+              </Button>
+            </div>
+            <div className="animate-in fade-in slide-in-from-right-16 duration-700 fill-mode-backwards">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
+                {partners.map((partner) => (
+                  <div key={partner.name} className="flex items-center justify-center p-4 bg-gray-50 rounded-lg shadow-sm transition-transform hover:-translate-y-1">
+                     <div className="relative h-16 w-full sm:h-20">
+                      <Image 
+                          src={partner.logo} 
+                          alt={partner.name} 
+                          fill
+                          className="object-contain"
+                          data-ai-hint={partner.aiHint}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

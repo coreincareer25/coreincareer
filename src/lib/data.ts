@@ -242,7 +242,40 @@ export const services = [
     },
     {
         title: 'AI-Powered Recommendations',
-        description: 'Leverage our advanced AI tool to get instant, personalized suggestions for courses, colleges, and scholarships.',
+        description: 'Leverage our advanced AI tool to get your personalized suggestions for courses, colleges, and scholarships.',
         icon: 'Sparkles'
     }
+];
+
+export const partners = [
+  {
+    name: 'Amity University',
+    logo: 'https://placehold.co/200x120.png',
+    aiHint: 'university logo'
+  },
+  {
+    name: 'Brainware University',
+    logo: 'https://placehold.co/200x120.png',
+    aiHint: 'university logo'
+  },
+  {
+    name: 'Techno India Group',
+    logo: 'https://placehold.co/200x120.png',
+    aiHint: 'education logo'
+  },
+  {
+    name: 'JMN Medical College',
+    logo: 'https://placehold.co/200x120.png',
+    aiHint: 'medical college logo'
+  },
+  {
+    name: 'JIS University',
+    logo: 'https://placehold.co/200x120.png',
+    aiHint: 'university logo'
+  },
+  {
+    name: 'IEM',
+    logo: 'https://placehold.co/200x120.png',
+    aiHint: 'institute logo'
+  },
 ];
