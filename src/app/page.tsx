@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
@@ -16,6 +18,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Award, FileText, Plane, School, Sparkles, UserCheck } from 'lucide-react';
 import React from 'react';
+import Autoplay from "embla-carousel-autoplay";
 
 const iconMap: { [key: string]: React.ElementType } = {
   UserCheck,
@@ -52,6 +55,10 @@ const educationalPrograms = [
 
 
 export default function Home() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
+
   return (
     <main className="bg-white overflow-x-hidden">
       <section className="text-center pt-20 pb-12 md:pt-28 md:pb-16">
@@ -126,7 +133,13 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-in fade-in slide-in-from-left-16 duration-700 fill-mode-backwards">
-              <Carousel className="w-full max-w-lg mx-auto" opts={{ loop: true }}>
+              <Carousel 
+                className="w-full max-w-lg mx-auto" 
+                opts={{ loop: true }}
+                plugins={[plugin.current]}
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
+              >
                 <CarouselContent>
                   <CarouselItem>
                     <div className="p-1">
@@ -155,8 +168,8 @@ export default function Home() {
                     </div>
                   </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
               </Carousel>
             </div>
             <div className="animate-in fade-in slide-in-from-right-16 duration-700 fill-mode-backwards">
