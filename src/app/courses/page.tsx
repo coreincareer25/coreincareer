@@ -937,6 +937,12 @@ export default function CoursesPage() {
                                                 <p className="text-muted-foreground">Pass in Higher Secondary (10+2) or equivalent examination with Maths/Business Maths/ Statistics/ Computer Science as one of the subjects and at least 30% marks in English. Eligible candidates have to appear and qualify CET examination as per University norms.</p>
                                             </div>
                                         )}
+                                        {tabName === 'computational' && course.name === 'MCA (Master of Computer Applications)' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility Criteria:</h4>
+                                                <p className="text-muted-foreground">To be eligible for an MCA (Master of Computer Applications) program in West Bengal, candidates generally need a Bachelor's degree (BCA, BSc, BTech, or equivalent) with Mathematics as a subject, preferably at the 10+2 or graduation level. A minimum of 50% marks in the qualifying degree is usually required. Additionally, most institutions conduct an entrance exam like JECA.</p>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
