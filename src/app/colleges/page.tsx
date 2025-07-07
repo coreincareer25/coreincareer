@@ -105,39 +105,50 @@ export default function CollegesPage() {
         </div>
       </section>
 
-      <section className="py-12 container mx-auto max-w-7xl px-4">
-        <Tabs defaultValue="engineering" className="w-full">
-            <TabsList className="flex-wrap justify-center h-auto gap-2 bg-transparent p-0 mb-8 hidden md:flex">
-              {Object.entries(collegeData).map(([key, data]) => (
-                <TabsTrigger key={key} value={key} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-card">
-                  {data.title}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          
-            <div className="md:hidden mb-8">
-              <select
-                className="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-3 bg-card"
-                onChange={(e) => {
-                  const tab = document.querySelector(`button[value="${e.target.value}"]`) as HTMLButtonElement | null;
-                  tab?.click();
-                }}
-              >
-              {Object.entries(collegeData).map(([key, data]) => (
-                  <option key={key} value={key}>{data.title}</option>
-              ))}
-              </select>
-            </div>
-
-            {Object.entries(collegeData).map(([key, data]) => (
-              <TabsContent key={key} value={key} className="m-0">
-                {data.subCategories ? (
-                  <div className="space-y-12">
-                    {Object.values(data.subCategories).map(subCat => (
-                      <div key={subCat.title}>
-                        <h2 className="text-2xl font-bold font-headline mb-6 text-center md:text-left">{subCat.title}</h2>
+      <div className="bg-gradient-to-b from-purple-100/50 via-pink-100/50 to-transparent">
+        <section className="py-12 container mx-auto max-w-6xl px-4">
+          <Tabs defaultValue="engineering" className="w-full">
+              <TabsList className="flex h-auto flex-wrap justify-center gap-2 bg-transparent p-0">
+                {Object.entries(collegeData).map(([key, data]) => (
+                  <TabsTrigger key={key} value={key} className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">
+                    {data.title}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            
+              <div className="mt-8">
+                {Object.entries(collegeData).map(([key, data]) => (
+                  <TabsContent key={key} value={key} className="m-0">
+                    {data.subCategories ? (
+                      <div className="space-y-12">
+                        {Object.values(data.subCategories).map(subCat => (
+                          <div key={subCat.title}>
+                            <h2 className="text-2xl font-bold font-headline mb-6 text-center md:text-left">{subCat.title}</h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                              {subCat.colleges.map((college, index) => (
+                                <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                                  <div className="relative h-40 w-full">
+                                    <Image src="https://placehold.co/600x400.png" alt={college} fill className="object-cover" data-ai-hint="university campus" />
+                                  </div>
+                                  <CardHeader className="flex-grow">
+                                    <CardTitle className="text-lg font-semibold">{college}</CardTitle>
+                                  </CardHeader>
+                                  <CardFooter>
+                                    <Button asChild className="w-full">
+                                      <Link href="/contact">Apply Now</Link>
+                                    </Button>
+                                  </CardFooter>
+                                </Card>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div>
+                        {data.description && <p className="text-center text-muted-foreground mb-6">{data.description}</p>}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                          {subCat.colleges.map((college, index) => (
+                          {data.colleges && data.colleges.map((college, index) => (
                             <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
                               <div className="relative h-40 w-full">
                                 <Image src="https://placehold.co/600x400.png" alt={college} fill className="object-cover" data-ai-hint="university campus" />
@@ -154,34 +165,13 @@ export default function CollegesPage() {
                           ))}
                         </div>
                       </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div>
-                    {data.description && <p className="text-center text-muted-foreground mb-6">{data.description}</p>}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                      {data.colleges && data.colleges.map((college, index) => (
-                         <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                           <div className="relative h-40 w-full">
-                             <Image src="https://placehold.co/600x400.png" alt={college} fill className="object-cover" data-ai-hint="university campus" />
-                           </div>
-                           <CardHeader className="flex-grow">
-                             <CardTitle className="text-lg font-semibold">{college}</CardTitle>
-                           </CardHeader>
-                           <CardFooter>
-                             <Button asChild className="w-full">
-                               <Link href="/contact">Apply Now</Link>
-                             </Button>
-                           </CardFooter>
-                         </Card>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </TabsContent>
-            ))}
-        </Tabs>
-      </section>
+                    )}
+                  </TabsContent>
+                ))}
+              </div>
+          </Tabs>
+        </section>
+      </div>
     </div>
   );
 }
