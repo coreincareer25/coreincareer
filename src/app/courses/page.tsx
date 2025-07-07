@@ -495,7 +495,6 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Sc. in Critical Care Technology (CCT)', colleges: bscCctColleges },
     { name: 'B.Sc. in Physician Assistant', colleges: bpaColleges },
     { name: 'B.Sc. in Radiology', colleges: bscRadiologyColleges },
-    { name: 'B.Sc. in Operation Theatre Technology', colleges: [] },
   ],
   computational: [
     { name: 'BCA (Bachelor of Computer Applications)', colleges: [] },
