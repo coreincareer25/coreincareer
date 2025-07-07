@@ -33,6 +33,16 @@ const btechCseColleges = [
   'SurTech',
   'Supreme Knowledge Foundation',
   'Abacus Institute of Engineering & Management',
+  'KIIT',
+  'SOA',
+  'AMITY NOIDA',
+  'JAIN (Deemed-to-be University)',
+  'Sathyabama University',
+  'Galgotias University',
+  'Sarhad University',
+  'Shiv Nadar Institution of Eminence',
+  'Shivalik College, Dehradun',
+  'Graphic Era Deemed to be University',
 ];
 
 const courseData: { [key: string]: Course[] } = {
