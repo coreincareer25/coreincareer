@@ -979,6 +979,15 @@ export default function CoursesPage() {
                                                 </ul>
                                             </div>
                                         )}
+                                        {tabName === 'others' && course.name === 'B.Sc. in Microbiology' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility & Admission:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li>Passed Class 12 with a minimum aggregate of 50% in the Science stream with PCB (Physics, Chemistry, and Biology)</li>
+                                                    <li><strong>Admission:</strong> Merit-based/ Entrance Exams like  CUET, LPU NEST, CUCET, etc.</li>
+                                                </ul>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
