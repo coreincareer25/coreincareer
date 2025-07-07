@@ -354,6 +354,12 @@ const diplomaPolytechnicColleges = [
   'Guru Nanak Institute of Technology (GNIT)',
 ];
 
+const btechMarineEngineeringColleges = [
+  'The Neotia University',
+  "Siksha 'O' Anusandhan",
+  'Mahaveer Academy of Technology and Science University',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -375,7 +381,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Tech. in Agricultural Engineering', colleges: btechAgricultureColleges },
     { name: 'B.Tech. in Civil Engineering', colleges: [] },
     { name: 'B.Tech. in Food Technology', colleges: [] },
-    { name: 'B.Tech. in Marine Engineering', colleges: [] },
+    { name: 'B.Tech. in Marine Engineering', colleges: btechMarineEngineeringColleges },
     { name: 'Diploma / Polytechnic', colleges: diplomaPolytechnicColleges },
   ],
   medical: [
