@@ -513,6 +513,22 @@ const bcaColleges = [
     'Amity University',
 ];
 
+const bbaColleges = [
+    'EIILM',
+    'Swami Vivekananda University (SVU)',
+    'IEM Salt Lake & Newtown',
+    'Techno Main Salt Lake',
+    'Techno International Newtown',
+    'Brainware University',
+    'Sister Nivedita University (SNU)',
+    'iLEAD Kolkata',
+    'NSHM Knowledge Campus, Kolkata',
+    'Adamas University',
+    'Supreme Knowledge Foundation',
+    'Amity University',
+    'JIS University',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -563,7 +579,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Sc. in Cyber Security', colleges: bscCyberSecurityComputationalColleges },
   ],
   management: [
-    { name: 'BBA (Bachelor of Business Administration)', colleges: [] },
+    { name: 'BBA (Bachelor of Business Administration)', colleges: bbaColleges },
     { name: 'MBA (Master of Business Administration)', colleges: [] },
     { name: 'PGDM (Post Graduate Diploma in Management)', colleges: [] },
     { name: 'B.Com (Bachelor of Commerce)', colleges: [] },
