@@ -4,32 +4,38 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const riasecModel = [
+const qnaModel = [
     {
-        type: "Realistic (Doers)",
-        description: "People who are practical, hands-on, and enjoy working with tools, machines, or animals. They are often good at mechanical or athletic jobs."
+        number: "01.",
+        aiHint: "career passion",
+        description: "Choosing a career based on interests ensures long-term passion and growth, while marks reflect current strengths. Passion fuels perseverance—choose interest for a fulfilling future."
     },
     {
-        type: "Investigative (Thinkers)",
-        description: "People who like to observe, learn, investigate, analyze, evaluate, or solve problems. They often work in scientific or research fields."
+        number: "02.",
+        aiHint: "informed decision",
+        description: "Listen to friends and relatives, but make your own informed decision. It's your life—choose what aligns with your goals, values, and interests."
     },
     {
-        type: "Artistic (Creators)",
-        description: "People who have artistic, innovating, or intuitional abilities and like to work in unstructured situations using their imagination and creativity."
+        number: "03.",
+        aiHint: "career questions",
+        description: "After 12th, ask: What am I truly passionate about? Should I follow trends or my dreams? The right questions guide you to the right career path."
     },
     {
-        type: "Social (Helpers)",
-        description: "People who like to work with people to enlighten, inform, help, train, or cure them, or are skilled with words."
+        number: "04.",
+        aiHint: "offline counseling",
+        description: "Offline counselling offers face-to-face interaction, builds trust, and ensures deeper emotional connection—something online sessions often lack. Personal guidance feels more real and impactful in person."
     },
     {
-        type: "Enterprising (Persuaders)",
-        description: "People who like to work with people, influencing, persuading, leading or managing for organizational goals or economic gain."
+        number: "05.",
+        aiHint: "character integrity",
+        description: "True status isn't wealth or fame—it's character, integrity, and how you treat others. Respect, kindness, and values define real success, not material possessions or social media likes."
     },
     {
-        type: "Conventional (Organizers)",
-        description: "People who like to work with data, have clerical or numerical ability, carry out tasks in detail or follow through on others' instructions."
+        number: "06.",
+        aiHint: "education empowerment",
+        description: "Education empowers minds, opens doors to opportunity, and builds a better society. It's not just about marks—it's the foundation for critical thinking, growth, and lifelong success."
     }
-]
+];
 
 export default function PsychometricTestingPage() {
     return (
@@ -79,17 +85,23 @@ export default function PsychometricTestingPage() {
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
                         <h2 className="text-4xl font-black tracking-tight text-gray-900">Understand Yourself Better, Choose Smarter</h2>
-                        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-                            The Holland Codes or the Holland Occupational Themes (RIASEC) refers to a theory of careers and vocational choice based upon personality types.
-                        </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {riasecModel.map((item, index) => (
-                            <Card key={item.type} className="text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300 ease-in-out animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${300 + index * 150}ms` }}>
+                        {qnaModel.map((item, index) => (
+                            <Card key={index} className="flex flex-col overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300 ease-in-out animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${300 + index * 150}ms` }}>
+                                <div className="relative h-48 w-full">
+                                    <Image
+                                        src={`https://placehold.co/600x400.png`}
+                                        alt={item.description.substring(0, 50)}
+                                        fill
+                                        className="object-cover"
+                                        data-ai-hint={item.aiHint}
+                                    />
+                                </div>
                                 <CardHeader>
-                                    <CardTitle className="text-xl font-bold text-primary">{item.type}</CardTitle>
+                                    <CardTitle className="text-2xl font-bold text-primary">{item.number}</CardTitle>
                                 </CardHeader>
-                                <CardContent>
+                                <CardContent className="flex-grow">
                                     <p className="text-muted-foreground">{item.description}</p>
                                 </CardContent>
                             </Card>
