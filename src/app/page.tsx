@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -314,6 +315,9 @@ export default function Home() {
               </div>
               <Carousel
                   opts={{ align: "start", loop: true }}
+                  plugins={[plugin.current]}
+                  onMouseEnter={plugin.current.stop}
+                  onMouseLeave={plugin.current.reset}
                   className="w-full max-w-5xl mx-auto"
               >
                   <CarouselContent>
