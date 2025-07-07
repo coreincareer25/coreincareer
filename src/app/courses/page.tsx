@@ -963,6 +963,14 @@ export default function CoursesPage() {
                                                 </ul>
                                             </div>
                                         )}
+                                        {tabName === 'others' && course.name === 'B.Sc. in Agriculture' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility & Entrance:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li><strong>Entrance exam:</strong> ICAR AIEEA, CUET, and state-level exams like AP EAMCET, KEAM, or MHT CET</li>
+                                                </ul>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
