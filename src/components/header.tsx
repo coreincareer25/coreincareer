@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, ChevronDown, Phone, Mail } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
 import {
@@ -60,19 +60,6 @@ export function Header() {
                     CONTACT US
                 </Link>
             </Button>
-        </div>
-
-        <div className="hidden xl:block absolute top-1 right-4 transform translate-y-0">
-            <div className="p-2 rounded-b-lg bg-gradient-to-r from-cyan-50 to-purple-100 shadow-sm">
-                <div className="flex items-center gap-2 text-xs font-medium">
-                    <Phone className="h-4 w-4 text-gray-700"/>
-                    <span className="text-gray-700">+91 9123783438</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs font-medium mt-1">
-                    <Mail className="h-4 w-4 text-gray-700"/>
-                    <span className="text-gray-700">coreincareer2025@gmail.com</span>
-                </div>
-            </div>
         </div>
 
         <div className="lg:hidden">
