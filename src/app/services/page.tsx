@@ -204,6 +204,40 @@ export default function ServicesPage() {
           </div>
       </section>
 
+      <section className="py-20 bg-white">
+          <div className="container mx-auto max-w-7xl px-4">
+              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+                  <div>
+                      <p className="text-lg font-bold text-primary">05.</p>
+                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">Entrance Exam</h3>
+                      <div className="mt-4 text-muted-foreground space-y-2">
+                        <p>B.Tech/ Pharmacy — <span className="font-semibold text-gray-800">JEE MAINS/WBJEE</span></p>
+                        <p>MBBS- <span className="font-semibold text-gray-800">NEET</span></p>
+                        <p>Nursing — <span className="font-semibold text-gray-800">JENPAS/JOINT</span></p>
+                        <p>Law — <span className="font-semibold text-gray-800">CLAT</span></p>
+                        <p>Management — <span className="font-semibold text-gray-800">CET</span></p>
+                        <p>Paramedical — <span className="font-semibold text-gray-800">JENPAS</span></p>
+                        <p>Architecture — <span className="font-semibold text-gray-800">NATA</span></p>
+                        <p>Diploma Engineering — <span className="font-semibold text-gray-800">JEXPO</span></p>
+                      </div>
+                      <div className="mt-6">
+                        <h4 className="text-lg font-bold text-gray-900">Other Entrance</h4>
+                        <p className="mt-2 text-muted-foreground">KIITEE/SAAT/VITEEE/IEMJEE/BET etc.</p>
+                      </div>
+                  </div>
+                  <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
+                      <Image
+                          src="https://placehold.co/600x400.png"
+                          alt="Entrance exam illustration"
+                          fill
+                          className="object-cover"
+                          data-ai-hint="student exam illustration"
+                      />
+                  </div>
+              </div>
+          </div>
+      </section>
+
       <section className="py-20">
         <div className="container mx-auto max-w-7xl px-4">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
