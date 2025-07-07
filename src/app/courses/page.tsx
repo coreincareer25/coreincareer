@@ -943,6 +943,22 @@ export default function CoursesPage() {
                                                 <p className="text-muted-foreground">To be eligible for an MCA (Master of Computer Applications) program in West Bengal, candidates generally need a Bachelor's degree (BCA, BSc, BTech, or equivalent) with Mathematics as a subject, preferably at the 10+2 or graduation level. A minimum of 50% marks in the qualifying degree is usually required. Additionally, most institutions conduct an entrance exam like JECA.</p>
                                             </div>
                                         )}
+                                        {tabName === 'management' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility & Entrance:</h4>
+                                                {course.name === 'MBA (Master of Business Administration)' || course.name === 'MHA (masters of hospital management)' ? (
+                                                    <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                        <li>Students typically need to have completed their 12th standard (or equivalent) from a recognized board.</li>
+                                                        <li><strong>Entrance exam:</strong> CAT, XAT, GMAT, or CMAT.</li>
+                                                    </ul>
+                                                ) : (
+                                                    <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                        <li>Students typically need to have completed their 12th standard (or equivalent) from a recognized board with minimum 50% aggregate.</li>
+                                                        <li><strong>Entrance Exams:</strong> Many universities and colleges conduct entrance exams for BBA admissions, such as CUET, SET, NPAT, etc.</li>
+                                                    </ul>
+                                                )}
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
