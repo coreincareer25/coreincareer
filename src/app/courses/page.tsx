@@ -705,6 +705,16 @@ const bscMicrobiologyColleges = [
     'GNIPST'
 ];
 
+const bscBiotechnologyOthersColleges = [
+    'SVU',
+    'Brainware University',
+    'Adamas university',
+    'jis university',
+    'SNU',
+    'TNU',
+    'GNIPST'
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -771,6 +781,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Sc. (Bachelor of Science)', colleges: [] },
     { name: 'M.Sc. (Master of Science)', colleges: [] },
     { name: 'B.Sc. in Microbiology', colleges: bscMicrobiologyColleges },
+    { name: 'B.Sc. in Biotechnology', colleges: bscBiotechnologyOthersColleges },
     { name: 'LLB (Bachelor of Laws)', colleges: llbColleges },
     { name: 'BBA LLB', colleges: bbaLlbColleges },
     { name: 'BA LLB', colleges: baLlbColleges },
