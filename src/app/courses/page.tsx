@@ -690,6 +690,11 @@ const llbColleges = [
     'Amity University'
 ];
 
+const bcomLlbColleges = [
+    'SNU',
+    'Amity University'
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -758,6 +763,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'LLB (Bachelor of Laws)', colleges: llbColleges },
     { name: 'BBA LLB', colleges: bbaLlbColleges },
     { name: 'BA LLB', colleges: baLlbColleges },
+    { name: 'B.Com LLB', colleges: bcomLlbColleges },
   ],
 };
 
