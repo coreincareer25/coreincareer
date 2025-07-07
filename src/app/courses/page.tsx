@@ -378,6 +378,17 @@ const btechCivilEngineeringColleges = [
   'Gargi Memorial Institute of Technology',
 ];
 
+const mbbsColleges = [
+  'JMN Medical College and Hospital',
+  'IQ City Medical College Hospital',
+  'Jagannath Gupta Institute of Medical Sciences And Hospital',
+  'GOURI DEVI INSTITUTE OF MEDICAL SCIENCES AND HOSPITAL',
+  'KPC Medical College & Hospital',
+  'Shri Ramkrishna Institute of Medical Sciences',
+  'Saraswathi Institute of Medical Sciences',
+  'Christian Medical College & Hospital'
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -403,7 +414,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'Diploma / Polytechnic', colleges: diplomaPolytechnicColleges },
   ],
   medical: [
-    { name: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)', colleges: [] },
+    { name: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)', colleges: mbbsColleges },
     { name: 'BDS (Bachelor of Dental Surgery)', colleges: [] },
     { name: 'B.Sc. in Nursing', colleges: [] },
   ],
