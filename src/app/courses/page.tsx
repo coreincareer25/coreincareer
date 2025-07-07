@@ -997,6 +997,12 @@ export default function CoursesPage() {
                                                 </ul>
                                             </div>
                                         )}
+                                        {tabName === 'others' && course.name === 'B.Sc. in Nutrition' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility Criteria:</h4>
+                                                <p className="text-muted-foreground">To be eligible for a B.Sc. in Nutrition, candidates generally need to have passed the 10+2 (or equivalent) examination with Biology, Chemistry, and Physics (PCB) as subjects, though some institutions may accept students with a strong background in Home Science or Nutrition as well. Minimum marks in these subjects, typically ranging from 50% to 60%, are also required.</p>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
