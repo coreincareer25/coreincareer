@@ -1,4 +1,3 @@
-
 "use client";
 
 import Balancer from "react-wrap-balancer";
@@ -672,6 +671,15 @@ const bbaLlbColleges = [
     'Amity University'
 ];
 
+const baLlbColleges = [
+    'ADAMAS UNIVERSITY',
+    'Brainware University',
+    'SVU',
+    'TNU',
+    'SNU',
+    'Amity University'
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -739,6 +747,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'M.Sc. (Master of Science)', colleges: [] },
     { name: 'LLB (Bachelor of Laws)', colleges: [] },
     { name: 'BBA LLB', colleges: bbaLlbColleges },
+    { name: 'BA LLB', colleges: baLlbColleges },
   ],
 };
 
