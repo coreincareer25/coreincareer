@@ -389,6 +389,15 @@ const mbbsColleges = [
   'Christian Medical College & Hospital'
 ];
 
+const bdsColleges = [
+  'Guru Nanak Institute of Dental Sciences & Research',
+  'Kusum Devi Sunderlal Dugar Jain Dental College& Hospital',
+  'Haldia Institute of Dental Sciences & Research (HIDSAR)',
+  'Dr R Ahmed Dental College and Hospital',
+  'Manav Rachna Dental College',
+  'Al-Azhar Dental College Thodupuzha'
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -415,7 +424,7 @@ const courseData: { [key: string]: Course[] } = {
   ],
   medical: [
     { name: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)', colleges: mbbsColleges },
-    { name: 'BDS (Bachelor of Dental Surgery)', colleges: [] },
+    { name: 'BDS (Bachelor of Dental Surgery)', colleges: bdsColleges },
     { name: 'B.Sc. in Nursing', colleges: [] },
   ],
   paramedical: [
