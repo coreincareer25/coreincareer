@@ -559,12 +559,8 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Sc. in Animation', colleges: bscAnimationColleges },
     { name: 'B.Sc. in Media Science', colleges: bscMediaScienceColleges },
     { name: 'BCA (Bachelor of Computer Applications)', colleges: bcaColleges },
-    { name: 'MCA (Master of Computer Applications)', colleges: [] },
-    { name: 'B.Sc. in Computer Science', colleges: [] },
-    { name: 'B.Sc. in Information Technology', colleges: [] },
     { name: 'B.Sc. in Data Science', colleges: bscDataScienceComputationalColleges },
     { name: 'B.Sc. in Cyber Security', colleges: bscCyberSecurityComputationalColleges },
-    { name: 'M.Sc. in Data Science', colleges: [] },
   ],
   management: [
     { name: 'BBA (Bachelor of Business Administration)', colleges: [] },
