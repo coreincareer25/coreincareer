@@ -1,3 +1,4 @@
+
 export const advantages = [
   {
     number: '01.',
@@ -70,24 +71,62 @@ export const faqs = [
 
 export const team = [
     {
-        name: 'Soumya Singh',
-        title: 'Founder & CEO',
+        name: 'Anupam Roy',
+        title: 'Senior Counsellor',
         image: 'https://placehold.co/300x300.png',
-        aiHint: 'female CEO'
+        aiHint: 'male counsellor portrait',
+        email: 'anupamsir25@gmail.com'
     },
     {
-        name: 'Dr. Anika Sharma',
-        title: 'Head Counselor',
+        name: 'Gourab Tapadar',
+        title: 'Senior Counsellor',
         image: 'https://placehold.co/300x300.png',
-        aiHint: 'professional woman'
+        aiHint: 'male counsellor portrait',
+        email: 'gourabsir25@gmail.com'
     },
     {
-        name: 'Rajat Gupta',
-        title: 'Admissions Expert',
+        name: 'Pooja Ganguly',
+        title: 'Senior Counsellor',
         image: 'https://placehold.co/300x300.png',
-        aiHint: 'male professional'
+        aiHint: 'female counsellor portrait',
+        email: 'gangulymam25@gmail.com'
+    },
+    {
+        name: 'Anuradha Ray',
+        title: 'Senior Counsellor',
+        image: 'https://placehold.co/300x300.png',
+        aiHint: 'female counsellor portrait',
+        email: 'anuradhacoreincareer@gmail.com'
+    },
+    {
+        name: 'Saheba Khatun',
+        title: 'Junior Counsellor',
+        image: 'https://placehold.co/300x300.png',
+        aiHint: 'female counsellor portrait',
+        email: 'sahebajc@gmail.com'
+    },
+    {
+        name: 'Sneha Sen',
+        title: 'Junior Counsellor',
+        image: 'https://placehold.co/300x300.png',
+        aiHint: 'female counsellor portrait',
+        email: 'snehasen2105@gmail.com'
+    },
+    {
+        name: 'Anushka Sharma',
+        title: 'Junior Counsellor',
+        image: 'https://placehold.co/300x300.png',
+        aiHint: 'female counsellor portrait',
+        email: 'anushkasharma93@gmail.com'
+    },
+    {
+        name: 'Rishabh Sen',
+        title: 'Junior Counsellor',
+        image: 'https://placehold.co/300x300.png',
+        aiHint: 'male counsellor portrait',
+        email: 'rishabhsen@gmail.com'
     }
-]
+];
 
 export const courses = [
   {

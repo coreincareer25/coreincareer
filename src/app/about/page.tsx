@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { team } from "@/lib/data";
-import { Linkedin } from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
@@ -60,29 +59,28 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="py-20 bg-secondary">
+            <section className="py-20 bg-cyan-50">
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
-                        <p className="font-semibold uppercase tracking-widest text-primary">OUR TEAM</p>
-                        <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Meet Our Experts</h2>
-                        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-                            Our team of experienced counselors and admission experts is dedicated to your success.
+                        <h2 className="text-4xl font-black tracking-tight text-gray-900">Our Mentors</h2>
+                        <p className="mt-4 text-lg text-muted-foreground max-w-4xl mx-auto">
+                            At Core in Career, our mentors are the backbone of our success. They bring a wealth of experience, industry knowledge, and compassion to guide students and professionals at every stage of their journey.
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                         {team.map((member, index) => (
-                            <Card key={member.name} className="text-center overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${300 + index * 150}ms` }}>
+                            <Card key={member.name} className="text-center overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards bg-card shadow-lg" style={{ animationDelay: `${300 + index * 150}ms` }}>
                                 <div className="relative h-64 w-full">
                                     <Image src={member.image} alt={member.name} layout="fill" objectFit="cover" data-ai-hint={member.aiHint} />
                                 </div>
-                                <CardHeader>
-                                    <CardTitle className="text-xl">{member.name}</CardTitle>
-                                    <p className="text-primary font-medium">{member.title}</p>
+                                <CardHeader className="p-4 pb-2">
+                                    <CardTitle className="text-lg font-bold">{member.name}</CardTitle>
+                                    <p className="text-sm text-muted-foreground">{member.title}</p>
                                 </CardHeader>
-                                <CardContent>
-                                    <Link href="#" className="text-muted-foreground hover:text-primary">
-                                        <Linkedin className="h-6 w-6 mx-auto"/>
-                                    </Link>
+                                <CardContent className="p-4 pt-0">
+                                    <a href={`mailto:${member.email}`} className="text-sm text-primary hover:underline break-all">
+                                        {member.email}
+                                    </a>
                                 </CardContent>
                             </Card>
                         ))}
