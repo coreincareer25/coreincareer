@@ -405,12 +405,9 @@ const courseData: { [key: string]: Course[] } = {
   medical: [
     { name: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)', colleges: [] },
     { name: 'BDS (Bachelor of Dental Surgery)', colleges: [] },
-    { name: 'BAMS (Bachelor of Ayurvedic Medicine and Surgery)', colleges: [] },
-    { name: 'BHMS (Bachelor of Homeopathic Medicine and Surgery)', colleges: [] },
-    { name: 'BUMS (Bachelor of Unani Medicine and Surgery)', colleges: [] },
+    { name: 'B.Sc. in Nursing', colleges: [] },
   ],
   paramedical: [
-    { name: 'B.Sc. in Nursing', colleges: [] },
     { name: 'BPT (Bachelor of Physiotherapy)', colleges: [] },
     { name: 'B.Sc. in Medical Laboratory Technology', colleges: [] },
     { name: 'B.Sc. in Radiology', colleges: [] },
