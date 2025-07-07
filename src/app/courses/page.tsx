@@ -662,6 +662,16 @@ const mhaColleges = [
     'IISWBM'
 ];
 
+const bbaLlbColleges = [
+    'ADAMAS UNIVERSITY',
+    'JIS University',
+    'Brainware University',
+    'SVU',
+    'TNU',
+    'SNU',
+    'Amity University'
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -728,6 +738,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Sc. (Bachelor of Science)', colleges: [] },
     { name: 'M.Sc. (Master of Science)', colleges: [] },
     { name: 'LLB (Bachelor of Laws)', colleges: [] },
+    { name: 'BBA LLB', colleges: bbaLlbColleges },
   ],
 };
 
