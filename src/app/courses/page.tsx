@@ -427,6 +427,13 @@ const bscOptometryColleges = [
   'NSHM Knowledge Campus, Kolkata',
 ];
 
+const bscCctColleges = [
+  'Swami Vivekananda University (SVU)',
+  'Brainware University',
+  'iLEAD Kolkata',
+  'Supreme Knowledge Foundation',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -464,6 +471,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'BPT (Bachelor of Physiotherapy)', colleges: [] },
     { name: 'B.Sc. in Medical Laboratory Technology', colleges: bscMedicalLabTechColleges },
     { name: 'B.Sc. in Optometry', colleges: bscOptometryColleges },
+    { name: 'B.Sc. in Critical Care Technology (CCT)', colleges: bscCctColleges },
     { name: 'B.Sc. in Radiology', colleges: [] },
     { name: 'B.Sc. in Operation Theatre Technology', colleges: [] },
   ],
