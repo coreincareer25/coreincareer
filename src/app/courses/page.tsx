@@ -635,6 +635,36 @@ export default function CoursesPage() {
                                                 <p className="text-muted-foreground"><strong>Entrance:</strong> JEXPO, VOCLET</p>
                                             </div>
                                         )}
+                                        {tabName === 'nursing' && course.name === 'B.Sc. in Nursing' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility & Duration:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li>Typically, candidates need to have passed their 10+2 (or equivalent) with Physics, Chemistry, and Biology (PCB) as main subjects.</li>
+                                                    <li>It is a four-year undergraduate program designed to prepare students for a career as a registered nurse.</li>
+                                                    <li><strong>Entrance Exams:</strong> Popular entrance exams for B.Sc. Nursing include AIIMS Paramedical, NEET, and IPU CET.</li>
+                                                </ul>
+                                            </div>
+                                        )}
+                                        {tabName === 'nursing' && course.name === 'GNM (General Nursing and Midwifery)' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility & Duration:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li>Typically requires a 10+2 qualification with a science background and a minimum percentage (usually 40-50%).</li>
+                                                    <li>GNM nursing is a diploma program focused on general nursing and midwifery, spanning 3.5 years, including a 6-month internship.</li>
+                                                    <li><strong>Entrance:</strong> WBJEEB</li>
+                                                </ul>
+                                            </div>
+                                        )}
+                                        {tabName === 'nursing' && course.name === 'ANM (Auxiliary Nursing Midwifery)' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility & Duration:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li>Typically requires a 10+2 qualification with a science background and a minimum percentage (usually 45-50%).</li>
+                                                    <li>ANM is a <em>two-year</em> diploma program focused on providing basic healthcare, particularly in maternal and child health, and is a vital part of rural healthcare.</li>
+                                                    <li><strong>Entrance:</strong> WBJEEB</li>
+                                                </ul>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
