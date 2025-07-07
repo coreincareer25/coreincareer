@@ -833,7 +833,7 @@ export default function CoursesPage() {
       <div className="bg-gradient-to-b from-purple-100/50 via-pink-100/50 to-transparent">
         <section className="py-12 container mx-auto max-w-6xl px-4">
           <Tabs defaultValue="engineering" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-2 bg-transparent p-0">
+            <TabsList className="flex h-auto flex-wrap justify-center gap-2 bg-transparent p-0">
               <TabsTrigger value="engineering" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Engineering</TabsTrigger>
               <TabsTrigger value="medical" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Medical</TabsTrigger>
               <TabsTrigger value="nursing" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Nursing</TabsTrigger>
