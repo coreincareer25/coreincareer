@@ -101,20 +101,46 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg animate-in fade-in slide-in-from-left-16 duration-700 fill-mode-backwards">
-                <Image src="https://placehold.co/600x400.png" alt="Counseling session" layout="fill" objectFit="cover" data-ai-hint="counseling session" />
+            <div className="animate-in fade-in slide-in-from-left-16 duration-700 fill-mode-backwards">
+              <Carousel className="w-full max-w-lg mx-auto" opts={{ loop: true }}>
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
+                        <Image
+                          src="https://placehold.co/600x400.png"
+                          alt="Students using microscopes in a lab"
+                          fill
+                          className="object-cover"
+                          data-ai-hint="students laboratory"
+                        />
+                      </div>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="p-1">
+                      <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
+                        <Image
+                          src="https://placehold.co/600x400.png"
+                          alt="A student looking through a microscope"
+                          fill
+                          className="object-cover"
+                          data-ai-hint="student microscope"
+                        />
+                      </div>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </div>
             <div className="animate-in fade-in slide-in-from-right-16 duration-700 fill-mode-backwards">
-              <p className="font-semibold uppercase tracking-widest text-primary">ABOUT US</p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Your Trusted Partner in Career Guidance</h2>
-              <p className="mt-4 text-muted-foreground">Core in Career was founded with a simple yet powerful mission: to empower individuals to find their true calling. We believe that with the right guidance, everyone can achieve their academic and professional dreams.</p>
-              <ul className="mt-6 space-y-3">
-                <li className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-green-500" /> Personalized and unbiased advice</li>
-                <li className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-green-500" /> Backed by psychometric analysis</li>
-                <li className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-green-500" /> A dedicated team of experts</li>
-              </ul>
-              <Button asChild className="mt-8">
-                <Link href="/about">Know More</Link>
+              <p className="font-semibold uppercase tracking-widest text-primary">WHO ARE WE</p>
+              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Our Journey and Commitment</h2>
+              <p className="mt-4 text-muted-foreground">Core in Career was founded to bridge the gap between education and industry needs, providing students with the skills and knowledge to excel. We believe the foundation of a successful career lies in understanding yourself. Let us help you explore your inner strengths and match them to the right career path.</p>
+              <Button asChild size="lg" className="mt-8 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
+                <Link href="/about">Read More</Link>
               </Button>
             </div>
           </div>
