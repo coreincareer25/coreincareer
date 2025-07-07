@@ -76,7 +76,7 @@ export function Footer() {
       <div className="container mx-auto max-w-7xl px-4 py-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="md:col-span-2 lg:col-span-1">
-            <Logo />
+            <Logo showSubtitle={false} />
             <p className="mt-4 text-sm text-gray-400">
               Guiding you on your educational journey with expert advice and personalized recommendations.
             </p>
