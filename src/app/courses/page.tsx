@@ -398,6 +398,17 @@ const bdsColleges = [
   'Al-Azhar Dental College Thodupuzha'
 ];
 
+const nursingColleges = [
+  'Brainware University',
+  'M R GROUP OF COLLEGES & HOSPITALS',
+  'Sister Nivedita University (SNU)',
+  'Calcutta Institute of Nursing and Paramedical Science',
+  'Neotia Academy Nursing Training Institute',
+  'Desun Nursing School and College',
+  'B.M. Birla College of Nursing',
+  'Kalyani IINR',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -427,9 +438,9 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'BDS (Bachelor of Dental Surgery)', colleges: bdsColleges },
   ],
   nursing: [
-    { name: 'B.Sc. in Nursing', colleges: [] },
-    { name: 'GNM (General Nursing and Midwifery)', colleges: [] },
-    { name: 'ANM (Auxiliary Nursing Midwifery)', colleges: [] },
+    { name: 'B.Sc. in Nursing', colleges: nursingColleges },
+    { name: 'GNM (General Nursing and Midwifery)', colleges: nursingColleges },
+    { name: 'ANM (Auxiliary Nursing Midwifery)', colleges: nursingColleges },
   ],
   paramedical: [
     { name: 'BPT (Bachelor of Physiotherapy)', colleges: [] },
