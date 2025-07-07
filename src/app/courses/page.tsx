@@ -988,6 +988,15 @@ export default function CoursesPage() {
                                                 </ul>
                                             </div>
                                         )}
+                                        {tabName === 'others' && course.name === 'B.Sc. in Biotechnology' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility Criteria:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li>Candidates must pass their Class 12 in a Science stream with PCB subjects with at least 50-60% marks.</li>
+                                                    <li><strong>Admission Procedure:</strong> Merit-Based/Entrance-Based</li>
+                                                </ul>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
