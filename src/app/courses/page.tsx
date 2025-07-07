@@ -434,6 +434,10 @@ const bscCctColleges = [
   'Supreme Knowledge Foundation',
 ];
 
+const bptColleges = [
+    'Swami Vivekananda University (SVU)',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -468,7 +472,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'ANM (Auxiliary Nursing Midwifery)', colleges: nursingColleges },
   ],
   paramedical: [
-    { name: 'BPT (Bachelor of Physiotherapy)', colleges: [] },
+    { name: 'BPT (Bachelor of Physiotherapy)', colleges: bptColleges },
     { name: 'B.Sc. in Medical Laboratory Technology', colleges: bscMedicalLabTechColleges },
     { name: 'B.Sc. in Optometry', colleges: bscOptometryColleges },
     { name: 'B.Sc. in Critical Care Technology (CCT)', colleges: bscCctColleges },
