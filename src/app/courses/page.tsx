@@ -550,6 +550,18 @@ const bhmColleges = [
     'Kalyani IINR',
 ];
 
+const hotelManagementColleges = [
+    'EIILM',
+    'GNIHM',
+    'IIHM',
+    'IIIHM',
+    'Techno India Salt Lake',
+    'SNU',
+    'NSHM kolkata',
+    'BSTM Chuchura',
+    'Supreme mankundu',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -602,6 +614,7 @@ const courseData: { [key: string]: Course[] } = {
   management: [
     { name: 'BBA (Bachelor of Business Administration)', colleges: bbaColleges },
     { name: 'BHM (Bachelor of Hospital Management)', colleges: bhmColleges },
+    { name: 'Bachelor of Hotel and Hospitality Management', colleges: hotelManagementColleges },
     { name: 'MBA (Master of Business Administration)', colleges: [] },
     { name: 'PGDM (Post Graduate Diploma in Management)', colleges: [] },
     { name: 'B.Com (Bachelor of Commerce)', colleges: [] },
