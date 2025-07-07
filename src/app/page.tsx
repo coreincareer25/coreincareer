@@ -290,6 +290,47 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="py-20 bg-[#F3FAF7]">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-in fade-in slide-in-from-left-16 duration-700 fill-mode-backwards">
+              <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
+                <Image
+                  src="https://placehold.co/600x400.png"
+                  alt="Innovative education solutions"
+                  fill
+                  className="object-cover"
+                  data-ai-hint="education innovation"
+                />
+              </div>
+            </div>
+            <div className="animate-in fade-in slide-in-from-right-16 duration-700 fill-mode-backwards">
+              <p className="font-semibold uppercase tracking-widest text-primary">WHY WE STAND OUT</p>
+              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+                <Balancer>
+                  Distinct Advantages of Partnering with Us
+                </Balancer>
+              </h2>
+              <p className="mt-4 text-muted-foreground">At Core in Career, we pride ourselves on delivering innovative education solutions and unmatched support to our learners.</p>
+              <ul className="mt-8 space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <span className="text-lg text-foreground">Tailored Learning Experiences</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <span className="text-lg text-foreground">Industry-Relevant Curriculum</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <span className="text-lg text-foreground">Long-Term Career Support</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       
       <section className="py-20 bg-secondary">
           <div className="container mx-auto px-4 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
