@@ -454,6 +454,16 @@ const bpharmColleges = [
     'Shivalik College, Dehradun'
 ];
 
+const bscAnimationColleges = [
+    'Swami Vivekananda University (SVU)',
+    'Brainware University',
+    'iLEAD Kolkata',
+    'NSHM Knowledge Campus, Kolkata',
+    'Adamas University',
+    'Supreme Knowledge Foundation',
+    'Sister Nivedita University (SNU)',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -497,6 +507,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Sc. in Radiology', colleges: bscRadiologyColleges },
   ],
   computational: [
+    { name: 'B.Sc. in Animation', colleges: bscAnimationColleges },
     { name: 'BCA (Bachelor of Computer Applications)', colleges: [] },
     { name: 'MCA (Master of Computer Applications)', colleges: [] },
     { name: 'B.Sc. in Computer Science', colleges: [] },
