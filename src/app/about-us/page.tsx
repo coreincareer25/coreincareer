@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { team } from "@/lib/data";
-import { Target, Eye, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
@@ -23,29 +23,39 @@ export default function AboutUsPage() {
 
             <section className="py-20">
                 <div className="container mx-auto max-w-7xl px-4">
-                    <div className="grid md:grid-cols-2 gap-12">
-                        <Card className="shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '200ms' }}>
-                            <CardHeader className="flex-row items-center gap-4">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                                    <Target className="h-8 w-8"/>
-                                </div>
-                                <CardTitle className="font-headline text-2xl">Our Mission</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-muted-foreground text-base">To be the most trusted career guidance partner by providing personalized, data-driven, and accessible educational and career counseling to students and professionals worldwide.</p>
-                            </CardContent>
-                        </Card>
-                        <Card className="shadow-lg hover:shadow-xl transition-shadow animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '400ms' }}>
-                            <CardHeader className="flex-row items-center gap-4">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                                    <Eye className="h-8 w-8"/>
-                                </div>
-                                <CardTitle className="font-headline text-2xl">Our Vision</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-muted-foreground text-base">To create a world where everyone has the clarity and confidence to choose a fulfilling career path, leading to personal and professional success and a better society.</p>
-                            </CardContent>
-                        </Card>
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div className="animate-in fade-in slide-in-from-left-16 duration-700 fill-mode-backwards">
+                            <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
+                                <Image
+                                    src="https://placehold.co/600x400.png"
+                                    alt="Career counseling session"
+                                    fill
+                                    className="object-cover"
+                                    data-ai-hint="career counseling illustration"
+                                />
+                            </div>
+                        </div>
+                        <div className="animate-in fade-in slide-in-from-right-16 duration-700 fill-mode-backwards">
+                            <h2 className="text-4xl font-black tracking-tight text-gray-900">Our Story and Vision</h2>
+                            <p className="mt-6 text-muted-foreground">
+                                Core in Career is a career counselling platform dedicated to helping individuals discover their true potential and align it with the right career path. We believe that successful careers are built from a strong understanding of one's core—skills, interests, values, and personality.
+                            </p>
+                            <p className="mt-4 text-muted-foreground">
+                                Through our science-backed psychometric assessments, expert one-on-one counselling, and tailored career roadmaps, we've helped hundreds of individuals make confident, informed decisions about their futures. Whether it's selecting the right academic stream, choosing a college course, or planning a career switch, our approach is practical, personalized, and proven to work.
+                            </p>
+                            <div className="mt-6">
+                                <h3 className="text-xl font-bold">Our services include:</h3>
+                                <ul className="mt-4 list-disc list-inside space-y-2 text-muted-foreground">
+                                    <li>Career and stream selection</li>
+                                    <li>Psychometric testing</li>
+                                    <li>College and course guidance</li>
+                                    <li>Career transitions and upskilling support</li>
+                                </ul>
+                            </div>
+                            <p className="mt-6 text-muted-foreground">
+                                With certified counsellors and real-world insights, Core in Career is more than a counselling service — it's your partner in building a career you'll love.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
