@@ -7,31 +7,37 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const qnaModel = [
     {
         number: "01.",
+        image: "/images/psychometric/career-passion.jpg",
         aiHint: "career passion",
         description: "Choosing a career based on interests ensures long-term passion and growth, while marks reflect current strengths. Passion fuels perseverance—choose interest for a fulfilling future."
     },
     {
         number: "02.",
+        image: "/images/psychometric/informed-decision.jpg",
         aiHint: "informed decision",
         description: "Listen to friends and relatives, but make your own informed decision. It's your life—choose what aligns with your goals, values, and interests."
     },
     {
         number: "03.",
+        image: "/images/psychometric/career-questions.jpg",
         aiHint: "career questions",
         description: "After 12th, ask: What am I truly passionate about? Should I follow trends or my dreams? The right questions guide you to the right career path."
     },
     {
         number: "04.",
+        image: "/images/psychometric/offline-counseling.jpg",
         aiHint: "offline counseling",
         description: "Offline counselling offers face-to-face interaction, builds trust, and ensures deeper emotional connection—something online sessions often lack. Personal guidance feels more real and impactful in person."
     },
     {
         number: "05.",
+        image: "/images/psychometric/character-integrity.jpg",
         aiHint: "character integrity",
         description: "True status isn't wealth or fame—it's character, integrity, and how you treat others. Respect, kindness, and values define real success, not material possessions or social media likes."
     },
     {
         number: "06.",
+        image: "/images/psychometric/education-empowerment.jpg",
         aiHint: "education empowerment",
         description: "Education empowers minds, opens doors to opportunity, and builds a better society. It's not just about marks—it's the foundation for critical thinking, growth, and lifelong success."
     }
@@ -91,7 +97,7 @@ export default function PsychometricTestingPage() {
                             <Card key={index} className="flex flex-col overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300 ease-in-out animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${300 + index * 150}ms` }}>
                                 <div className="relative h-48 w-full">
                                     <Image
-                                        src={`https://placehold.co/600x400.png`}
+                                        src={item.image}
                                         alt={item.description.substring(0, 50)}
                                         fill
                                         className="object-cover"
