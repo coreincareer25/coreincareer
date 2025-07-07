@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { services } from "@/lib/data";
-import { Award, FileText, Plane, School, Sparkles, UserCheck, Snowflake } from "lucide-react";
+import { Award, FileText, Plane, School, Sparkles, UserCheck, Snowflake, ChevronRight } from "lucide-react";
 import React from "react";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
@@ -83,21 +83,29 @@ export default function ServicesPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-16 items-start animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '500ms' }}>
             <div>
-              <Accordion type="single" collapsible className="w-full space-y-4">
+              <div className="w-full space-y-4">
                 {admissionProcessSteps.map((step, index) => (
-                    <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg bg-card px-4 shadow-sm">
-                        <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">{step.title}</AccordionTrigger>
-                        <AccordionContent className="text-base text-muted-foreground">
-                            {step.description}
-                            {step.readMoreLink && (
-                                <Link href={step.readMoreLink} className="text-primary hover:underline font-medium ml-1">
-                                    Read more...
+                    <div key={step.title}>
+                        {step.readMoreLink ? (
+                            <div className="border rounded-lg bg-card px-4 shadow-sm">
+                                <Link href={step.readMoreLink} className="flex flex-1 items-center justify-between py-4 text-left text-lg font-semibold hover:no-underline">
+                                    {step.title}
+                                    <ChevronRight className="h-5 w-5" />
                                 </Link>
-                            )}
-                        </AccordionContent>
-                    </AccordionItem>
+                            </div>
+                        ) : (
+                            <Accordion type="single" collapsible className="w-full">
+                                <AccordionItem value={`item-${index}`} className="border rounded-lg bg-card px-4 shadow-sm">
+                                    <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">{step.title}</AccordionTrigger>
+                                    <AccordionContent className="text-base text-muted-foreground">
+                                        {step.description}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                        )}
+                    </div>
                 ))}
-              </Accordion>
+              </div>
             </div>
             <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
               <Image
