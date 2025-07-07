@@ -170,45 +170,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="py-20 bg-secondary">
-          <div className="container mx-auto px-4 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
-              <div className="text-center mb-12">
-                  <p className="font-semibold uppercase tracking-widest text-primary">TESTIMONIALS</p>
-                  <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">What Our Students Say</h2>
-              </div>
-              <Carousel
-                  opts={{ align: "start", loop: true }}
-                  className="w-full max-w-5xl mx-auto"
-              >
-                  <CarouselContent>
-                      {testimonials.map((testimonial, index) => (
-                          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                              <div className="p-1">
-                                  <Card className="h-full flex flex-col transition-shadow hover:shadow-xl">
-                                      <CardContent className="p-6 flex-grow flex flex-col justify-between">
-                                          <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
-                                          <div className="mt-6 flex items-center gap-4">
-                                              <Avatar>
-                                                  <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
-                                                  <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                              </Avatar>
-                                              <div>
-                                                  <p className="font-semibold">{testimonial.name}</p>
-                                                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                                              </div>
-                                          </div>
-                                      </CardContent>
-                                  </Card>
-                              </div>
-                          </CarouselItem>
-                      ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2" />
-                  <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2" />
-              </Carousel>
-          </div>
-      </section>
       
       <section className="py-20 bg-[#f9f4ff]">
         <div className="container mx-auto px-4">
@@ -330,6 +291,45 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="py-20 bg-secondary">
+          <div className="container mx-auto px-4 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
+              <div className="text-center mb-12">
+                  <p className="font-semibold uppercase tracking-widest text-primary">TESTIMONIALS</p>
+                  <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">What Our Students Say</h2>
+              </div>
+              <Carousel
+                  opts={{ align: "start", loop: true }}
+                  className="w-full max-w-5xl mx-auto"
+              >
+                  <CarouselContent>
+                      {testimonials.map((testimonial, index) => (
+                          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                              <div className="p-1">
+                                  <Card className="h-full flex flex-col transition-shadow hover:shadow-xl">
+                                      <CardContent className="p-6 flex-grow flex flex-col justify-between">
+                                          <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
+                                          <div className="mt-6 flex items-center gap-4">
+                                              <Avatar>
+                                                  <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
+                                                  <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                                              </Avatar>
+                                              <div>
+                                                  <p className="font-semibold">{testimonial.name}</p>
+                                                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                                              </div>
+                                          </div>
+                                      </CardContent>
+                                  </Card>
+                              </div>
+                          </CarouselItem>
+                      ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2" />
+                  <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2" />
+              </Carousel>
+          </div>
       </section>
       
       <section className="py-20 bg-secondary">
