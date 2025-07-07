@@ -1,9 +1,11 @@
 
 "use client";
 
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -54,6 +56,7 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export default function ContactPage() {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -70,13 +73,37 @@ export default function ContactPage() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We will get back to you shortly.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    if (!formRef.current) return;
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast({
+        variant: "destructive",
+        title: "Configuration Error",
+        description: "The email service is not set up correctly. Please contact support.",
+      });
+      return;
+    }
+
+    try {
+      await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for contacting us. We will get back to you shortly.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      toast({
+        variant: "destructive",
+        title: "Submission Failed",
+        description: "There was an error sending your message. Please try again.",
+      });
+    }
   }
 
   return (
@@ -140,7 +167,7 @@ export default function ContactPage() {
 
                     <div>
                     <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                        <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <FormField
                                 control={form.control}
