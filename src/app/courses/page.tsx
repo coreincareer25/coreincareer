@@ -923,6 +923,14 @@ export default function CoursesPage() {
                                                 </ul>
                                             </div>
                                         )}
+                                        {tabName === 'computational' && ['B.Sc. in Animation', 'B.Sc. in Media Science', 'B.Sc. in Data Science', 'B.Sc. in Cyber Security'].includes(course.name) && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility Criteria:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li>Candidates generally need to have passed their 10+2 (or equivalent) examination from a recognized board.</li>
+                                                </ul>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
