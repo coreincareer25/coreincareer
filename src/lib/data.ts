@@ -33,6 +33,83 @@ export const testimonials = [
         title: 'Student (BBA LLB from JIS University)',
         image: '/images/testimonials/indira-kundu.jpg',
         aiHint: 'female student'
+    },
+    {
+        quote: "They are one of the best career council organization in West Bengal, everyone must take guidance from them for their higher education.",
+        name: 'Shyamal Das',
+        title: 'B.tech Cse Aiml IEM Kolkata',
+        image: '/images/testimonials/shyamal-das.jpg',
+        aiHint: 'male student'
+    },
+    {
+        quote: "I got a lot of good guidance by talking to them so you can also get ideas from them if you want",
+        name: 'Tiyasa Sil',
+        title: 'B.tech Cse Adamas University',
+        image: '/images/testimonials/tiyasa-sil.jpg',
+        aiHint: 'female student'
+    },
+    {
+        quote: "this is the best career guidance organization I got a lot of help from here I will tell everyone to contact here for your higher studies",
+        name: 'Amay paul',
+        title: 'BBA Business Analytic from EIILM Kolkata',
+        image: '/images/testimonials/amay-paul.jpg',
+        aiHint: 'male student'
+    },
+    {
+        quote: "they helped me when I didn't get any good guidance for my LLB studies, so you can also contact them.",
+        name: 'Aishiki Ghosh',
+        title: 'BBA LLB from Adamas University',
+        image: '/images/testimonials/aishiki-ghosh.jpg',
+        aiHint: 'female student'
+    },
+    {
+        quote: "Please contact them to know which subject will be best for your career in future, they have very Good career councelling program",
+        name: 'Akrity Chakraborty',
+        title: 'Psychology from Brainware University',
+        image: '/images/testimonials/akrity-chakraborty.jpg',
+        aiHint: 'female student'
+    },
+    {
+        quote: "You must contact this organization for best career guidance",
+        name: 'Krishanu Biswas',
+        title: 'B.tech CSE from ADAMAS UNIVERSITY',
+        image: '/images/testimonials/krishanu-biswas.jpg',
+        aiHint: 'male student'
+    },
+    {
+        quote: "They guided me very well for my subject and also helped me with scholarship and education loan.",
+        name: 'Depto neogi',
+        title: 'B.tech ECE from JISCE',
+        image: '/images/testimonials/depto-neogi.jpg',
+        aiHint: 'male student'
+    },
+    {
+        quote: "Those who are still worried about their career, contact this organization they will guide you for your right career.",
+        name: 'Aniket Pal',
+        title: 'B.tech AIML from IEM Kolkata',
+        image: '/images/testimonials/aniket-pal.jpg',
+        aiHint: 'male student'
+    },
+    {
+        quote: "Every student needs to take their career advice for higher studies. They help very professionally",
+        name: 'Jyeti Dutta',
+        title: 'BBA in EIILM Kolkata',
+        image: '/images/testimonials/jyeti-dutta.jpg',
+        aiHint: 'female student'
+    },
+    {
+        quote: "They helped me a lot to understand which subject would be best for my future",
+        name: 'Aniruddha Sain',
+        title: 'B.tech AIML from ADAMAS UNIVERSITY',
+        image: '/images/testimonials/aniruddha-sain.jpg',
+        aiHint: 'male student'
+    },
+    {
+        quote: "I got very good career advice for my career from the career counselors of this company .",
+        name: 'Disha Roy',
+        title: 'BBA in Mediascience from SNU',
+        image: '/images/testimonials/disha-roy.jpg',
+        aiHint: 'female student'
     }
 ];
 
