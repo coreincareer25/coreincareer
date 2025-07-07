@@ -454,6 +454,16 @@ export default function CoursesPage() {
                                         {course.name}
                                     </AccordionTrigger>
                                     <AccordionContent>
+                                        {tabName === 'engineering' && course.name !== 'Diploma / Polytechnic' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility Criteria:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li>Students who have completed their 12th standard with PCM (Physics, Chemistry, Mathematics) are eligible to apply for this course.</li>
+                                                    <li>10+2 from a recognized Board of education with a minimum aggregate score of 50% Marks.</li>
+                                                    <li><strong>Entrance:</strong> Admission to this course is based on entrance exams such as JEE Main, JEE Advanced, BITSAT, VITEEE, etc.</li>
+                                                </ul>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
