@@ -30,21 +30,21 @@ const educationalPrograms = [
   {
     title: 'Career Counseling',
     description: 'Personalized guidance to help you choose the right stream, course, and career path based on your strengths, interests, and goals.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/home/career-counseling.jpg',
     aiHint: 'confused student career',
     href: '/services'
   },
   {
     title: 'College Guidance (UG & PG)',
     description: 'Expert support in selecting suitable undergraduate and postgraduate programs based on your profile, goals, and academic background.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/home/college-guidance.jpg',
     aiHint: 'students studying group',
     href: '/services'
   },
   {
     title: 'Scholarship & Loan Assistance',
     description: 'Professional endorsement and documentation support for both Government & Private scholarships and education loan, improving your chances of selection.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/home/scholarship-assistance.jpg',
     aiHint: 'scholarship document',
     href: '/services'
   }
@@ -82,7 +82,7 @@ export default function Home() {
       <section className="container mx-auto px-4 animate-in fade-in duration-700 fill-mode-backwards delay-500">
         <div className="relative h-40 md:h-64 lg:h-96 w-full max-w-6xl mx-auto">
            <Image
-              src="https://placehold.co/1200x400.png"
+              src="/images/home/hero-group.jpg"
               alt="A diverse group of professionals in various uniforms"
               fill
               className="object-contain"
@@ -132,7 +132,7 @@ export default function Home() {
                     <div className="p-1">
                       <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
                         <Image
-                          src="https://placehold.co/600x400.png"
+                          src="/images/home/lab-students-1.jpg"
                           alt="Students using microscopes in a lab"
                           fill
                           className="object-cover"
@@ -145,7 +145,7 @@ export default function Home() {
                     <div className="p-1">
                       <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
                         <Image
-                          src="https://placehold.co/600x400.png"
+                          src="/images/home/lab-students-2.jpg"
                           alt="A student looking through a microscope"
                           fill
                           className="object-cover"
@@ -258,7 +258,7 @@ export default function Home() {
             <div className="animate-in fade-in slide-in-from-left-16 duration-700 fill-mode-backwards">
               <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="https://placehold.co/600x400.png"
+                  src="/images/home/education-innovation.jpg"
                   alt="Innovative education solutions"
                   fill
                   className="object-cover"

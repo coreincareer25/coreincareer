@@ -31,21 +31,21 @@ export const testimonials = [
         quote: "Core in Career's guidance was a game-changer for me. Their mentors helped me choose the right engineering specialization, and I couldn't be happier with my decision. The psychometric assessment was surprisingly accurate and insightful!",
         name: 'Anjali Sharma',
         title: 'B.Tech Student',
-        image: 'https://placehold.co/100x100.png',
+        image: '/images/testimonials/anjali-sharma.jpg',
         aiHint: 'happy student'
     },
     {
         quote: "The personalized counseling helped me identify my strengths and weaknesses. With their support, I secured admission to my dream MBA program. I highly recommend their services to any aspiring student.",
         name: 'Rahul Verma',
         title: 'MBA Aspirant',
-        image: 'https://placehold.co/100x100.png',
+        image: '/images/testimonials/rahul-verma.jpg',
         aiHint: 'smiling professional'
     },
     {
         quote: "I was overwhelmed with the college application process, but Core in Career made it seamless. From shortlisting universities to preparing for interviews, their team was with me at every step.",
         name: 'Priya Patel',
         title: 'Medical Student',
-        image: 'https://placehold.co/100x100.png',
+        image: '/images/testimonials/priya-patel.jpg',
         aiHint: 'confident woman'
     }
 ];
@@ -73,56 +73,56 @@ export const team = [
     {
         name: 'Anupam Roy',
         title: 'Senior Counsellor',
-        image: 'https://placehold.co/300x300.png',
+        image: '/images/team/anupam-roy.jpg',
         aiHint: 'male counsellor portrait',
         email: 'anupamsir25@gmail.com'
     },
     {
         name: 'Gourab Tapadar',
         title: 'Senior Counsellor',
-        image: 'https://placehold.co/300x300.png',
+        image: '/images/team/gourab-tapadar.jpg',
         aiHint: 'male counsellor portrait',
         email: 'gourabsir25@gmail.com'
     },
     {
         name: 'Pooja Ganguly',
         title: 'Senior Counsellor',
-        image: 'https://placehold.co/300x300.png',
+        image: '/images/team/pooja-ganguly.jpg',
         aiHint: 'female counsellor portrait',
         email: 'gangulymam25@gmail.com'
     },
     {
         name: 'Anuradha Ray',
         title: 'Senior Counsellor',
-        image: 'https://placehold.co/300x300.png',
+        image: '/images/team/anuradha-ray.jpg',
         aiHint: 'female counsellor portrait',
         email: 'anuradhacoreincareer@gmail.com'
     },
     {
         name: 'Saheba Khatun',
         title: 'Junior Counsellor',
-        image: 'https://placehold.co/300x300.png',
+        image: '/images/team/saheba-khatun.jpg',
         aiHint: 'female counsellor portrait',
         email: 'sahebajc@gmail.com'
     },
     {
         name: 'Sneha Sen',
         title: 'Junior Counsellor',
-        image: 'https://placehold.co/300x300.png',
+        image: '/images/team/sneha-sen.jpg',
         aiHint: 'female counsellor portrait',
         email: 'snehasen2105@gmail.com'
     },
     {
         name: 'Anushka Sharma',
         title: 'Junior Counsellor',
-        image: 'https://placehold.co/300x300.png',
+        image: '/images/team/anushka-sharma.jpg',
         aiHint: 'female counsellor portrait',
         email: 'anushkasharma93@gmail.com'
     },
     {
         name: 'Rishabh Sen',
         title: 'Junior Counsellor',
-        image: 'https://placehold.co/300x300.png',
+        image: '/images/team/rishabh-sen.jpg',
         aiHint: 'male counsellor portrait',
         email: 'rishabhsen@gmail.com'
     }
@@ -155,7 +155,7 @@ export const courses = [
     prerequisites: 'High School Diploma with Math and Physics',
     curriculum: ['Data Structures', 'Algorithms', 'AI & ML', 'Cybersecurity'],
     careerProspects: 'Software Engineer, Data Scientist, AI Specialist, Security Analyst',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/courses/computer-science.jpg',
     aiHint: 'computer science'
   },
   {
@@ -163,7 +163,7 @@ export const courses = [
     prerequisites: 'High School Diploma',
     curriculum: ['Marketing', 'Finance', 'Human Resources', 'Operations Management'],
     careerProspects: 'Manager, Financial Analyst, Marketing Specialist, HR Manager',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/courses/business-administration.jpg',
     aiHint: 'business meeting'
   },
   {
@@ -171,7 +171,7 @@ export const courses = [
     prerequisites: 'High School Diploma, Portfolio recommended',
     curriculum: ['Typography', 'UI/UX Design', 'Branding', 'Animation'],
     careerProspects: 'Graphic Designer, UI/UX Designer, Art Director, Brand Strategist',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/courses/graphic-design.jpg',
     aiHint: 'design tools'
   },
   {
@@ -179,7 +179,7 @@ export const courses = [
     prerequisites: 'High School Diploma with Math and Physics',
     curriculum: ['Thermodynamics', 'Fluid Mechanics', 'Robotics', 'Material Science'],
     careerProspects: 'Mechanical Engineer, Robotics Engineer, Aerospace Engineer',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/courses/mechanical-engineering.jpg',
     aiHint: 'engineering blueprint'
   },
     {
@@ -187,7 +187,7 @@ export const courses = [
     prerequisites: 'High School Diploma',
     curriculum: ['Cognitive Psychology', 'Social Psychology', 'Clinical Psychology', 'Research Methods'],
     careerProspects: 'Therapist, Counselor, Researcher, HR Specialist',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/courses/psychology.jpg',
     aiHint: 'brain illustration'
   },
   {
@@ -195,7 +195,7 @@ export const courses = [
     prerequisites: 'High School Diploma with Biology/Chemistry',
     curriculum: ['Ecology', 'Climate Change', 'Conservation Biology', 'Environmental Policy'],
     careerProspects: 'Environmental Consultant, Conservation Scientist, Policy Advisor',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/courses/environmental-science.jpg',
     aiHint: 'nature landscape'
   }
 ];
@@ -207,7 +207,7 @@ export const colleges = [
     programs: 'Known for its cutting-edge research in AI and Robotics.',
     campusLife: 'Vibrant campus with over 200 student clubs and a focus on entrepreneurship.',
     admission: 'SAT: 1450+, GPA: 3.8+',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/colleges/innovate-university.jpg',
     aiHint: 'modern university'
   },
   {
@@ -216,7 +216,7 @@ export const colleges = [
     programs: 'Top-ranked MBA and Finance programs with international exposure.',
     campusLife: 'Diverse student body from over 100 countries.',
     admission: 'GMAT: 700+, 3 years work experience',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/colleges/global-business-school.jpg',
     aiHint: 'city campus'
   },
   {
@@ -225,7 +225,7 @@ export const colleges = [
     programs: 'Renowned for its programs in Fine Arts, Design, and Film.',
     campusLife: 'A hub for artists with numerous galleries and studios.',
     admission: 'Portfolio submission is key.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/colleges/creative-arts-institute.jpg',
     aiHint: 'art school'
   },
   {
@@ -234,7 +234,7 @@ export const colleges = [
     programs: 'Strong focus on liberal arts and environmental sciences.',
     campusLife: 'Picturesque campus surrounded by nature trails.',
     admission: 'Holistic review process.',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/colleges/heritage-college.jpg',
     aiHint: 'classic campus'
   }
 ];
@@ -245,7 +245,7 @@ export const scholarships = [
     eligibility: 'High-achieving students pursuing a degree in a STEM field.',
     deadline: 'March 31, 2025',
     amount: '$10,000 per year',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/scholarships/stem-scholars-award.jpg',
     aiHint: 'science laboratory'
   },
   {
@@ -253,7 +253,7 @@ export const scholarships = [
     eligibility: 'Demonstrated leadership potential and community involvement.',
     deadline: 'April 15, 2025',
     amount: '$5,000',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/scholarships/future-leaders-grant.jpg',
     aiHint: 'team leadership'
   },
   {
@@ -261,7 +261,7 @@ export const scholarships = [
     eligibility: 'Exceptional talent in visual arts or design, based on portfolio.',
     deadline: 'February 28, 2025',
     amount: 'Full tuition coverage',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/scholarships/art-design-fellowship.jpg',
     aiHint: 'art gallery'
   },
   {
@@ -269,7 +269,7 @@ export const scholarships = [
     eligibility: 'Students committed to solving global challenges.',
     deadline: 'May 1, 2025',
     amount: '$7,500',
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/scholarships/global-citizen-scholarship.jpg',
     aiHint: 'world map'
   }
 ];
@@ -310,32 +310,32 @@ export const services = [
 export const partners = [
   {
     name: 'Amity University',
-    logo: 'https://placehold.co/200x120.png',
+    logo: '/images/partners/amity-university-logo.jpg',
     aiHint: 'university logo'
   },
   {
     name: 'Brainware University',
-    logo: 'https://placehold.co/200x120.png',
+    logo: '/images/partners/brainware-university-logo.jpg',
     aiHint: 'university logo'
   },
   {
     name: 'Techno India Group',
-    logo: 'https://placehold.co/200x120.png',
+    logo: '/images/partners/techno-india-group-logo.jpg',
     aiHint: 'education logo'
   },
   {
     name: 'JMN Medical College',
-    logo: 'https://placehold.co/200x120.png',
+    logo: '/images/partners/jmn-medical-college-logo.jpg',
     aiHint: 'medical college logo'
   },
   {
     name: 'JIS University',
-    logo: 'https://placehold.co/200x120.png',
+    logo: '/images/partners/jis-university-logo.jpg',
     aiHint: 'university logo'
   },
   {
     name: 'IEM',
-    logo: 'https://placehold.co/200x120.png',
+    logo: '/images/partners/iem-logo.jpg',
     aiHint: 'institute logo'
   },
 ];

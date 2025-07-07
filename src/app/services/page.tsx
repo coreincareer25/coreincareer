@@ -84,7 +84,7 @@ export default function ServicesPage() {
             </div>
             <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/images/services/counseling-sign.jpg"
                 alt="Counselling Services Sign"
                 fill
                 className="object-cover"
@@ -119,7 +119,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl">
                       <Image
-                          src="https://placehold.co/600x400.png"
+                          src="/images/services/career-choice.jpg"
                           alt="Career counselling illustration"
                           fill
                           className="object-cover"
@@ -135,7 +135,7 @@ export default function ServicesPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
                   <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
                       <Image
-                          src="https://placehold.co/600x400.png"
+                          src="/images/services/classroom-lecture.jpg"
                           alt="Students in a classroom"
                           fill
                           className="object-cover"
@@ -170,7 +170,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl">
                       <Image
-                          src="https://placehold.co/600x400.png"
+                          src="/images/services/scholarship-money.jpg"
                           alt="Scholarship assistance illustration"
                           fill
                           className="object-cover"
@@ -186,7 +186,7 @@ export default function ServicesPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
                   <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
                       <Image
-                          src="https://placehold.co/600x400.png"
+                          src="/images/services/student-loan.jpg"
                           alt="Student loan guidance"
                           fill
                           className="object-cover"
@@ -227,7 +227,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
                       <Image
-                          src="https://placehold.co/600x400.png"
+                          src="/images/services/student-exam.jpg"
                           alt="Entrance exam illustration"
                           fill
                           className="object-cover"

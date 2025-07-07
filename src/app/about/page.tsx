@@ -27,7 +27,7 @@ export default function AboutPage() {
                         <div className="animate-in fade-in slide-in-from-left-16 duration-700 fill-mode-backwards">
                             <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
                                 <Image
-                                    src="https://placehold.co/600x400.png"
+                                    src="/images/about/counseling-session.jpg"
                                     alt="Career counseling session"
                                     fill
                                     className="object-cover"

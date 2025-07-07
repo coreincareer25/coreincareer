@@ -140,7 +140,7 @@ export default function CollegesPage() {
                               {subCat.colleges.map((college, index) => (
                                 <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
                                   <div className="relative h-40 w-full">
-                                    <Image src="https://placehold.co/600x400.png" alt={college} fill className="object-cover" data-ai-hint="university campus" />
+                                    <Image src="/images/colleges/campus.jpg" alt={college} fill className="object-cover" data-ai-hint="university campus" />
                                   </div>
                                   <CardHeader className="flex-grow">
                                     <CardTitle className="text-lg font-semibold">{college}</CardTitle>
@@ -163,7 +163,7 @@ export default function CollegesPage() {
                           {'colleges' in data && data.colleges && data.colleges.map((college, index) => (
                             <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
                               <div className="relative h-40 w-full">
-                                <Image src="https://placehold.co/600x400.png" alt={college} fill className="object-cover" data-ai-hint="university campus" />
+                                <Image src="/images/colleges/campus.jpg" alt={college} fill className="object-cover" data-ai-hint="university campus" />
                               </div>
                               <CardHeader className="flex-grow">
                                 <CardTitle className="text-lg font-semibold">{college}</CardTitle>
