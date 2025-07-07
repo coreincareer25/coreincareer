@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { services } from "@/lib/data";
-import { Award, FileText, Plane, School, Sparkles, UserCheck } from "lucide-react";
+import { Award, FileText, Plane, School, Sparkles, UserCheck, Snowflake } from "lucide-react";
 import React from "react";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
@@ -37,6 +37,14 @@ const admissionProcessSteps = [
         description: "From choosing the right college to completing the application process, we provide end-to-end support to ensure a smooth, stress-free admission."
     }
 ];
+
+// Wavy line SVG component for the offerings banner
+const WavyLine = () => (
+    <svg width="80" height="10" viewBox="0 0 100 10" className="inline-block text-muted-foreground" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 5 Q 12.5 0, 25 5 T 50 5 T 75 5 T 100 5" stroke="currentColor" fill="transparent" strokeWidth="2"/>
+    </svg>
+);
+
 
 export default function ServicesPage() {
   return (
@@ -85,6 +93,64 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="py-12 bg-cyan-50/50 text-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+          <div className="container mx-auto max-w-7xl px-4">
+              <Snowflake className="mx-auto h-12 w-12 text-primary" />
+              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Your Ambition, Our Mission</h2>
+              <div className="mt-2 flex items-center justify-center gap-4 text-muted-foreground">
+                  <WavyLine />
+                  <span className="text-lg font-medium">Offerings</span>
+                  <WavyLine />
+              </div>
+          </div>
+      </section>
+
+      <section className="py-20 bg-white">
+          <div className="container mx-auto max-w-7xl px-4">
+              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+                  <div>
+                      <p className="text-lg font-bold text-primary">01.</p>
+                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">Career Counseling</h3>
+                      <p className="mt-4 text-muted-foreground">
+                          Our career counseling service provides tailored advice to help students identify their strengths, interests, and career goals, ensuring a well-informed decision-making process. We guide them through various educational options and career paths that align with their aspirations.
+                      </p>
+                  </div>
+                  <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl">
+                      <Image
+                          src="https://placehold.co/600x400.png"
+                          alt="Career counselling illustration"
+                          fill
+                          className="object-cover"
+                          data-ai-hint="career choice illustration"
+                      />
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section className="py-20 bg-white">
+          <div className="container mx-auto max-w-7xl px-4">
+              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+                  <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
+                      <Image
+                          src="https://placehold.co/600x400.png"
+                          alt="Students in a classroom"
+                          fill
+                          className="object-cover"
+                          data-ai-hint="students classroom lecture"
+                      />
+                  </div>
+                  <div>
+                      <p className="text-lg font-bold text-primary">02.</p>
+                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">College & Management Counselling (UG & PG)</h3>
+                      <p className="mt-4 text-muted-foreground">
+                          We offer expert guidance to help you choose the right undergraduate or postgraduate program based on your interests, goals, and academic background. Our counselling also covers admission through private institutions, management quota seats, and stream-specific opportunities—ensuring you make informed and strategic decisions for your higher education journey.
+                      </p>
+                  </div>
+              </div>
+          </div>
       </section>
 
       <section className="py-20">
