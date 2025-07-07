@@ -801,10 +801,6 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'MHA (masters of hospital management)', colleges: mhaColleges },
   ],
   others: [
-    { name: 'B.A. (Bachelor of Arts)', colleges: [] },
-    { name: 'M.A. (Master of Arts)', colleges: [] },
-    { name: 'B.Sc. (Bachelor of Science)', colleges: [] },
-    { name: 'M.Sc. (Master of Science)', colleges: [] },
     { name: 'B.Sc. in Microbiology', colleges: bscMicrobiologyColleges },
     { name: 'B.Sc. in Biotechnology', colleges: bscBiotechnologyOthersColleges },
     { name: 'B.Sc. in Forensic Science', colleges: bscForensicScienceColleges },
