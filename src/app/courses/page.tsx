@@ -409,6 +409,16 @@ const nursingColleges = [
   'Kalyani IINR',
 ];
 
+const bscMedicalLabTechColleges = [
+  'Swami Vivekananda University (SVU)',
+  'JIS University',
+  'Brainware University',
+  'iLEAD Kolkata',
+  'Adamas University',
+  'GNIPST',
+  'Supreme Knowledge Foundation'
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -444,7 +454,7 @@ const courseData: { [key: string]: Course[] } = {
   ],
   paramedical: [
     { name: 'BPT (Bachelor of Physiotherapy)', colleges: [] },
-    { name: 'B.Sc. in Medical Laboratory Technology', colleges: [] },
+    { name: 'B.Sc. in Medical Laboratory Technology', colleges: bscMedicalLabTechColleges },
     { name: 'B.Sc. in Radiology', colleges: [] },
     { name: 'B.Sc. in Operation Theatre Technology', colleges: [] },
   ],
