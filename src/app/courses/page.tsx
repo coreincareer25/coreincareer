@@ -527,6 +527,15 @@ const bbaColleges = [
     'Supreme Knowledge Foundation',
     'Amity University',
     'JIS University',
+    'KIIT',
+    'SOA',
+    'AMITY NOIDA',
+    'JAIN (Deemed-to-be University)',
+    'Sathyabama University',
+    'Galgotias University',
+    'Sarhad University',
+    'Shiv Nadar Institution of Eminence',
+    'Graphic Era Deemed to be University',
 ];
 
 
