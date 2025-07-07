@@ -49,11 +49,11 @@ export default function PsychometricTestingPage() {
             <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
-                        src="https://placehold.co/1920x400.png"
+                        src="/images/psychometric-testing/hero.jpg"
                         alt="Brain with gears"
                         fill
                         className="object-cover"
-                        data-ai-hint="psychology concept"
+                        data-ai-hint="brain gears"
                     />
                     <div className="absolute inset-0 bg-black/50" />
                 </div>

@@ -76,11 +76,11 @@ export default function RecommendationsPage() {
       <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
         <div className="absolute inset-0">
             <Image
-                src="https://placehold.co/1920x400.png"
+                src="/images/recommendations/hero.jpg"
                 alt="AI brain illustration"
                 fill
                 className="object-cover"
-                data-ai-hint="artificial intelligence"
+                data-ai-hint="ai brain"
             />
             <div className="absolute inset-0 bg-black/50" />
         </div>

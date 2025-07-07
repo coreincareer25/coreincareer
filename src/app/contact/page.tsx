@@ -84,11 +84,11 @@ export default function ContactPage() {
         <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
             <div className="absolute inset-0">
                 <Image
-                    src="https://placehold.co/1920x400.png"
+                    src="/images/contact/hero.jpg"
                     alt="Person on a call"
                     fill
                     className="object-cover"
-                    data-ai-hint="contact us"
+                    data-ai-hint="customer support"
                 />
                 <div className="absolute inset-0 bg-black/50" />
             </div>
