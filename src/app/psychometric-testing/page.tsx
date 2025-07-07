@@ -78,7 +78,7 @@ export default function PsychometricTestingPage() {
             <section className="py-20 bg-secondary/50">
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
-                        <h2 className="text-4xl font-black tracking-tight text-gray-900">The Holland (RIASEC) Model</h2>
+                        <h2 className="text-4xl font-black tracking-tight text-gray-900">Understand Yourself Better, Choose Smarter</h2>
                         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
                             The Holland Codes or the Holland Occupational Themes (RIASEC) refers to a theory of careers and vocational choice based upon personality types.
                         </p>
