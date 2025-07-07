@@ -334,6 +334,16 @@ const btechBiomedicalColleges = [
   'Adamas University',
 ];
 
+const btechAgricultureColleges = [
+  'JIS College of Engineering, Kalyani',
+  'JIS University',
+  'Sister Nivedita University (SNU)',
+  'JAIN (Deemed-to-be University)',
+  'Galgotias University',
+  'Sarhad University',
+  'Shiv Nadar Institution of Eminence',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -352,7 +362,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Tech. in Mechanical Engineering (ME)', colleges: btechMeColleges },
     { name: 'B.Tech. in Biotechnology', colleges: btechBiotechnologyColleges },
     { name: 'B.Tech. in Biomedical Engineering', colleges: btechBiomedicalColleges },
-    { name: 'B.Tech. in Agricultural Engineering', colleges: [] },
+    { name: 'B.Tech. in Agricultural Engineering', colleges: btechAgricultureColleges },
     { name: 'B.Tech. in Civil Engineering', colleges: [] },
     { name: 'B.Tech. in Food Technology', colleges: [] },
     { name: 'B.Tech. in Marine Engineering', colleges: [] },
