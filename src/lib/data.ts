@@ -28,25 +28,11 @@ export const advantages = [
 
 export const testimonials = [
     {
-        quote: "Core in Career's guidance was a game-changer for me. Their mentors helped me choose the right engineering specialization, and I couldn't be happier with my decision. The psychometric assessment was surprisingly accurate and insightful!",
-        name: 'Anjali Sharma',
-        title: 'B.Tech Student',
-        image: '/images/testimonials/anjali-sharma.jpg',
-        aiHint: 'happy student'
-    },
-    {
-        quote: "The personalized counseling helped me identify my strengths and weaknesses. With their support, I secured admission to my dream MBA program. I highly recommend their services to any aspiring student.",
-        name: 'Rahul Verma',
-        title: 'MBA Aspirant',
-        image: '/images/testimonials/rahul-verma.jpg',
-        aiHint: 'smiling professional'
-    },
-    {
-        quote: "I was overwhelmed with the college application process, but Core in Career made it seamless. From shortlisting universities to preparing for interviews, their team was with me at every step.",
-        name: 'Priya Patel',
-        title: 'Medical Student',
-        image: '/images/testimonials/priya-patel.jpg',
-        aiHint: 'confident woman'
+        quote: "It is a very good career council organization. Because they gave me a psychometrics test through which I found the best subject for my career.",
+        name: 'Indira Kundu',
+        title: 'Student (BBA LLB from JIS University)',
+        image: '/images/testimonials/indira-kundu.jpg',
+        aiHint: 'female student'
     }
 ];
 
