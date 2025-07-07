@@ -446,6 +446,14 @@ const bscRadiologyColleges = [
     'Swami Vivekananda University (SVU)',
 ];
 
+const bpharmColleges = [
+    'Bengal School of Technology (BST)',
+    'Adamas University',
+    'NSHM Knowledge Campus, Kolkata',
+    'M.R. College of Pharmaceutical Sciences and Research, Barasat',
+    'Shivalik College, Dehradun'
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -481,6 +489,7 @@ const courseData: { [key: string]: Course[] } = {
   ],
   paramedical: [
     { name: 'BPT (Bachelor of Physiotherapy)', colleges: bptColleges },
+    { name: 'B.Pharm (Bachelor of Pharmacy)', colleges: bpharmColleges },
     { name: 'B.Sc. in Medical Laboratory Technology', colleges: bscMedicalLabTechColleges },
     { name: 'B.Sc. in Optometry', colleges: bscOptometryColleges },
     { name: 'B.Sc. in Critical Care Technology (CCT)', colleges: bscCctColleges },
