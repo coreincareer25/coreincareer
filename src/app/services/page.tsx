@@ -38,29 +38,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container mx-auto max-w-7xl px-4">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => {
-                const IconComponent = iconMap[service.icon];
-                return (
-                <Card key={service.title} className="transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${200 + index * 150}ms` }}>
-                    <CardHeader className="items-center text-center">
-                        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                            {IconComponent && <IconComponent className="h-8 w-8" />}
-                        </div>
-                        <CardTitle className="font-headline text-xl pt-4">{service.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                        <p className="text-muted-foreground">{service.description}</p>
-                    </CardContent>
-                </Card>
-                );
-            })}
-            </div>
-        </div>
-      </section>
-
       <section className="py-20 bg-white">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
@@ -89,6 +66,29 @@ export default function ServicesPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto max-w-7xl px-4">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, index) => {
+                const IconComponent = iconMap[service.icon];
+                return (
+                <Card key={service.title} className="transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${200 + index * 150}ms` }}>
+                    <CardHeader className="items-center text-center">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            {IconComponent && <IconComponent className="h-8 w-8" />}
+                        </div>
+                        <CardTitle className="font-headline text-xl pt-4">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center">
+                        <p className="text-muted-foreground">{service.description}</p>
+                    </CardContent>
+                </Card>
+                );
+            })}
+            </div>
         </div>
       </section>
 
