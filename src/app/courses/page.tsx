@@ -438,6 +438,10 @@ const bptColleges = [
     'Swami Vivekananda University (SVU)',
 ];
 
+const bpaColleges = [
+    'Brainware University',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -476,6 +480,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Sc. in Medical Laboratory Technology', colleges: bscMedicalLabTechColleges },
     { name: 'B.Sc. in Optometry', colleges: bscOptometryColleges },
     { name: 'B.Sc. in Critical Care Technology (CCT)', colleges: bscCctColleges },
+    { name: 'B.Sc. in Physician Assistant', colleges: bpaColleges },
     { name: 'B.Sc. in Radiology', colleges: [] },
     { name: 'B.Sc. in Operation Theatre Technology', colleges: [] },
   ],
