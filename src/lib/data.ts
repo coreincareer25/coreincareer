@@ -128,6 +128,27 @@ export const team = [
     }
 ];
 
+export const valuePropositions = [
+  {
+    number: '01.',
+    title: 'Tailored Programs',
+    description: 'We offer tailored educational pathways that align with your aspirations and career goals.',
+    highlight: true,
+  },
+  {
+    number: '02.',
+    title: 'Experienced Mentors',
+    description: 'Our team provides one-on-one counseling sessions, ensuring personalized advice and support throughout your journey.',
+    highlight: false,
+  },
+  {
+    number: '03.',
+    title: 'Networking Opportunities',
+    description: 'With a proven track record of successful student placements, we pride ourselves on delivering exceptional results.',
+    highlight: false,
+  },
+];
+
 export const courses = [
   {
     title: 'Computer Science & Engineering',

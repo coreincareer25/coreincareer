@@ -1,8 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { team } from "@/lib/data";
+import { team, valuePropositions } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
+import { cn } from "@/lib/utils";
 
 export default function AboutPage() {
     return (
@@ -81,6 +82,33 @@ export default function AboutPage() {
                                     <a href={`mailto:${member.email}`} className="text-sm text-primary hover:underline break-all">
                                         {member.email}
                                     </a>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-20 bg-white">
+                <div className="container mx-auto max-w-7xl px-4">
+                    <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
+                        <p className="font-semibold uppercase tracking-widest text-muted-foreground">
+                            WHY CHOOSE US
+                        </p>
+                        <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+                            Unique Value Propositions
+                        </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {valuePropositions.map((prop, index) => (
+                            <Card key={prop.title} className={cn(
+                                'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards',
+                                prop.highlight ? 'bg-secondary' : 'bg-card'
+                            )} style={{ animationDelay: `${300 + index * 150}ms` }}>
+                                <CardContent className="p-0 flex flex-col items-center flex-1">
+                                    <p className="text-primary font-bold text-lg">{prop.number}</p>
+                                    <h3 className="mt-4 text-xl font-bold text-foreground">{prop.title}</h3>
+                                    <p className="mt-4 text-muted-foreground flex-grow">{prop.description}</p>
                                 </CardContent>
                             </Card>
                         ))}
