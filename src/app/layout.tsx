@@ -37,12 +37,12 @@ export default function RootLayout({
           <Toaster />
           <Link
             href="https://wa.me/919123783438"
-            className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 bg-[#25D366] text-white rounded-full p-2.5 md:p-3 shadow-lg hover:bg-[#128C7E] transition-colors flex items-center justify-center"
+            className="fixed top-1/2 -translate-y-1/2 right-4 z-50 bg-[#25D366] text-white rounded-full p-2 md:p-2.5 shadow-lg hover:bg-[#128C7E] transition-colors flex items-center justify-center"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
           >
-            <WhatsAppIcon className="h-6 w-6 md:h-8 md:w-8" />
+            <WhatsAppIcon className="h-5 w-5 md:h-6 md:w-6" />
           </Link>
         </BalancerProvider>
       </body>
