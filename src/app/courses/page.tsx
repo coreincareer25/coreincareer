@@ -1,12 +1,13 @@
 
 "use client";
 
-import { useState } from 'react';
 import Balancer from "react-wrap-balancer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Plus, School } from 'lucide-react';
+import { School } from 'lucide-react';
 import Link from 'next/link';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 
 type Course = {
   name: string;
@@ -96,8 +97,6 @@ const courseData: { [key: string]: Course[] } = {
 
 
 export default function CoursesPage() {
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(courseData.engineering[0]);
-
   return (
     <div className="bg-background">
       <section className="py-20 bg-secondary animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards">
@@ -125,72 +124,50 @@ export default function CoursesPage() {
               <TabsTrigger value="others" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Others</TabsTrigger>
             </TabsList>
             
-            <div className="mt-8 rounded-lg bg-white/30 p-2 space-y-1 backdrop-blur-sm shadow-inner">
+            <div className="mt-8">
                 {(Object.keys(courseData) as Array<keyof typeof courseData>).map(tabName => (
                     <TabsContent key={tabName} value={tabName} className="m-0">
-                        <div className="space-y-1">
-                            {courseData[tabName].map((course) => (
-                            <div
-                                key={course.name}
-                                onClick={() => setSelectedCourse(course)}
-                                className={`flex items-center p-3 rounded-lg cursor-pointer transition-all duration-300 border ${
-                                    selectedCourse?.name === course.name
-                                    ? 'bg-pink-400 text-white font-semibold shadow-lg'
-                                    : 'bg-white/70 hover:bg-white hover:shadow-md'
-                                }`}
-                            >
-                                <Plus className="h-4 w-4 mr-3 flex-shrink-0" />
-                                <span>{course.name}</span>
-                            </div>
+                        <Accordion type="single" collapsible className="w-full space-y-2">
+                            {courseData[tabName].map((course, index) => (
+                                <AccordionItem key={course.name} value={`item-${index}`} className="border rounded-lg bg-white/80 backdrop-blur-sm shadow-sm px-4">
+                                    <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                                        {course.name}
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        {course.colleges.length > 0 ? (
+                                            <>
+                                                <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+                                                    {course.colleges.map((college, cIndex) => (
+                                                        <div key={cIndex} className="bg-secondary/30 border border-secondary p-3 rounded-lg text-sm text-center font-medium text-secondary-foreground flex items-center justify-center gap-2">
+                                                            <School className="h-4 w-4 text-primary" />
+                                                            {college}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <div className="text-center py-4">
+                                                <p className="text-muted-foreground">
+                                                    No specific colleges are listed for this course yet.
+                                                </p>
+                                                <Button asChild size="sm" className="mt-4 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-6 py-2 font-semibold hover:opacity-90 transition-opacity">
+                                                    <Link href="/colleges">
+                                                        Explore All Colleges
+                                                    </Link>
+                                                </Button>
+                                            </div>
+                                        )}
+                                    </AccordionContent>
+                                </AccordionItem>
                             ))}
-                        </div>
+                        </Accordion>
                     </TabsContent>
                 ))}
             </div>
           </Tabs>
         </section>
       </div>
-
-      <section className="py-20 bg-white">
-        <div className="container mx-auto max-w-5xl px-4">
-          {selectedCourse ? (
-            <>
-              <h2 className="text-3xl font-black text-gray-900 tracking-tight text-center">
-                Colleges Offering <span className="text-primary">{selectedCourse.name}</span>
-              </h2>
-              {selectedCourse.colleges.length > 0 ? (
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {selectedCourse.colleges.map((college, index) => (
-                    <div key={index} className="bg-secondary/30 border border-secondary p-4 rounded-lg shadow-sm text-center font-medium text-secondary-foreground flex items-center justify-center gap-2">
-                       <School className="h-4 w-4 text-primary" />
-                      {college}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="mt-8 text-center">
-                  <p className="text-lg text-muted-foreground">
-                    No specific colleges are listed for this course yet.
-                    Explore our full database for more options.
-                  </p>
-                  <Button asChild size="lg" className="mt-6 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
-                    <Link href="/colleges">
-                      Explore All Colleges
-                    </Link>
-                  </Button>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="text-center">
-              <h2 className="text-3xl font-black text-gray-900 tracking-tight">Explore Colleges That Offer This Course</h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-                Select a course from the list above to see affiliated colleges.
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
     </div>
   );
 }
