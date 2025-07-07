@@ -874,6 +874,15 @@ export default function CoursesPage() {
                                                 <p className="text-muted-foreground"><strong>Entrance:</strong> JEXPO, VOCLET</p>
                                             </div>
                                         )}
+                                        {tabName === 'medical' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility & Entrance:</h4>
+                                                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                                                    <li>Students generally need to have passed their 10+2 (or equivalent) with Physics, Chemistry, and Biology (PCB) and English, and qualify in the NEET (National Eligibility cum Entrance Test).</li>
+                                                    <li><strong>Entrance Exam:</strong> NEET</li>
+                                                </ul>
+                                            </div>
+                                        )}
                                         {tabName === 'nursing' && course.name === 'B.Sc. in Nursing' && (
                                             <div className="mb-6 space-y-2">
                                                 <h4 className="font-bold text-foreground">Eligibility & Duration:</h4>
