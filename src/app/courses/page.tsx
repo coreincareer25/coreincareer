@@ -464,6 +464,13 @@ export default function CoursesPage() {
                                                 </ul>
                                             </div>
                                         )}
+                                        {tabName === 'engineering' && course.name === 'Diploma / Polytechnic' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility Criteria:</h4>
+                                                <p className="text-muted-foreground">A Polytechnic Diploma, also known as a Diploma in Engineering, is a shorter, technical qualification that can be pursued after completing Class 10 or 12. It’s a good option for students wanting a practical, industry-focused education. The eligibility criteria vary, but typically require a passing grade in your qualifying exam, often with a focus on science and math. Job prospects are positive, with diploma holders finding roles in various technical fields.</p>
+                                                <p className="text-muted-foreground"><strong>Entrance:</strong> JEXPO, VOCLET</p>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
