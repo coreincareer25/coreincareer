@@ -330,6 +330,10 @@ const btechBiotechnologyColleges = [
   'Shiv Nadar Institution of Eminence',
 ];
 
+const btechBiomedicalColleges = [
+  'Adamas University',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -347,7 +351,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Tech. in Electrical Engineering (EE)', colleges: btechEeColleges },
     { name: 'B.Tech. in Mechanical Engineering (ME)', colleges: btechMeColleges },
     { name: 'B.Tech. in Biotechnology', colleges: btechBiotechnologyColleges },
-    { name: 'B.Tech. in Biomedical Engineering', colleges: [] },
+    { name: 'B.Tech. in Biomedical Engineering', colleges: btechBiomedicalColleges },
     { name: 'B.Tech. in Agricultural Engineering', colleges: [] },
     { name: 'B.Tech. in Civil Engineering', colleges: [] },
     { name: 'B.Tech. in Food Technology', colleges: [] },
