@@ -562,6 +562,14 @@ const hotelManagementColleges = [
     'Supreme mankundu',
 ];
 
+const bbaSportsManagementColleges = [
+    'Sister Nivedita University (SNU)',
+    'iLEAD Kolkata',
+    'NSHM Knowledge Campus, Kolkata',
+    'IEM Salt Lake & Newtown',
+    'Techno India Salt Lake',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -613,6 +621,7 @@ const courseData: { [key: string]: Course[] } = {
   ],
   management: [
     { name: 'BBA (Bachelor of Business Administration)', colleges: bbaColleges },
+    { name: 'BBA Sports Management', colleges: bbaSportsManagementColleges },
     { name: 'BHM (Bachelor of Hospital Management)', colleges: bhmColleges },
     { name: 'Bachelor of Hotel and Hospitality Management', colleges: hotelManagementColleges },
     { name: 'MBA (Master of Business Administration)', colleges: [] },
