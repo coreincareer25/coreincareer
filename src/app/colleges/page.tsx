@@ -108,7 +108,7 @@ export default function CollegesPage() {
       <div className="bg-gradient-to-b from-purple-100/50 via-pink-100/50 to-transparent">
         <section className="py-12 container mx-auto max-w-6xl px-4">
           <Tabs defaultValue="engineering" className="w-full">
-              <TabsList className="flex h-auto flex-wrap justify-center gap-2 bg-transparent p-0">
+              <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent p-0">
                 {Object.entries(collegeData).map(([key, data]) => (
                   <TabsTrigger key={key} value={key} className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">
                     {data.title}
@@ -123,7 +123,7 @@ export default function CollegesPage() {
                       <div className="space-y-12">
                         {Object.values(data.subCategories).map(subCat => (
                           <div key={subCat.title}>
-                            <h2 className="text-2xl font-bold font-headline mb-6 text-center md:text-left">{subCat.title}</h2>
+                            <h2 className="text-xl font-semibold mb-6 text-center">{subCat.title}</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                               {subCat.colleges.map((college, index) => (
                                 <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
