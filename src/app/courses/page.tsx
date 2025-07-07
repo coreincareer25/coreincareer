@@ -538,6 +538,18 @@ const bbaColleges = [
     'Graphic Era Deemed to be University',
 ];
 
+const bhmColleges = [
+    'EIILM',
+    'Swami Vivekananda University (SVU)',
+    'Techno Main Salt Lake',
+    'Brainware University',
+    'Sister Nivedita University (SNU)',
+    'iLEAD Kolkata',
+    'NSHM Knowledge Campus, Kolkata',
+    'Supreme Knowledge Foundation',
+    'Kalyani IINR',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -589,6 +601,7 @@ const courseData: { [key: string]: Course[] } = {
   ],
   management: [
     { name: 'BBA (Bachelor of Business Administration)', colleges: bbaColleges },
+    { name: 'BHM (Bachelor of Hospital Management)', colleges: bhmColleges },
     { name: 'MBA (Master of Business Administration)', colleges: [] },
     { name: 'PGDM (Post Graduate Diploma in Management)', colleges: [] },
     { name: 'B.Com (Bachelor of Commerce)', colleges: [] },
