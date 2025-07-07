@@ -20,11 +20,11 @@ const collegeData = {
     title: 'Medical',
     subCategories: {
       mbbs: {
-        title: 'MBBS',
+        title: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)',
         colleges: ['JMN Medical College and Hospital', 'IQ City Medical College Hospital', 'Jagannath Gupta Institute of Medical Sciences And Hospital', 'GOURI DEVI INSTITUTE OF MEDICAL SCIENCES AND HOSPITAL', 'KPC Medical College & Hospital', 'Shri Ramkrishna Institute of Medical Sciences', 'Saraswathi Institute of Medical Sciences', 'Christian Medical College & Hospital']
       },
       bds: {
-        title: 'BDS',
+        title: 'BDS (Bachelor of Dental Surgery)',
         colleges: ['Guru Nanak Institute of Dental Sciences & Research', 'Kusum Devi Sunderlal Dugar Jain Dental College& Hospital', 'Haldia Institute of Dental Sciences & Research (HIDSAR)', 'Dr R Ahmed Dental College and Hospital', 'Manav Rachna Dental College', 'Al-Azhar Dental College Thodupuzha']
       }
     }
@@ -73,18 +73,30 @@ const collegeData = {
   },
   healthcare: {
     title: 'Health Care Technology & Science',
-    description: '(Paramedical, B.pharm, D.pharm, Biotechnology, Microbiology, Food Technology, Nutrition, Agriculture)',
-    colleges: ['Svu', 'jis university', 'Techno India main campus', 'BST', 'brainware', 'ILEAD kolkata', 'Mr. Nursing and pharmaceutical institute Barasat', 'Adamas university', 'SNU', 'TNU', 'GNIPST', 'NSHM kolkata', 'Suprem']
+    subCategories: {
+      main: {
+        title: '(Paramedical, B.pharm, D.pharm, Biotechnology, Microbiology, Food Technology, Nutrition, Agriculture)',
+        colleges: ['Svu', 'jis university', 'Techno India main campus', 'BST', 'brainware', 'ILEAD kolkata', 'Mr. Nursing and pharmaceutical institute Barasat', 'Adamas university', 'SNU', 'TNU', 'GNIPST', 'NSHM kolkata', 'Suprem']
+      }
+    }
   },
   llb: {
     title: 'LLB',
-    description: '(LLB, BA LLB, BBA LLB, B.com LLB)',
-    colleges: ['ADAMAS UNIVERSITY', 'JIS university', 'SVU', 'SNU', 'Amity University', 'Brainware University', 'TNU']
+    subCategories: {
+      main: {
+        title: '(LLB, BA LLB, BBA LLB, B.com LLB)',
+        colleges: ['ADAMAS UNIVERSITY', 'JIS university', 'SVU', 'SNU', 'Amity University', 'Brainware University', 'TNU']
+      }
+    }
   },
   nursing: {
     title: 'Nursing',
-    description: '(B.sc Nursing, GNM Nursing, ANM Nursing)',
-    colleges: ['Brainware', 'SNU', 'Mr. Group of Hospital & nursing', 'kolkata nursing institute', 'IINR Kalyani']
+    subCategories: {
+      main: {
+        title: '(B.sc Nursing, GNM Nursing, ANM Nursing)',
+        colleges: ['Brainware', 'SNU', 'Mr. Group of Hospital & nursing', 'kolkata nursing institute', 'IINR Kalyani']
+      }
+    }
   }
 };
 
@@ -146,9 +158,9 @@ export default function CollegesPage() {
                       </div>
                     ) : (
                       <div>
-                        {data.description && <p className="text-center text-muted-foreground mb-6">{data.description}</p>}
+                        {'description' in data && data.description && <p className="text-center text-muted-foreground mb-6">{data.description}</p>}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                          {data.colleges && data.colleges.map((college, index) => (
+                          {'colleges' in data && data.colleges && data.colleges.map((college, index) => (
                             <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
                               <div className="relative h-40 w-full">
                                 <Image src="https://placehold.co/600x400.png" alt={college} fill className="object-cover" data-ai-hint="university campus" />
