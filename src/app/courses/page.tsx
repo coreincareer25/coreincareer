@@ -221,6 +221,31 @@ const btechItColleges = [
   'Graphic Era Deemed to be University',
 ];
 
+const btechEceColleges = [
+  'IEM Salt Lake & Newtown',
+  'Manipal University',
+  'Adamas University',
+  'Sister Nivedita University (SNU)',
+  'Techno Main Salt Lake & Newtown',
+  'Heritage Institute of Technology',
+  'Amity University, Kolkata',
+  'MCKV Institute of Engineering',
+  'Swami Vivekananda University (SVU)',
+  'JIS College of Engineering, Kalyani',
+  'Supreme Knowledge Foundation',
+  'KIIT',
+  'SOA',
+  'AMITY NOIDA',
+  'JAIN (Deemed-to-be University)',
+  'Sathyabama University',
+  'Galgotias University',
+  'Sarhad University',
+  'Shiv Nadar Institution of Eminence',
+  'Shivalik College, Dehradun',
+  'Graphic Era Deemed to be University',
+];
+
+
 const courseData: { [key: string]: Course[] } = {
   engineering: [
     { name: 'B.Tech. in Computer Science Engineering (CSE)', colleges: btechCseColleges },
@@ -232,7 +257,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Tech. in Data Science', colleges: btechDataScienceColleges },
     { name: 'B.Tech. in Cyber Security', colleges: btechCyberSecurityColleges },
     { name: 'B.Tech. in Information Technology (IT)', colleges: btechItColleges },
-    { name: 'B.Tech. in Electronics and Communication Engineering (ECE)', colleges: [] },
+    { name: 'B.Tech. in Electronics and Communication Engineering (ECE)', colleges: btechEceColleges },
     { name: 'B.Tech. in Electrical and Electronics Engineering (EEE)', colleges: [] },
     { name: 'B.Tech. in Electrical Engineering (EE)', colleges: [] },
     { name: 'B.Tech. in Mechanical Engineering (ME)', colleges: [] },
