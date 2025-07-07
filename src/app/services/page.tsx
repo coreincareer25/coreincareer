@@ -1,8 +1,9 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { services } from "@/lib/data";
-import { Award, FileText, Plane, School, Sparkles, UserCheck } from "lucide-react";
+import { Award, FileText, Plane, School, Sparkles, UserCheck, ChevronRight } from "lucide-react";
 import React from "react";
 import Balancer from "react-wrap-balancer";
+import Image from "next/image";
 
 const iconMap: { [key: string]: React.ElementType } = {
   UserCheck,
@@ -13,6 +14,14 @@ const iconMap: { [key: string]: React.ElementType } = {
   Sparkles,
 };
 
+const admissionProcessSteps = [
+    "Psychometric Testing",
+    "Subject & Course Selection",
+    "Document Verification",
+    "Interview / Entrance Exam Preparation",
+    "Final Admission Guidance"
+];
+
 export default function ServicesPage() {
   return (
     <div className="bg-background">
@@ -20,7 +29,7 @@ export default function ServicesPage() {
         <div className="container mx-auto max-w-7xl px-4 text-center">
             <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
                 <Balancer>
-                Our Counseling <span className="text-primary">Services</span>
+                Our <span className="text-primary">Services</span>
                 </Balancer>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -51,6 +60,36 @@ export default function ServicesPage() {
             </div>
         </div>
       </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="grid md:grid-cols-2 gap-16 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '500ms' }}>
+            <div>
+              <h2 className="text-3xl font-black tracking-tight text-gray-900 mb-8">
+                Admission Process <span className="text-primary">Support</span>
+              </h2>
+              <ul className="space-y-4">
+                {admissionProcessSteps.map((step, index) => (
+                    <li key={index} className="flex items-center p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-card">
+                        <ChevronRight className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
+                        <span className="text-lg text-muted-foreground">{step}</span>
+                    </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl">
+              <Image
+                src="https://placehold.co/600x400.png"
+                alt="Counselling Services Sign"
+                fill
+                className="object-cover"
+                data-ai-hint="counselling services sign"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
