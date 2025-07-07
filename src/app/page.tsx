@@ -332,7 +332,7 @@ export default function Home() {
           </div>
       </section>
       
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-background">
           <div className="container mx-auto px-4 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
               <div className="text-center mb-12">
                   <p className="font-semibold uppercase tracking-widest text-primary">FAQs</p>
