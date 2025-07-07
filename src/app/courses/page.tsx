@@ -708,9 +708,6 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'Bachelor of Hotel and Hospitality Management', colleges: hotelManagementColleges },
     { name: 'MBA (Master of Business Administration)', colleges: mbaColleges },
     { name: 'MHA (masters of hospital management)', colleges: mhaColleges },
-    { name: 'PGDM (Post Graduate Diploma in Management)', colleges: [] },
-    { name: 'B.Com (Bachelor of Commerce)', colleges: [] },
-    { name: 'M.Com (Master of Commerce)', colleges: [] },
   ],
   others: [
     { name: 'B.A. (Bachelor of Arts)', colleges: [] },
