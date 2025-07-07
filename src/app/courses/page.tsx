@@ -476,6 +476,17 @@ const bscMediaScienceColleges = [
     'Amity University',
 ];
 
+const bscDataScienceComputationalColleges = [
+    'Swami Vivekananda University (SVU)',
+    'Brainware University',
+    'Sister Nivedita University (SNU)',
+    'iLEAD Kolkata',
+    'NSHM Knowledge Campus, Kolkata',
+    'Adamas University',
+    'Supreme Knowledge Foundation',
+    'Amity University',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -525,6 +536,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'MCA (Master of Computer Applications)', colleges: [] },
     { name: 'B.Sc. in Computer Science', colleges: [] },
     { name: 'B.Sc. in Information Technology', colleges: [] },
+    { name: 'B.Sc. in Data Science', colleges: bscDataScienceComputationalColleges },
     { name: 'M.Sc. in Data Science', colleges: [] },
   ],
   management: [
