@@ -367,6 +367,17 @@ const btechFoodTechnologyColleges = [
   'Techno India University',
 ];
 
+const btechCivilEngineeringColleges = [
+  'Heritage Institute of Technology',
+  'Netaji Subhash Engineering College',
+  'Narula Institute of Technology',
+  'Brainware University',
+  'Adamas University',
+  'Amity university',
+  'UEM kolkata',
+  'Gargi Memorial Institute of Technology',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -386,7 +397,7 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Tech. in Biotechnology', colleges: btechBiotechnologyColleges },
     { name: 'B.Tech. in Biomedical Engineering', colleges: btechBiomedicalColleges },
     { name: 'B.Tech. in Agricultural Engineering', colleges: btechAgricultureColleges },
-    { name: 'B.Tech. in Civil Engineering', colleges: [] },
+    { name: 'B.Tech. in Civil Engineering', colleges: btechCivilEngineeringColleges },
     { name: 'B.Tech. in Food Technology', colleges: btechFoodTechnologyColleges },
     { name: 'B.Tech. in Marine Engineering', colleges: btechMarineEngineeringColleges },
     { name: 'Diploma / Polytechnic', colleges: diplomaPolytechnicColleges },
