@@ -931,6 +931,12 @@ export default function CoursesPage() {
                                                 </ul>
                                             </div>
                                         )}
+                                        {tabName === 'computational' && course.name === 'BCA (Bachelor of Computer Applications)' && (
+                                            <div className="mb-6 space-y-2">
+                                                <h4 className="font-bold text-foreground">Eligibility Criteria:</h4>
+                                                <p className="text-muted-foreground">Pass in Higher Secondary (10+2) or equivalent examination with Maths/Business Maths/ Statistics/ Computer Science as one of the subjects and at least 30% marks in English. Eligible candidates have to appear and qualify CET examination as per University norms.</p>
+                                            </div>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>
