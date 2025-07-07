@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,6 +25,30 @@ const iconMap: { [key: string]: React.ElementType } = {
   Plane,
   Sparkles,
 };
+
+const educationalPrograms = [
+  {
+    title: 'Career Counseling',
+    description: 'Personalized guidance to help you choose the right stream, course, and career path based on your strengths, interests, and goals.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'confused student career',
+    href: '/services'
+  },
+  {
+    title: 'College Guidance (UG & PG)',
+    description: 'Expert support in selecting suitable undergraduate and postgraduate programs based on your profile, goals, and academic background.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'students studying group',
+    href: '/services'
+  },
+  {
+    title: 'Scholarship & Loan Assistance',
+    description: 'Professional endorsement and documentation support for both Government & Private scholarships and education loan, improving your chances of selection.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'scholarship document',
+    href: '/services'
+  }
+];
 
 
 export default function Home() {
@@ -186,33 +210,46 @@ export default function Home() {
           </div>
       </section>
       
-      <section className="py-20">
+      <section className="py-20 bg-[#f9f4ff]">
         <div className="container mx-auto px-4">
-            <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
-                <p className="font-semibold uppercase tracking-widest text-primary">OUR SERVICES</p>
-                <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Comprehensive Support for Your Future</h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {services.map((service, index) => {
-                    const IconComponent = iconMap[service.icon];
-                    return (
-                        <Card key={service.title} className="text-center p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${200 + index * 150}ms` }}>
-                             <div className="flex justify-center mb-4">
-                                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                                    {IconComponent && <IconComponent className="h-8 w-8" />}
-                                </div>
-                            </div>
-                            <h3 className="text-xl font-bold">{service.title}</h3>
-                            <p className="mt-2 text-muted-foreground">{service.description}</p>
-                        </Card>
-                    );
-                })}
-            </div>
-             <div className="text-center mt-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `500ms` }}>
-                <Button asChild size="lg">
-                    <Link href="/services">View All Services</Link>
-                </Button>
-            </div>
+          <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards">
+            <p className="font-semibold uppercase tracking-widest text-primary">
+              OUR SERVICES
+            </p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+              Explore Our Educational Programs
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {educationalPrograms.map((program, index) => (
+              <Card 
+                key={program.title} 
+                className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards flex flex-col"
+                style={{ animationDelay: `${200 + index * 150}ms` }}
+              >
+                <div className="relative h-56 w-full">
+                  <Image
+                    src={program.image}
+                    alt={program.title}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={program.aiHint}
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-headline text-xl text-center">{program.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center flex-grow">
+                  <p className="text-muted-foreground">{program.description}</p>
+                </CardContent>
+                <CardFooter className="justify-center p-6">
+                  <Button asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-6 py-2 font-semibold hover:opacity-90 transition-opacity">
+                    <Link href={program.href}>Read More</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
       
