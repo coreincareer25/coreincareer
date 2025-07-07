@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -22,6 +23,7 @@ import { Loader2, Sparkles, BookOpen, School, Award } from "lucide-react";
 import { generateRecommendations } from "./actions";
 import type { PersonalizedRecommendationsOutput } from "@/ai/flows/personalized-recommendations";
 import Balancer from "react-wrap-balancer";
+import Image from "next/image";
 
 const formSchema = z.object({
   interests: z.string().min(5, { message: "Please describe your interests." }),
@@ -71,14 +73,24 @@ export default function RecommendationsPage() {
 
   return (
     <div className="bg-background">
-      <section className="py-20 bg-secondary animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards">
-        <div className="container mx-auto max-w-7xl px-4 text-center">
+      <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
+        <div className="absolute inset-0">
+            <Image
+                src="https://placehold.co/1920x400.png"
+                alt="AI brain illustration"
+                fill
+                className="object-cover"
+                data-ai-hint="artificial intelligence"
+            />
+            <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
             <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
                 <Balancer>
                 AI-Powered <span className="text-primary">Recommendations</span>
                 </Balancer>
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
             Tell us about yourself, and our AI will generate personalized suggestions for courses, colleges, and scholarships to guide your educational path.
             </p>
         </div>

@@ -104,14 +104,24 @@ const collegeData = {
 export default function CollegesPage() {
   return (
     <div className="bg-background">
-      <section className="py-20 bg-secondary animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards">
-        <div className="container mx-auto max-w-7xl px-4 text-center">
+      <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
+        <div className="absolute inset-0">
+            <Image
+                src="https://placehold.co/1920x400.png"
+                alt="Students walking on campus"
+                fill
+                className="object-cover"
+                data-ai-hint="college campus"
+            />
+            <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
           <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
             <Balancer>
               College <span className="text-primary">Profiles</span>
             </Balancer>
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
             Explore detailed profiles of top colleges and universities to find your ideal institution.
           </p>
         </div>

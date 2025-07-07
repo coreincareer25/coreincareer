@@ -62,19 +62,29 @@ export default function Home() {
 
   return (
     <main className="bg-white overflow-x-hidden">
-      <section className="text-center pt-20 pb-12 md:pt-28 md:pb-16">
-        <div className="container mx-auto px-4">
-          <p className="font-semibold uppercase tracking-widest text-gray-500 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-200">
+      <section className="relative text-center pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
+        <div className="absolute inset-0">
+            <Image
+                src="https://placehold.co/1920x500.png"
+                alt="Students graduating"
+                fill
+                className="object-cover"
+                data-ai-hint="students graduation"
+            />
+            <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="container relative mx-auto px-4">
+          <p className="font-semibold uppercase tracking-widest text-gray-300 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-200">
             EMPOWER YOUR FUTURE
           </p>
-          <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-gray-900 leading-tight animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-300">
+          <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-300">
             <Balancer>
               Discover the Core of Your
               <br />
               <span className="text-primary">Career Path</span>
             </Balancer>
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-400">
+          <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-300 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-400">
             We provide expert guidance and personalized support to help you navigate your educational and professional journey with confidence.
           </p>
           <div className="mt-10 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards delay-500">

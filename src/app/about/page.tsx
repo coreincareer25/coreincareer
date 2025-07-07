@@ -8,14 +8,24 @@ import { cn } from "@/lib/utils";
 export default function AboutPage() {
     return (
         <div className="bg-white">
-            <section className="py-20 bg-secondary animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards">
-                <div className="container mx-auto max-w-7xl px-4 text-center">
+            <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
+                <div className="absolute inset-0">
+                    <Image
+                        src="https://placehold.co/1920x400.png"
+                        alt="Abstract background"
+                        fill
+                        className="object-cover"
+                        data-ai-hint="abstract background"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+                </div>
+                <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
                     <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
                        <Balancer>
                          About <span className="text-primary">Core in Career</span>
                        </Balancer>
                     </h1>
-                    <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                    <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
                         We are dedicated to empowering individuals to discover and pursue their ideal career paths. Our mission is to provide comprehensive, personalized guidance and resources for a successful future.
                     </p>
                 </div>

@@ -19,6 +19,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
+import Image from "next/image";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required." }),
@@ -80,14 +81,24 @@ export default function ContactPage() {
 
   return (
     <div className="bg-background">
-        <section className="py-20 bg-secondary animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards">
-            <div className="container mx-auto max-w-7xl px-4 text-center">
+        <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
+            <div className="absolute inset-0">
+                <Image
+                    src="https://placehold.co/1920x400.png"
+                    alt="Person on a call"
+                    fill
+                    className="object-cover"
+                    data-ai-hint="contact us"
+                />
+                <div className="absolute inset-0 bg-black/50" />
+            </div>
+            <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
                 <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
                 <Balancer>
                     Contact <span className="text-primary">Us</span>
                 </Balancer>
                 </h1>
-                <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
                     Have questions or need a free consultation? We'd love to hear from you.
                 </p>
             </div>
