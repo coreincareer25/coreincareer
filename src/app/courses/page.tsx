@@ -720,6 +720,26 @@ const bscForensicScienceColleges = [
     'SNU',
 ];
 
+const bscAgricultureColleges = [
+    'ADAMAS UNIVERSITY',
+    'Brainware University',
+    'SVU',
+    'SNU',
+    'JIS university',
+    'jis Kalyani',
+    'TNU',
+];
+
+const bscNutritionColleges = [
+    'ADAMAS UNIVERSITY',
+    'Brainware University',
+    'SVU',
+    'SNU',
+    'JIS university',
+    'jis Kalyani',
+    'TNU',
+];
+
 
 const courseData: { [key: string]: Course[] } = {
   engineering: [
@@ -788,6 +808,8 @@ const courseData: { [key: string]: Course[] } = {
     { name: 'B.Sc. in Microbiology', colleges: bscMicrobiologyColleges },
     { name: 'B.Sc. in Biotechnology', colleges: bscBiotechnologyOthersColleges },
     { name: 'B.Sc. in Forensic Science', colleges: bscForensicScienceColleges },
+    { name: 'B.Sc. in Agriculture', colleges: bscAgricultureColleges },
+    { name: 'B.Sc. in Nutrition', colleges: bscNutritionColleges },
     { name: 'LLB (Bachelor of Laws)', colleges: llbColleges },
     { name: 'BBA LLB', colleges: bbaLlbColleges },
     { name: 'BA LLB', colleges: baLlbColleges },
