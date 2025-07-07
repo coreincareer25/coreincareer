@@ -13,7 +13,6 @@ export function Logo() {
         priority
       />
       <div>
-        <p className="font-bold text-lg leading-tight">Core in Career</p>
         <p className="text-xs text-muted-foreground leading-tight">by JP Educational Service</p>
       </div>
     </Link>
