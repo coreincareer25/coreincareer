@@ -1,6 +1,7 @@
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { services } from "@/lib/data";
-import { Award, FileText, Plane, School, Sparkles, UserCheck, ChevronRight } from "lucide-react";
+import { Award, FileText, Plane, School, Sparkles, UserCheck } from "lucide-react";
 import React from "react";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
@@ -15,11 +16,26 @@ const iconMap: { [key: string]: React.ElementType } = {
 };
 
 const admissionProcessSteps = [
-    "Psychometric Testing",
-    "Subject & Course Selection",
-    "Document Verification",
-    "Interview / Entrance Exam Preparation",
-    "Final Admission Guidance"
+    {
+        title: "Psychometric Testing",
+        description: "We assess your personality, interests, and aptitude using science-based tools (like the Holland RIASEC model) to understand your strengths and ideal career path. Read more..."
+    },
+    {
+        title: "Subject & Course Selection",
+        description: "Based on your test results and personal interests, we help you choose the most suitable academic stream, subjects, and courses—whether at UG or PG level."
+    },
+    {
+        title: "Document Verification",
+        description: "We guide you in organizing and reviewing important documents (marksheets, ID proofs, certificates, etc.) needed for admission and scholarship applications."
+    },
+    {
+        title: "Interview / Entrance Exam Preparation",
+        description: "We offer tips, mock interviews, and practice materials to help you perform confidently in college entrance exams or selection interviews."
+    },
+    {
+        title: "Final Admission Guidance",
+        description: "From choosing the right college to completing the application process, we provide end-to-end support to ensure a smooth, stress-free admission."
+    }
 ];
 
 export default function ServicesPage() {
@@ -45,18 +61,20 @@ export default function ServicesPage() {
               Admission Process <span className="text-primary">Support</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-16 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '500ms' }}>
+          <div className="grid md:grid-cols-2 gap-16 items-start animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '500ms' }}>
             <div>
-              <ul className="space-y-4">
+              <Accordion type="single" collapsible className="w-full space-y-4">
                 {admissionProcessSteps.map((step, index) => (
-                    <li key={index} className="flex items-center p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-card">
-                        <ChevronRight className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                        <span className="text-lg text-muted-foreground">{step}</span>
-                    </li>
+                    <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg bg-card px-4 shadow-sm">
+                        <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">{step.title}</AccordionTrigger>
+                        <AccordionContent className="text-base text-muted-foreground">
+                            {step.description}
+                        </AccordionContent>
+                    </AccordionItem>
                 ))}
-              </ul>
+              </Accordion>
             </div>
-            <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl">
+            <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
               <Image
                 src="https://placehold.co/600x400.png"
                 alt="Counselling Services Sign"
