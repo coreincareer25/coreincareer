@@ -7,7 +7,7 @@ import Image from "next/image";
 import Balancer from "react-wrap-balancer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { School } from "lucide-react";
+import { MotionWrapper } from "@/components/motion-wrapper";
 
 const collegeData = {
   engineering: {
@@ -102,9 +102,33 @@ const collegeData = {
 
 
 export default function CollegesPage() {
+  const cardContainerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" }
+    },
+  };
+
   return (
     <div className="bg-background">
-      <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
+      <MotionWrapper
+        as="section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="relative py-20 overflow-hidden"
+      >
         <div className="absolute inset-0">
             <Image
                 src="/images/colleges/hero.jpg"
@@ -112,6 +136,7 @@ export default function CollegesPage() {
                 fill
                 className="object-cover"
                 data-ai-hint="university building"
+                priority
             />
             <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -125,7 +150,7 @@ export default function CollegesPage() {
             Explore detailed profiles of top colleges and universities to find your ideal institution.
           </p>
         </div>
-      </section>
+      </MotionWrapper>
 
       <div className="bg-gradient-to-b from-purple-100/50 via-pink-100/50 to-transparent">
         <section className="py-12 container mx-auto max-w-6xl px-4">
@@ -146,46 +171,62 @@ export default function CollegesPage() {
                         {Object.values(data.subCategories).map(subCat => (
                           <div key={subCat.title}>
                             <h2 className="text-xl font-semibold mb-6 text-center">{subCat.title}</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <MotionWrapper
+                              variants={cardContainerVariants}
+                              initial="hidden"
+                              whileInView="visible"
+                              viewport={{ once: true, amount: 0.1 }}
+                              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                            >
                               {subCat.colleges.map((college, index) => (
-                                <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                                  <div className="relative h-40 w-full">
-                                    <Image src="/images/colleges/campus.jpg" alt={college} fill className="object-cover" data-ai-hint="university campus" />
-                                  </div>
-                                  <CardHeader className="flex-grow">
-                                    <CardTitle className="text-lg font-semibold">{college}</CardTitle>
-                                  </CardHeader>
-                                  <CardFooter>
-                                    <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
-                                      <Link href="/contact">Apply Now</Link>
-                                    </Button>
-                                  </CardFooter>
-                                </Card>
+                                <MotionWrapper el="div" variants={cardVariants} key={index}>
+                                  <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
+                                    <div className="relative h-40 w-full">
+                                      <Image src="/images/colleges/campus.jpg" alt={college} fill className="object-cover" data-ai-hint="university campus" />
+                                    </div>
+                                    <CardHeader className="flex-grow">
+                                      <CardTitle className="text-lg font-semibold">{college}</CardTitle>
+                                    </CardHeader>
+                                    <CardFooter>
+                                      <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
+                                        <Link href="/contact">Apply Now</Link>
+                                      </Button>
+                                    </CardFooter>
+                                  </Card>
+                                </MotionWrapper>
                               ))}
-                            </div>
+                            </MotionWrapper>
                           </div>
                         ))}
                       </div>
                     ) : (
                       <div>
                         {'description' in data && data.description && <p className="text-center text-muted-foreground mb-6">{data.description}</p>}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <MotionWrapper
+                          variants={cardContainerVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true, amount: 0.1 }}
+                          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                        >
                           {'colleges' in data && data.colleges && data.colleges.map((college, index) => (
-                            <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                              <div className="relative h-40 w-full">
-                                <Image src="/images/colleges/campus.jpg" alt={college} fill className="object-cover" data-ai-hint="university campus" />
-                              </div>
-                              <CardHeader className="flex-grow">
-                                <CardTitle className="text-lg font-semibold">{college}</CardTitle>
-                              </CardHeader>
-                              <CardFooter>
-                                <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
-                                  <Link href="/contact">Apply Now</Link>
-                                </Button>
-                              </CardFooter>
-                            </Card>
+                            <MotionWrapper el="div" variants={cardVariants} key={index}>
+                              <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
+                                <div className="relative h-40 w-full">
+                                  <Image src="/images/colleges/campus.jpg" alt={college} fill className="object-cover" data-ai-hint="university campus" />
+                                </div>
+                                <CardHeader className="flex-grow">
+                                  <CardTitle className="text-lg font-semibold">{college}</CardTitle>
+                                </CardHeader>
+                                <CardFooter>
+                                  <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
+                                    <Link href="/contact">Apply Now</Link>
+                                  </Button>
+                                </CardFooter>
+                              </Card>
+                            </MotionWrapper>
                           ))}
-                        </div>
+                        </MotionWrapper>
                       </div>
                     )}
                   </TabsContent>
@@ -197,3 +238,4 @@ export default function CollegesPage() {
     </div>
   );
 }
+      

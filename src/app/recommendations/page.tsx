@@ -24,6 +24,7 @@ import { generateRecommendations } from "./actions";
 import type { PersonalizedRecommendationsOutput } from "@/ai/flows/personalized-recommendations";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
+import { MotionWrapper } from "@/components/motion-wrapper";
 
 const formSchema = z.object({
   interests: z.string().min(5, { message: "Please describe your interests." }),
@@ -71,9 +72,20 @@ export default function RecommendationsPage() {
     }
   }
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
   return (
     <div className="bg-background">
-      <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
+      <MotionWrapper
+        as="section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="relative py-20 overflow-hidden"
+      >
         <div className="absolute inset-0">
             <Image
                 src="/images/recommendations/hero.jpg"
@@ -81,6 +93,7 @@ export default function RecommendationsPage() {
                 fill
                 className="object-cover"
                 data-ai-hint="ai brain"
+                priority
             />
             <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -94,11 +107,17 @@ export default function RecommendationsPage() {
             Tell us about yourself, and our AI will generate personalized suggestions for courses, colleges, and scholarships to guide your educational path.
             </p>
         </div>
-      </section>
+      </MotionWrapper>
 
-      <section className="py-20">
+      <section className="py-20 overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+            <MotionWrapper
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={sectionVariants}
+                className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
+            >
             <Card className="shadow-lg sticky top-24">
                 <CardHeader>
                 <CardTitle className="font-headline text-2xl">Tell Us About You</CardTitle>
@@ -164,7 +183,7 @@ export default function RecommendationsPage() {
                 </div>
                 )}
                 {recommendations && (
-                <Accordion type="multiple" defaultValue={['courses', 'colleges', 'scholarships']} className="w-full space-y-4 animate-in fade-in duration-500">
+                <Accordion type="multiple" defaultValue={['courses', 'colleges', 'scholarships']} className="w-full space-y-4">
                     <AccordionItem value="courses" className="border rounded-lg bg-card px-4 shadow-sm">
                     <AccordionTrigger className="text-lg font-headline hover:no-underline"><BookOpen className="mr-3 h-5 w-5 text-primary"/> Course Recommendations</AccordionTrigger>
                     <AccordionContent>
@@ -199,9 +218,10 @@ export default function RecommendationsPage() {
                     </div>
                 )}
             </div>
-            </div>
+            </MotionWrapper>
         </div>
       </section>
     </div>
   );
 }
+      

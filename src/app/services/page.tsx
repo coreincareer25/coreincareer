@@ -1,3 +1,6 @@
+
+"use client";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { services } from "@/lib/data";
@@ -6,6 +9,7 @@ import React from "react";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
 import Link from "next/link";
+import { MotionWrapper } from "@/components/motion-wrapper";
 
 const iconMap: { [key: string]: React.ElementType } = {
   UserCheck,
@@ -49,9 +53,96 @@ const WavyLine = () => (
 
 
 export default function ServicesPage() {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
+  const cardContainerVariants = {
+      hidden: {},
+      visible: {
+      transition: {
+          staggerChildren: 0.1,
+      },
+      },
+  };
+
+  const cardVariants = {
+      hidden: { y: 20, opacity: 0 },
+      visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" }
+      },
+  };
+
+  const ServiceSection = ({
+    image,
+    imageAlt,
+    aiHint,
+    number,
+    title,
+    description,
+    children,
+    imageFirst = false
+  } : {
+    image: string,
+    imageAlt: string,
+    aiHint: string,
+    number: string,
+    title: string,
+    description?: string,
+    children?: React.ReactNode,
+    imageFirst?: boolean
+  }) => {
+    const imageContent = (
+      <MotionWrapper
+        initial={{ opacity: 0, x: imageFirst ? 50 : -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl"
+      >
+        <Image src={image} alt={imageAlt} fill className="object-cover" data-ai-hint={aiHint} />
+      </MotionWrapper>
+    );
+  
+    const textContent = (
+      <MotionWrapper
+        initial={{ opacity: 0, x: imageFirst ? -50 : 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <p className="text-lg font-bold text-primary">{number}</p>
+        <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">{title}</h3>
+        {description && <p className="mt-4 text-muted-foreground">{description}</p>}
+        {children}
+      </MotionWrapper>
+    );
+
+    return (
+      <section className="py-12 bg-white overflow-hidden">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {imageFirst ? textContent : imageContent}
+            {imageFirst ? imageContent : textContent}
+          </div>
+        </div>
+      </section>
+    );
+  };
+  
+
   return (
     <div className="bg-background">
-      <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
+      <MotionWrapper
+        as="section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="relative py-20 overflow-hidden"
+      >
         <div className="absolute inset-0">
             <Image
                 src="/images/services/hero.jpg"
@@ -59,6 +150,7 @@ export default function ServicesPage() {
                 fill
                 className="object-cover"
                 data-ai-hint="helping hand"
+                priority
             />
             <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -72,18 +164,29 @@ export default function ServicesPage() {
             We provide comprehensive support to ensure you make the best decisions for your academic and professional future. Our goal is to empower you at every step of your educational journey.
             </p>
         </div>
-      </section>
+      </MotionWrapper>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+          <MotionWrapper
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={sectionVariants}
+              className="text-center mb-12"
+            >
             <h2 className="text-3xl font-black tracking-tight text-gray-900">
               Admission Process <span className="text-primary">Support</span>
             </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-16 items-start animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '500ms' }}>
-            <div>
-              <div className="w-full space-y-4">
+          </MotionWrapper>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <MotionWrapper
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="w-full space-y-4"
+            >
                 {admissionProcessSteps.map((step, index) => (
                     <div key={step.title}>
                         {step.readMoreLink ? (
@@ -105,9 +208,14 @@ export default function ServicesPage() {
                         )}
                     </div>
                 ))}
-              </div>
-            </div>
-            <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
+            </MotionWrapper>
+            <MotionWrapper
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl"
+            >
               <Image
                 src="/images/services/counseling-sign.jpg"
                 alt="Counselling Services Sign"
@@ -115,12 +223,19 @@ export default function ServicesPage() {
                 className="object-cover"
                 data-ai-hint="counselling services sign"
               />
-            </div>
+            </MotionWrapper>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-cyan-50/50 text-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+      <MotionWrapper
+        as="section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+        className="py-12 bg-cyan-50/50 text-center"
+      >
           <div className="container mx-auto max-w-7xl px-4">
               <Snowflake className="mx-auto h-12 w-12 text-primary" />
               <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Your Ambition, Our Mission</h2>
@@ -130,162 +245,115 @@ export default function ServicesPage() {
                   <WavyLine />
               </div>
           </div>
-      </section>
+      </MotionWrapper>
 
-      <section className="py-20 bg-white">
-          <div className="container mx-auto max-w-7xl px-4">
-              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
-                  <div>
-                      <p className="text-lg font-bold text-primary">01.</p>
-                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">Career Counseling</h3>
-                      <p className="mt-4 text-muted-foreground">
-                          Our career counseling service provides tailored advice to help students identify their strengths, interests, and career goals, ensuring a well-informed decision-making process. We guide them through various educational options and career paths that align with their aspirations.
-                      </p>
-                  </div>
-                  <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl">
-                      <Image
-                          src="/images/services/career-choice.jpg"
-                          alt="Career counselling illustration"
-                          fill
-                          className="object-cover"
-                          data-ai-hint="career choice illustration"
-                      />
-                  </div>
-              </div>
+        <ServiceSection
+            image="/images/services/career-choice.jpg"
+            imageAlt="Career counselling illustration"
+            aiHint="career choice illustration"
+            number="01."
+            title="Career Counseling"
+            description="Our career counseling service provides tailored advice to help students identify their strengths, interests, and career goals, ensuring a well-informed decision-making process. We guide them through various educational options and career paths that align with their aspirations."
+        />
+
+        <ServiceSection
+            image="/images/services/classroom-lecture.jpg"
+            imageAlt="Students in a classroom"
+            aiHint="students classroom lecture"
+            number="02."
+            title="College & Management Counselling (UG & PG)"
+            description="We offer expert guidance to help you choose the right undergraduate or postgraduate program based on your interests, goals, and academic background. Our counselling also covers admission through private institutions, management quota seats, and stream-specific opportunities—ensuring you make informed and strategic decisions for your higher education journey."
+            imageFirst
+        />
+
+        <ServiceSection
+            image="/images/services/scholarship-money.jpg"
+            imageAlt="Scholarship assistance illustration"
+            aiHint="scholarship money illustration"
+            number="03."
+            title="Scholarship Assistance"
+            description="At Core in Career, we proudly endorse students who demonstrate exceptional talent, determination, and a strong commitment to their future. Our scholarship endorsement recognizes individuals who not only meet academic excellence but also show clear purpose in their chosen career paths. Whether you're applying for a university scholarship, a competitive fellowship, or need support securing educational funding, Core in Career is here to champion your journey."
+        >
+          <ul className="mt-4 list-disc list-inside space-y-2 font-semibold text-gray-800">
+              <li>Swami Vivekananda Scholarship</li>
+              <li>Kanyashree Scholarship</li>
+              <li>Nabanna Scholarship</li>
+          </ul>
+        </ServiceSection>
+    
+        <ServiceSection
+            image="/images/services/student-loan.jpg"
+            imageAlt="Student loan guidance"
+            aiHint="student loan concept"
+            number="04."
+            title="Education Loan Guidance"
+            description="At Core in Career, we provide personalized support to help students and parents secure education loans from government and private institutions. From selecting the right bank or scheme to understanding interest rates, documentation, and eligibility, we guide you through every step—ensuring a smooth and hassle-free loan application process for studies in India or abroad."
+            imageFirst
+        />
+
+        <ServiceSection
+            image="/images/services/student-exam.jpg"
+            imageAlt="Entrance exam illustration"
+            aiHint="student exam illustration"
+            number="05."
+            title="Entrance Exam"
+        >
+          <div className="mt-4 text-muted-foreground space-y-2">
+            <p>B.Tech/ Pharmacy — <span className="font-semibold text-gray-800">JEE MAINS/WBJEE</span></p>
+            <p>MBBS- <span className="font-semibold text-gray-800">NEET</span></p>
+            <p>Nursing — <span className="font-semibold text-gray-800">JENPAS/JOINT</span></p>
+            <p>Law — <span className="font-semibold text-gray-800">CLAT</span></p>
+            <p>Management — <span className="font-semibold text-gray-800">CET</span></p>
+            <p>Paramedical — <span className="font-semibold text-gray-800">JENPAS</span></p>
+            <p>Architecture — <span className="font-semibold text-gray-800">NATA</span></p>
+            <p>Diploma Engineering — <span className="font-semibold text-gray-800">JEXPO</span></p>
           </div>
-      </section>
-
-      <section className="py-20 bg-white">
-          <div className="container mx-auto max-w-7xl px-4">
-              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
-                  <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
-                      <Image
-                          src="/images/services/classroom-lecture.jpg"
-                          alt="Students in a classroom"
-                          fill
-                          className="object-cover"
-                          data-ai-hint="students classroom lecture"
-                      />
-                  </div>
-                  <div>
-                      <p className="text-lg font-bold text-primary">02.</p>
-                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">College & Management Counselling (UG & PG)</h3>
-                      <p className="mt-4 text-muted-foreground">
-                          We offer expert guidance to help you choose the right undergraduate or postgraduate program based on your interests, goals, and academic background. Our counselling also covers admission through private institutions, management quota seats, and stream-specific opportunities—ensuring you make informed and strategic decisions for your higher education journey.
-                      </p>
-                  </div>
-              </div>
+          <div className="mt-6">
+            <h4 className="text-lg font-bold text-gray-900">Other Entrance</h4>
+            <p className="mt-2 text-muted-foreground">KIITEE/SAAT/VITEEE/IEMJEE/BET etc.</p>
           </div>
-      </section>
+        </ServiceSection>
+      
 
-      <section className="py-20 bg-white">
-          <div className="container mx-auto max-w-7xl px-4">
-              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
-                  <div>
-                      <p className="text-lg font-bold text-primary">03.</p>
-                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">Scholarship Assistance</h3>
-                      <p className="mt-4 text-muted-foreground">
-                          At Core in Career, we proudly endorse students who demonstrate exceptional talent, determination, and a strong commitment to their future. Our scholarship endorsement recognizes individuals who not only meet academic excellence but also show clear purpose in their chosen career paths. Whether you're applying for a university scholarship, a competitive fellowship, or need support securing educational funding, Core in Career is here to champion your journey.
-                      </p>
-                      <ul className="mt-4 list-disc list-inside space-y-2 font-semibold text-gray-800">
-                          <li>Swami Vivekananda Scholarship</li>
-                          <li>Kanyashree Scholarship</li>
-                          <li>Nabanna Scholarship</li>
-                      </ul>
-                  </div>
-                  <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl">
-                      <Image
-                          src="/images/services/scholarship-money.jpg"
-                          alt="Scholarship assistance illustration"
-                          fill
-                          className="object-cover"
-                          data-ai-hint="scholarship money illustration"
-                      />
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <section className="py-20 bg-white">
-          <div className="container mx-auto max-w-7xl px-4">
-              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
-                  <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
-                      <Image
-                          src="/images/services/student-loan.jpg"
-                          alt="Student loan guidance"
-                          fill
-                          className="object-cover"
-                          data-ai-hint="student loan concept"
-                      />
-                  </div>
-                  <div>
-                      <p className="text-lg font-bold text-primary">04.</p>
-                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">Education Loan Guidance</h3>
-                      <p className="mt-4 text-muted-foreground">
-                          At Core in Career, we provide personalized support to help students and parents secure education loans from government and private institutions. From selecting the right bank or scheme to understanding interest rates, documentation, and eligibility, we guide you through every step—ensuring a smooth and hassle-free loan application process for studies in India or abroad.
-                      </p>
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <section className="py-20 bg-white">
-          <div className="container mx-auto max-w-7xl px-4">
-              <div className="grid md:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
-                  <div>
-                      <p className="text-lg font-bold text-primary">05.</p>
-                      <h3 className="mt-2 text-3xl font-black tracking-tight text-gray-900">Entrance Exam</h3>
-                      <div className="mt-4 text-muted-foreground space-y-2">
-                        <p>B.Tech/ Pharmacy — <span className="font-semibold text-gray-800">JEE MAINS/WBJEE</span></p>
-                        <p>MBBS- <span className="font-semibold text-gray-800">NEET</span></p>
-                        <p>Nursing — <span className="font-semibold text-gray-800">JENPAS/JOINT</span></p>
-                        <p>Law — <span className="font-semibold text-gray-800">CLAT</span></p>
-                        <p>Management — <span className="font-semibold text-gray-800">CET</span></p>
-                        <p>Paramedical — <span className="font-semibold text-gray-800">JENPAS</span></p>
-                        <p>Architecture — <span className="font-semibold text-gray-800">NATA</span></p>
-                        <p>Diploma Engineering — <span className="font-semibold text-gray-800">JEXPO</span></p>
-                      </div>
-                      <div className="mt-6">
-                        <h4 className="text-lg font-bold text-gray-900">Other Entrance</h4>
-                        <p className="mt-2 text-muted-foreground">KIITEE/SAAT/VITEEE/IEMJEE/BET etc.</p>
-                      </div>
-                  </div>
-                  <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
-                      <Image
-                          src="/images/services/student-exam.jpg"
-                          alt="Entrance exam illustration"
-                          fill
-                          className="object-cover"
-                          data-ai-hint="student exam illustration"
-                      />
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <section className="py-20">
+      <MotionWrapper
+        as="section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+        className="py-20"
+      >
         <div className="container mx-auto max-w-7xl px-4">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => {
+            <MotionWrapper
+                variants={cardContainerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+            >
+            {services.map((service) => {
                 const IconComponent = iconMap[service.icon];
                 return (
-                <Card key={service.title} className="transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: `${200 + index * 150}ms` }}>
-                    <CardHeader className="items-center text-center">
-                        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                            {IconComponent && <IconComponent className="h-8 w-8" />}
-                        </div>
-                        <CardTitle className="font-headline text-xl pt-4">{service.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                        <p className="text-muted-foreground">{service.description}</p>
-                    </CardContent>
-                </Card>
+                  <MotionWrapper el="div" variants={cardVariants} key={service.title}>
+                    <Card className="transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl h-full">
+                        <CardHeader className="items-center text-center">
+                            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                {IconComponent && <IconComponent className="h-8 w-8" />}
+                            </div>
+                            <CardTitle className="font-headline text-xl pt-4">{service.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-center">
+                            <p className="text-muted-foreground">{service.description}</p>
+                        </CardContent>
+                    </Card>
+                  </MotionWrapper>
                 );
             })}
-            </div>
+            </MotionWrapper>
         </div>
-      </section>
+      </MotionWrapper>
 
     </div>
   );
 }
+      

@@ -22,6 +22,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube } from "luc
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 import Image from "next/image";
+import { MotionWrapper } from "@/components/motion-wrapper";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required." }),
@@ -106,9 +107,20 @@ export default function ContactPage() {
     }
   }
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
   return (
     <div className="bg-background">
-        <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
+        <MotionWrapper
+            as="section"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            className="relative py-20 overflow-hidden"
+        >
             <div className="absolute inset-0">
                 <Image
                     src="/images/contact/hero.jpg"
@@ -116,6 +128,7 @@ export default function ContactPage() {
                     fill
                     className="object-cover"
                     data-ai-hint="customer support"
+                    priority
                 />
                 <div className="absolute inset-0 bg-black/50" />
             </div>
@@ -129,11 +142,17 @@ export default function ContactPage() {
                     Have questions or need a free consultation? We'd love to hear from you.
                 </p>
             </div>
-        </section>
+        </MotionWrapper>
 
-        <section className="py-20">
+        <section className="py-20 overflow-hidden">
             <div className="container mx-auto max-w-7xl px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '300ms' }}>
+                <MotionWrapper
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={sectionVariants}
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+                >
                 <div className="space-y-8">
                         <h2 className="text-3xl font-bold font-headline">We're Here to Help</h2>
                         <p className="text-muted-foreground">
@@ -293,11 +312,18 @@ export default function ContactPage() {
                         </form>
                         </Form>
                     </div>
-                </div>
+                </MotionWrapper>
             </div>
       </section>
 
-      <section className="pb-20 animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-backwards" style={{ animationDelay: '500ms' }}>
+      <MotionWrapper
+        as="section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+        className="pb-20"
+      >
         <div className="container mx-auto max-w-7xl px-4">
             <h2 className="text-3xl font-bold font-headline text-center mb-12">
                 Find Us On The <span className="text-primary">Map</span>
@@ -314,7 +340,8 @@ export default function ContactPage() {
                 ></iframe>
             </div>
         </div>
-      </section>
+      </MotionWrapper>
     </div>
   );
 }
+      

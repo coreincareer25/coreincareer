@@ -8,7 +8,7 @@ import { School } from 'lucide-react';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Image from "next/image";
-
+import { MotionWrapper } from "@/components/motion-wrapper";
 
 type Course = {
   name: string;
@@ -817,9 +817,20 @@ const courseData: { [key: string]: Course[] } = {
 
 
 export default function CoursesPage() {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
   return (
     <div className="bg-background">
-      <section className="relative py-20 animate-in fade-in slide-in-from-top-8 duration-700 fill-mode-backwards overflow-hidden">
+      <MotionWrapper
+        as="section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="relative py-20 overflow-hidden"
+      >
         <div className="absolute inset-0">
             <Image
                 src="/images/courses/hero.jpg"
@@ -827,6 +838,7 @@ export default function CoursesPage() {
                 fill
                 className="object-cover"
                 data-ai-hint="lecture hall"
+                priority
             />
             <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -840,10 +852,17 @@ export default function CoursesPage() {
             Browse our extensive catalog of courses to find the perfect fit for your academic and career aspirations.
           </p>
         </div>
-      </section>
+      </MotionWrapper>
 
       <div className="bg-gradient-to-b from-purple-100/50 via-pink-100/50 to-transparent">
-        <section className="py-12 container mx-auto max-w-6xl px-4">
+        <MotionWrapper
+          as="section"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+          className="py-12 container mx-auto max-w-6xl px-4"
+        >
           <Tabs defaultValue="engineering" className="w-full">
             <TabsList className="flex h-auto flex-wrap justify-center gap-2 bg-transparent p-0">
               <TabsTrigger value="engineering" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Engineering</TabsTrigger>
@@ -1047,8 +1066,9 @@ export default function CoursesPage() {
                 ))}
             </div>
           </Tabs>
-        </section>
+        </MotionWrapper>
       </div>
     </div>
   );
 }
+      
