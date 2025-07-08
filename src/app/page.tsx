@@ -134,25 +134,6 @@ export default function Home() {
         as="section"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-        className="container mx-auto px-4"
-      >
-        <div className="relative h-40 md:h-64 lg:h-96 w-full max-w-6xl mx-auto">
-           <Image
-              src="/images/home/hero-group.jpg"
-              alt="A diverse group of professionals in various uniforms"
-              fill
-              className="object-contain"
-              data-ai-hint="professionals group cartoon"
-            />
-        </div>
-      </MotionWrapper>
-
-      <MotionWrapper
-        as="section"
-        initial="hidden"
-        whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
         className="py-20 bg-[#F3FAF7]"
