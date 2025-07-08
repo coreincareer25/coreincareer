@@ -87,12 +87,23 @@ export default function Home() {
 
   return (
     <main className="bg-white overflow-x-hidden">
-      <section className="bg-gray-50 text-center pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
+      <section className="relative text-center pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
+        <div className="absolute inset-0">
+            <Image
+                src="/images/home/hero-group.jpg"
+                alt="Empowered students"
+                fill
+                className="object-cover"
+                data-ai-hint="empowered students"
+                priority
+            />
+            <div className="absolute inset-0 bg-black/50" />
+        </div>
         <MotionWrapper
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", staggerChildren: 0.2 }}
-          className="container mx-auto px-4"
+          className="container relative mx-auto px-4"
         >
           <MotionWrapper variants={cardVariants}>
             <p className="font-semibold uppercase tracking-widest text-primary">
@@ -100,7 +111,7 @@ export default function Home() {
             </p>
           </MotionWrapper>
            <MotionWrapper variants={cardVariants}>
-            <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-gray-900 leading-tight">
+            <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight">
               <Balancer>
                 Discover the Core of Your
                 <br />
@@ -109,7 +120,7 @@ export default function Home() {
             </h1>
           </MotionWrapper>
           <MotionWrapper variants={cardVariants}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
+            <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-300">
               We provide expert guidance and personalized support to help you navigate your educational and professional journey with confidence.
             </p>
           </MotionWrapper>
@@ -120,7 +131,7 @@ export default function Home() {
                   Get your free consult today
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all hover:bg-primary hover:text-primary-foreground border-primary">
+              <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all text-white border-primary hover:bg-primary hover:text-primary-foreground">
                 <Link href="/brochure.pdf" target="_blank" rel="noopener noreferrer">
                   Download Brochure
                 </Link>
