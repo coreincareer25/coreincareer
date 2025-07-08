@@ -114,10 +114,15 @@ export default function Home() {
             </p>
           </MotionWrapper>
           <MotionWrapper variants={cardVariants}>
-            <div className="mt-10">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
                 <Link href="/contact">
                   Get your free consult today
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all hover:bg-primary hover:text-primary-foreground border-primary">
+                <Link href="/brochure.pdf" target="_blank" rel="noopener noreferrer">
+                  Download Brochure
                 </Link>
               </Button>
             </div>
