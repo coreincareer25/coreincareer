@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -142,7 +141,7 @@ export default function Home() {
       </section>
 
       <MotionWrapper
-        as="section"
+        el="section"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -202,32 +201,21 @@ export default function Home() {
                 onMouseLeave={plugin.current.reset}
               >
                 <CarouselContent>
-                  <CarouselItem>
-                    <div className="p-1">
-                      <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
-                        <Image
-                          src="/images/home/lab-students-1.jpg"
-                          alt="Students using microscopes in a lab"
-                          fill
-                          className="object-cover"
-                          data-ai-hint="students laboratory"
-                        />
+                  {['/images/home/lab-students-1.jpeg','/images/home/lab-students-2.jpeg','/images/home/lab-students-3.jpeg','/images/home/lab-students-4.jpeg','/images/home/lab-students-5.jpeg','/images/home/lab-students-6.jpeg','/images/home/lab-students-7.jpeg','/images/home/lab-students-8.jpeg'].map((src, idx) => (
+                    <CarouselItem key={src+idx}>
+                      <div className="p-1">
+                        <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg group">
+                          <Image
+                            src={src}
+                            alt="Students using microscopes in a lab"
+                            fill
+                            className="object-cover animate-zoom"
+                            data-ai-hint="students laboratory"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="p-1">
-                      <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
-                        <Image
-                          src="/images/home/lab-students-2.jpg"
-                          alt="A student looking through a microscope"
-                          fill
-                          className="object-cover"
-                          data-ai-hint="student microscope"
-                        />
-                      </div>
-                    </div>
-                  </CarouselItem>
+                    </CarouselItem>
+                  ))}
                 </CarouselContent>
                 <CarouselPrevious className="left-4" />
                 <CarouselNext className="right-4" />
@@ -251,7 +239,7 @@ export default function Home() {
       </section>
       
       <MotionWrapper
-        as="section"
+        el="section"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -406,7 +394,7 @@ export default function Home() {
       </section>
 
       <MotionWrapper
-        as="section"
+        el="section"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -455,7 +443,7 @@ export default function Home() {
       </MotionWrapper>
       
       <MotionWrapper
-        as="section"
+        el="section"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -483,4 +471,11 @@ export default function Home() {
   );
 }
 
-    
+// Add this to your global CSS (e.g., globals.css):
+// @keyframes zoom {
+//   0% { transform: scale(1); }
+//   100% { transform: scale(1.08); }
+// }
+// .animate-zoom { animation: zoom 6s linear infinite alternate; }
+
+
