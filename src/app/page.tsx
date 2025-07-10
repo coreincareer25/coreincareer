@@ -131,7 +131,7 @@ export default function Home() {
                   Get your free consult today
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all border-primary bg-white text-foreground hover:bg-primary hover:text-primary-foreground">
+              <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all border-primary text-white hover:bg-primary hover:text-primary-foreground bg-transparent">
                 <Link href="/brochure.pdf" target="_blank" rel="noopener noreferrer">
                   Download Brochure
                 </Link>
