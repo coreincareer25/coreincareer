@@ -1,12 +1,12 @@
 
 "use client";
 
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { scholarships } from "@/lib/data";
 import Image from "next/image";
-import { Calendar, Target } from "lucide-react";
 import Balancer from "react-wrap-balancer";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function ScholarshipsPage() {
   const sectionVariants = {
@@ -68,55 +68,60 @@ export default function ScholarshipsPage() {
         as="section"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         variants={sectionVariants}
         className="py-20"
       >
         <div className="container mx-auto max-w-7xl px-4">
-            <MotionWrapper
-              variants={cardContainerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-              className="mt-12 grid gap-8 sm:grid-cols-1 md:grid-cols-2"
-            >
+          <MotionWrapper
+            variants={cardContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid gap-8 sm:grid-cols-1 md:grid-cols-2"
+          >
             {scholarships.map((scholarship) => (
-                <MotionWrapper el="div" variants={cardVariants} key={scholarship.name}>
-                  <Card className="flex flex-col overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl h-full">
-                    <div className="relative h-56 w-full">
+              <MotionWrapper el="div" variants={cardVariants} key={scholarship.title + scholarship.description}>
+                <div className="relative flex flex-col md:flex-row items-center justify-between rounded-lg shadow-lg overflow-hidden h-64 md:h-48 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+                    <div className="absolute inset-0">
                         <Image
-                        src={scholarship.image}
-                        alt={scholarship.name}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={scholarship.aiHint}
+                            src={scholarship.image}
+                            alt={scholarship.title}
+                            fill
+                            className="object-cover"
+                            data-ai-hint={scholarship.aiHint}
                         />
-                        <div className="absolute top-4 right-4 bg-primary text-primary-foreground font-bold py-2 px-4 rounded-full shadow-lg">
-                            {scholarship.amount}
+                         <div className="absolute inset-0 bg-black/40" />
+                    </div>
+                    <div className="relative flex-1 p-6 text-white text-left h-full flex flex-col justify-center">
+                        <div>
+                            <span className="text-3xl font-bold text-primary font-serif">{scholarship.title}</span>
+                            {scholarship.subtitle && <span className="text-xl ml-2 text-gray-300 italic">{scholarship.subtitle}</span>}
+                        </div>
+                        {scholarship.description && (
+                            <p className="text-gray-300 mt-2 max-w-sm">{scholarship.description}</p>
+                        )}
+                    </div>
+                    <div className="relative p-6 bg-green-500 text-white font-bold h-full flex items-center justify-center text-center w-full md:w-56">
+                        <div className="flex flex-col">
+                            <span className="text-lg">SCHOLARSHIP</span>
+                            <span className="text-xl">{scholarship.amount}</span>
                         </div>
                     </div>
-                    <CardHeader>
-                        <CardTitle className="font-headline text-xl">{scholarship.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                        <div className="flex items-start gap-3 text-muted-foreground">
-                            <Target className="h-5 w-5 mt-1 shrink-0 text-primary" />
-                            <div>
-                                <h4 className="font-semibold text-foreground">Eligibility:</h4>
-                                <p className="text-sm">{scholarship.eligibility}</p>
-                            </div>
-                        </div>
-                    </CardContent>
-                    <CardFooter className="bg-secondary/50 p-4 flex justify-between items-center">
-                        <div className="flex items-center gap-2 text-sm font-medium">
-                            <Calendar className="h-4 w-4" />
-                            Deadline: {scholarship.deadline}
-                        </div>
-                    </CardFooter>
-                  </Card>
-                </MotionWrapper>
+                </div>
+              </MotionWrapper>
             ))}
-            </MotionWrapper>
+          </MotionWrapper>
+
+          <div className="text-center mt-16">
+            <p className="text-lg text-muted-foreground">Ready to explore these opportunities?</p>
+            <Button asChild size="lg" className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link href="/contact">
+                Contact Us for More Info
+              </Link>
+            </Button>
+          </div>
+
         </div>
       </MotionWrapper>
     </div>

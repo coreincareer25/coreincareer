@@ -98,7 +98,7 @@ export const testimonials = [
         aiHint: 'female student'
     },
     {
-        quote: "They helped me a lot to understand which subject would be best for my future",
+        quote: "they helped me a lot to understand which subject would be best for my future",
         name: 'Aniruddha Sain',
         title: 'B.tech AIML from ADAMAS UNIVERSITY',
         image: '/images/testimonials/aniruddha-sain.jpg',
@@ -303,39 +303,136 @@ export const colleges = [
 ];
 
 export const scholarships = [
-  {
-    name: 'STEM Scholars Award',
-    eligibility: 'High-achieving students pursuing a degree in a STEM field.',
-    deadline: 'March 31, 2025',
-    amount: '$10,000 per year',
-    image: '/images/scholarships/stem-scholars-award.jpg',
-    aiHint: 'science laboratory'
-  },
-  {
-    name: 'Future Leaders Grant',
-    eligibility: 'Demonstrated leadership potential and community involvement.',
-    deadline: 'April 15, 2025',
-    amount: '$5,000',
-    image: '/images/scholarships/future-leaders-grant.jpg',
-    aiHint: 'team leadership'
-  },
-  {
-    name: 'Art & Design Fellowship',
-    eligibility: 'Exceptional talent in visual arts or design, based on portfolio.',
-    deadline: 'February 28, 2025',
-    amount: 'Full tuition coverage',
-    image: '/images/scholarships/art-design-fellowship.jpg',
-    aiHint: 'art gallery'
-  },
-  {
-    name: 'Global Citizen Scholarship',
-    eligibility: 'Students committed to solving global challenges.',
-    deadline: 'May 1, 2025',
-    amount: '$7,500',
-    image: '/images/scholarships/global-citizen-scholarship.jpg',
-    aiHint: 'world map'
-  }
+    {
+        title: 'B.Tech',
+        subtitle: 'in',
+        description: 'CSE with Aiml/ IOT/ Ds/ CS/ CSBS/ Robotics/ CC',
+        amount: 'Up to 3,00,000/-',
+        image: '/images/scholarships/btech-cse.jpg',
+        aiHint: 'circuit board'
+    },
+    {
+        title: 'B.Tech',
+        subtitle: 'in',
+        description: 'ECE/ EE/ ME/ EEE/ IT/ Automobile',
+        amount: 'Up to 3,00,000/-',
+        image: '/images/scholarships/btech-core.jpg',
+        aiHint: 'engineering gear'
+    },
+    {
+        title: 'B.Tech',
+        subtitle: 'in',
+        description: 'Biotechnology/ Biomedical/ SE',
+        amount: 'Up to 3,00,000/-',
+        image: '/images/scholarships/btech-bio.jpg',
+        aiHint: 'dna strand'
+    },
+    {
+        title: 'BBA',
+        subtitle: 'in',
+        description: 'Digital marketing/ Travel & tourism management/ Enterpreneurship/ Sports management',
+        amount: 'Up to 2,50,000/-',
+        image: '/images/scholarships/bba.jpg',
+        aiHint: 'business chart'
+    },
+    {
+        title: 'Hotel & Hospitality Management',
+        subtitle: '',
+        description: 'culinary Technology/ catering service',
+        amount: 'Up to 1,00,000/-',
+        image: '/images/scholarships/hotel-management.jpg',
+        aiHint: 'luxury hotel'
+    },
+    {
+        title: 'Hospital Management',
+        subtitle: '',
+        description: '',
+        amount: 'Up to 2,50,000/-',
+        image: '/images/scholarships/hospital-management.jpg',
+        aiHint: 'hospital corridor'
+    },
+    {
+        title: 'BCA',
+        subtitle: '',
+        description: '',
+        amount: 'Up to 2,50,000/-',
+        image: '/images/scholarships/bca.jpg',
+        aiHint: 'laptop code'
+    },
+    {
+        title: 'B.Sc',
+        subtitle: 'in',
+        description: 'BMLT/ OTT/ Optometry/ CCT/ Radiology',
+        amount: 'Up to 2,00,000/-',
+        image: '/images/scholarships/bsc-paramedical.jpg',
+        aiHint: 'medical equipment'
+    },
+    {
+        title: 'B.Sc Nursing',
+        subtitle: '',
+        description: '',
+        amount: 'Up to 3,00,000/-',
+        image: '/images/scholarships/bsc-nursing.jpg',
+        aiHint: 'nurse care'
+    },
+    {
+        title: 'Pharmacy',
+        subtitle: 'in',
+        description: 'B.pharm/ D.pharm',
+        amount: 'Up to 3,00,000/-',
+        image: '/images/scholarships/pharmacy.jpg',
+        aiHint: 'pills medicine'
+    },
+    {
+        title: 'Journalism and Media Science',
+        subtitle: '',
+        description: '',
+        amount: 'Up to 2,50,000/-',
+        image: '/images/scholarships/journalism.jpg',
+        aiHint: 'camera microphone'
+    },
+    {
+        title: 'B.Sc',
+        subtitle: 'in',
+        description: 'Animation & Vfx/ Gaming/ Film and television/ Fashion designing/ Grafix designing/ Interior designing',
+        amount: 'Up to 3,00,000/-',
+        image: '/images/scholarships/bsc-design.jpg',
+        aiHint: 'art canvas'
+    },
+    {
+        title: 'B.Sc',
+        subtitle: 'in',
+        description: 'Nutrition/ Biotechnology/ microbiology/ Agriculture',
+        amount: 'Up to 1,00,000/-',
+        image: '/images/scholarships/bsc-science.jpg',
+        aiHint: 'greenhouse plants'
+    },
+    {
+        title: 'Medical',
+        subtitle: 'in',
+        description: 'MBBS/ BDS/ veterinary',
+        amount: 'Up to 4,00,000/-',
+        image: '/images/scholarships/medical.jpg',
+        aiHint: 'doctor stethoscope'
+    },
+    {
+        title: 'Nursing',
+        subtitle: 'in',
+        description: 'GNM/ ANM',
+        amount: 'Up to 1,00,000/-',
+        image: '/images/scholarships/nursing.jpg',
+        aiHint: 'nurse patient'
+    },
+    {
+        title: 'Master\'s (PG)',
+        subtitle: 'in',
+        description: 'MBA/ MCA/ MHA',
+        amount: 'Up to 1,00,000/-',
+        image: '/images/scholarships/masters.jpg',
+        aiHint: 'graduation cap'
+    }
 ];
+
 
 export const services = [
     {
