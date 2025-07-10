@@ -372,28 +372,28 @@ export const services = [
 
 export const partners = [
   {
-    name: 'Amity University',
-    logo: '/images/partners/amity-university-logo.jpg',
+    name: 'JAIN (Deemed-to-be University)',
+    logo: '/images/partners/jain-university-logo.jpg',
     aiHint: 'university logo'
   },
   {
-    name: 'Brainware University',
-    logo: '/images/partners/brainware-university-logo.jpg',
+    name: 'Kalinga Institute of Industrial Technology',
+    logo: '/images/partners/kiit-logo.jpg',
     aiHint: 'university logo'
   },
   {
-    name: 'Techno India Group',
-    logo: '/images/partners/techno-india-group-logo.jpg',
-    aiHint: 'education logo'
+    name: "Siksha 'O' Anusandhan",
+    logo: '/images/partners/soa-logo.jpg',
+    aiHint: 'university logo'
   },
   {
-    name: 'JMN Medical College',
-    logo: '/images/partners/jmn-medical-college-logo.jpg',
-    aiHint: 'medical college logo'
+    name: 'Sharda University',
+    logo: '/images/partners/sharda-university-logo.jpg',
+    aiHint: 'university logo'
   },
   {
-    name: 'JIS University',
-    logo: '/images/partners/jis-university-logo.jpg',
+    name: 'ADAMAS UNIVERSITY',
+    logo: '/images/partners/adamas-university-logo.jpg',
     aiHint: 'university logo'
   },
   {
@@ -401,4 +401,19 @@ export const partners = [
     logo: '/images/partners/iem-logo.jpg',
     aiHint: 'institute logo'
   },
+  {
+    name: 'Techno International Newtown',
+    logo: '/images/partners/techno-international-newtown-logo.jpg',
+    aiHint: 'education logo'
+  },
+  {
+    name: 'Eiilm',
+    logo: '/images/partners/eiilm-logo.jpg',
+    aiHint: 'institute logo'
+  },
+  {
+    name: 'SVU',
+    logo: '/images/partners/svu-logo.jpg',
+    aiHint: 'university logo'
+  }
 ];
