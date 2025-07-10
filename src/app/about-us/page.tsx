@@ -114,6 +114,48 @@ export default function AboutUsPage() {
                     </div>
                 </div>
             </section>
+            
+            <MotionWrapper
+                as="section"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={sectionVariants}
+                className="py-20 bg-white"
+            >
+                <div className="container mx-auto max-w-7xl px-4">
+                    <div className="text-center mb-12">
+                        <p className="font-semibold uppercase tracking-widest text-muted-foreground">
+                            WHY CHOOSE US
+                        </p>
+                        <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+                            Unique Value Propositions
+                        </h2>
+                    </div>
+                    <MotionWrapper
+                        variants={cardContainerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                    >
+                        {valuePropositions.map((prop) => (
+                             <MotionWrapper el="div" variants={cardVariants} key={prop.title}>
+                                <Card className={cn(
+                                    'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full',
+                                    prop.highlight ? 'bg-secondary' : 'bg-card'
+                                )}>
+                                    <CardContent className="p-0 flex flex-col items-center flex-1">
+                                        <p className="text-primary font-bold text-lg">{prop.number}</p>
+                                        <h3 className="mt-4 text-xl font-bold text-foreground">{prop.title}</h3>
+                                        <p className="mt-4 text-muted-foreground flex-grow">{prop.description}</p>
+                                    </CardContent>
+                                </Card>
+                            </MotionWrapper>
+                        ))}
+                    </MotionWrapper>
+                </div>
+            </MotionWrapper>
 
             <MotionWrapper
                 as="section"
@@ -173,48 +215,6 @@ export default function AboutUsPage() {
                             Contact Us Now
                         </Link>
                     </Button>
-                </div>
-            </MotionWrapper>
-
-            <MotionWrapper
-                as="section"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={sectionVariants}
-                className="py-20 bg-white"
-            >
-                <div className="container mx-auto max-w-7xl px-4">
-                    <div className="text-center mb-12">
-                        <p className="font-semibold uppercase tracking-widest text-muted-foreground">
-                            WHY CHOOSE US
-                        </p>
-                        <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
-                            Unique Value Propositions
-                        </h2>
-                    </div>
-                    <MotionWrapper
-                        variants={cardContainerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.2 }}
-                        className="grid grid-cols-1 md:grid-cols-3 gap-8"
-                    >
-                        {valuePropositions.map((prop) => (
-                             <MotionWrapper el="div" variants={cardVariants} key={prop.title}>
-                                <Card className={cn(
-                                    'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full',
-                                    prop.highlight ? 'bg-secondary' : 'bg-card'
-                                )}>
-                                    <CardContent className="p-0 flex flex-col items-center flex-1">
-                                        <p className="text-primary font-bold text-lg">{prop.number}</p>
-                                        <h3 className="mt-4 text-xl font-bold text-foreground">{prop.title}</h3>
-                                        <p className="mt-4 text-muted-foreground flex-grow">{prop.description}</p>
-                                    </CardContent>
-                                </Card>
-                            </MotionWrapper>
-                        ))}
-                    </MotionWrapper>
                 </div>
             </MotionWrapper>
         </div>
