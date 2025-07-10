@@ -59,7 +59,7 @@ const educationalPrograms = [
 
 export default function Home() {
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   const sectionVariants = {
@@ -196,10 +196,8 @@ export default function Home() {
             >
               <Carousel 
                 className="w-full max-w-lg mx-auto" 
-                opts={{ loop: true }}
+                opts={{ loop: true, align: "start" }}
                 plugins={[plugin.current]}
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
               >
                 <CarouselContent>
                   {['/images/home/lab-students-1.jpg','/images/home/lab-students-2.jpg','/images/home/lab-students-3.jpg','/images/home/lab-students-4.jpg','/images/home/lab-students-5.jpg','/images/home/lab-students-6.jpg','/images/home/lab-students-7.jpg','/images/home/lab-students-8.jpg'].map((src, idx) => (
@@ -208,9 +206,9 @@ export default function Home() {
                         <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg group">
                           <Image
                             src={src}
-                            alt="Students using microscopes in a lab"
+                            alt="Students in a lab"
                             fill
-                            className="object-cover animate-zoom"
+                            className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                             data-ai-hint="students laboratory"
                           />
                         </div>
@@ -410,8 +408,6 @@ export default function Home() {
               <Carousel
                   opts={{ align: "start", loop: true }}
                   plugins={[plugin.current]}
-                  onMouseEnter={plugin.current.stop}
-                  onMouseLeave={plugin.current.reset}
                   className="w-full max-w-5xl mx-auto"
               >
                   <CarouselContent>
