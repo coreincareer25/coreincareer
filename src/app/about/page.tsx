@@ -159,6 +159,29 @@ export default function AboutPage() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
+                className="py-20 bg-primary/10"
+            >
+                <div className="container mx-auto max-w-7xl px-4 text-center">
+                    <h2 className="text-3xl font-black tracking-tight text-gray-900">
+                        Ready to Take the Next Step?
+                    </h2>
+                    <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                        Your future is our priority. For more information or to start your journey with a free consultation, contact us today. Our team is here to help you unlock your full potential.
+                    </p>
+                    <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
+                        <Link href="/contact">
+                            Contact Us Now
+                        </Link>
+                    </Button>
+                </div>
+            </MotionWrapper>
+
+            <MotionWrapper
+                as="section"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={sectionVariants}
                 className="py-20 bg-white"
             >
                 <div className="container mx-auto max-w-7xl px-4">
@@ -192,29 +215,6 @@ export default function AboutPage() {
                             </MotionWrapper>
                         ))}
                     </MotionWrapper>
-                </div>
-            </MotionWrapper>
-            
-            <MotionWrapper
-                as="section"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={sectionVariants}
-                className="py-20 bg-primary/10"
-            >
-                <div className="container mx-auto max-w-7xl px-4 text-center">
-                    <h2 className="text-3xl font-black tracking-tight text-gray-900">
-                        Ready to Take the Next Step?
-                    </h2>
-                    <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-                        Your future is our priority. For more information or to start your journey with a free consultation, contact us today. Our team is here to help you unlock your full potential.
-                    </p>
-                    <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
-                        <Link href="/contact">
-                            Contact Us Now
-                        </Link>
-                    </Button>
                 </div>
             </MotionWrapper>
         </div>
