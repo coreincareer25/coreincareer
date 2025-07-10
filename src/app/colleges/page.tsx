@@ -123,7 +123,7 @@ export default function CollegesPage() {
   return (
     <div className="bg-background">
       <MotionWrapper
-        as="section"
+        el="section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}

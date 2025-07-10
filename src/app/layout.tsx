@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Core in Career',
+  title: 'Core in Career by JP Educational Service',
   description: 'Your guide to educational options and services.',
 };
 

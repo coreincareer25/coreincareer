@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -90,7 +89,7 @@ export default function Home() {
       <section className="relative text-center pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
         <div className="absolute inset-0">
             <Image
-                src="/images/home/hero-group.jpg"
+                src="/images/home/hero-group3.jpg"
                 alt="Empowered students"
                 fill
                 className="object-cover"
@@ -321,10 +320,10 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap- md:gap-6">
                 {partners.map((partner) => (
-                  <div key={partner.name} className="flex items-center justify-center p-4 bg-gray-50 rounded-lg shadow-sm transition-transform hover:-translate-y-1">
-                     <div className="relative h-16 w-full sm:h-20">
+                  <div key={partner.name} className="flex items-center justify-center p-4 bg-purple-50 rounded-lg shadow-sm transition-transform hover:-translate-y-1 aspect-square">
+                    <div className="relative w-full h-full">
                       <Image 
                           src={partner.logo} 
                           alt={partner.name} 

@@ -37,7 +37,7 @@ export default function AboutPage() {
     return (
         <div className="bg-white">
             <MotionWrapper
-                as="section"
+                el="section"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.7 }}
@@ -116,7 +116,7 @@ export default function AboutPage() {
             </section>
 
             <MotionWrapper
-                as="section"
+                el="section"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
@@ -158,7 +158,7 @@ export default function AboutPage() {
             </MotionWrapper>
 
             <MotionWrapper
-                as="section"
+                el="section"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
@@ -196,7 +196,7 @@ export default function AboutPage() {
             </MotionWrapper>
 
             <MotionWrapper
-                as="section"
+                el="section"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}

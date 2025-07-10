@@ -475,7 +475,7 @@ export const partners = [
   },
   {
     name: 'Kalinga Institute of Industrial Technology',
-    logo: '/images/partners/kiit-logo.jpg',
+    logo: '/images/partners/kiit-logo.webp',
     aiHint: 'university logo'
   },
   {
@@ -485,7 +485,7 @@ export const partners = [
   },
   {
     name: 'Sharda University',
-    logo: '/images/partners/sharda-university-logo.jpg',
+    logo: '/images/partners/sharda-university-logo.png',
     aiHint: 'university logo'
   },
   {
@@ -495,7 +495,7 @@ export const partners = [
   },
   {
     name: 'IEM',
-    logo: '/images/partners/iem-logo.jpg',
+    logo: '/images/partners/iem-logo.png',
     aiHint: 'institute logo'
   },
   {
@@ -505,12 +505,12 @@ export const partners = [
   },
   {
     name: 'Eiilm',
-    logo: '/images/partners/eiilm-logo.jpg',
+    logo: '/images/partners/eiilm-logo.png',
     aiHint: 'institute logo'
   },
   {
     name: 'SVU',
-    logo: '/images/partners/svu-logo.jpg',
+    logo: '/images/partners/svu-logo.png',
     aiHint: 'university logo'
   }
 ];

@@ -49,9 +49,9 @@ export function Header() {
                   COURSE INFORMATION <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuItem asChild><Link href="/courses">Courses</Link></DropdownMenuItem>
-                  <DropdownMenuItem asChild><Link href="/colleges">Colleges</Link></DropdownMenuItem>
-                  <DropdownMenuItem asChild><Link href="/scholarships">Scholarships</Link></DropdownMenuItem>
+                  <DropdownMenuItem asChild><Link href="/courses">OUR COURSES</Link></DropdownMenuItem>
+                  <DropdownMenuItem asChild><Link href="/colleges">COLLEGES WE OFFER</Link></DropdownMenuItem>
+                  <DropdownMenuItem asChild><Link href="/scholarships">SCHOLARSHIPS</Link></DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </nav>
