@@ -77,7 +77,7 @@ export default function AboutPage() {
                         >
                             <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
                                 <Image
-                                    src="https://placehold.co/600x400.png"
+                                    src="https://placehold.co/600x400.jpg"
                                     alt="Career counseling session"
                                     fill
                                     className="object-cover"
