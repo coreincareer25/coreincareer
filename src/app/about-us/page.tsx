@@ -121,7 +121,7 @@ export default function AboutUsPage() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
-                className="py-20 bg-white"
+                className="py-20 bg-cyan-50"
             >
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="text-center mb-12">
@@ -163,7 +163,7 @@ export default function AboutUsPage() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
-                className="py-20 bg-cyan-50"
+                className="py-20 bg-white"
             >
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="text-center mb-12">
@@ -221,3 +221,5 @@ export default function AboutUsPage() {
     );
 }
       
+
+    
