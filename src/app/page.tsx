@@ -36,7 +36,7 @@ const educationalPrograms = [
   {
     title: 'Career Counseling',
     description: 'Personalized guidance to help you choose the right stream, course, and career path based on your strengths, interests, and goals.',
-    image: '/images/home/career-counseling.jpg',
+    image: '/images/home/career-counseling.jpeg',
     aiHint: 'confused student career',
     href: '/services'
   },
@@ -50,7 +50,7 @@ const educationalPrograms = [
   {
     title: 'Scholarship & Loan Assistance',
     description: 'Professional endorsement and documentation support for both Government & Private scholarships and education loan, improving your chances of selection.',
-    image: '/images/home/scholarship-assistance.jpg',
+    image: '/images/home/scholarship-assistance.jpeg',
     aiHint: 'scholarship document',
     href: '/services'
   }
@@ -266,7 +266,7 @@ export default function Home() {
                 <Card 
                   className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out flex flex-col h-full"
                 >
-                  <div className="relative h-56 w-full">
+                  <div className="relative h-64 w-full">
                     <Image
                       src={program.image}
                       alt={program.title}
@@ -350,9 +350,9 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
+              <div className="relative h-[30rem] w-full overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="/images/home/education-innovation.jpg"
+                  src="/images/home/education-innovation.jpeg"
                   alt="Innovative education solutions"
                   fill
                   className="object-cover"
