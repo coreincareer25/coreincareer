@@ -7,6 +7,8 @@ import Image from "next/image";
 import Balancer from "react-wrap-balancer";
 import { cn } from "@/lib/utils";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function AboutPage() {
     const sectionVariants = {
@@ -43,7 +45,7 @@ export default function AboutPage() {
             >
                 <div className="absolute inset-0">
                     <Image
-                        src="/images/about/hero.jpg"
+                        src="https://placehold.co/1920x1080.png"
                         alt="Abstract background"
                         fill
                         className="object-cover"
@@ -75,7 +77,7 @@ export default function AboutPage() {
                         >
                             <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
                                 <Image
-                                    src="/images/about/counseling-session.jpg"
+                                    src="https://placehold.co/600x400.png"
                                     alt="Career counseling session"
                                     fill
                                     className="object-cover"
@@ -192,9 +194,30 @@ export default function AboutPage() {
                     </MotionWrapper>
                 </div>
             </MotionWrapper>
+            
+            <MotionWrapper
+                as="section"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={sectionVariants}
+                className="py-20 bg-primary/10"
+            >
+                <div className="container mx-auto max-w-7xl px-4 text-center">
+                    <h2 className="text-3xl font-black tracking-tight text-gray-900">
+                        Ready to Take the Next Step?
+                    </h2>
+                    <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                        Your future is our priority. For more information or to start your journey with a free consultation, contact us today. Our team is here to help you unlock your full potential.
+                    </p>
+                    <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
+                        <Link href="/contact">
+                            Contact Us Now
+                        </Link>
+                    </Button>
+                </div>
+            </MotionWrapper>
         </div>
     );
 }
       
-
-    
