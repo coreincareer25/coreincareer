@@ -5,11 +5,11 @@ export function Logo({ showSubtitle = true }: { showSubtitle?: boolean }) {
   return (
     <Link href="/" aria-label="Core in Career Home" className="flex items-center gap-2">
       <Image
-        src="/logo.jpg"
+        src="/logo.png"
         alt="Core in Career Logo"
-        width={32}
-        height={32}
-        className="h-8 w-8"
+        width={160}
+        height={160}
+        className="h-40 w-40"
         priority
       />
       {showSubtitle && (
