@@ -133,22 +133,16 @@ export default function AboutPage() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
                     >
                         {team.map((member) => (
                             <MotionWrapper el="div" variants={cardVariants} key={member.name}>
-                                <Card className="text-center overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out bg-card shadow-lg h-full">
-                                    <div className="relative h-64 w-full">
-                                        <Image src={member.image} alt={member.name} layout="fill" objectFit="cover" data-ai-hint={member.aiHint} />
-                                    </div>
-                                    <CardHeader className="p-4 pb-2">
-                                        <CardTitle className="text-lg font-bold">{member.name}</CardTitle>
-                                        <p className="text-sm text-muted-foreground">{member.title}</p>
+                                <Card className="text-center bg-card shadow-lg p-6 h-full flex flex-col justify-center items-center transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+                                    <CardHeader className="p-0">
+                                        <CardTitle className="text-xl font-bold">{member.name}</CardTitle>
                                     </CardHeader>
-                                    <CardContent className="p-4 pt-0">
-                                        <a href={`mailto:${member.email}`} className="text-sm text-primary hover:underline break-all">
-                                            {member.email}
-                                        </a>
+                                    <CardContent className="p-0 mt-1">
+                                        <p className="text-md text-muted-foreground">{member.title}</p>
                                     </CardContent>
                                 </Card>
                             </MotionWrapper>
@@ -202,3 +196,5 @@ export default function AboutPage() {
     );
 }
       
+
+    
