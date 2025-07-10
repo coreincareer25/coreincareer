@@ -470,12 +470,3 @@ export default function Home() {
     </main>
   );
 }
-
-// Add this to your global CSS (e.g., globals.css):
-// @keyframes zoom {
-//   0% { transform: scale(1); }
-//   100% { transform: scale(1.08); }
-// }
-// .animate-zoom { animation: zoom 6s linear infinite alternate; }
-
-
