@@ -202,7 +202,7 @@ export default function Home() {
                 onMouseLeave={plugin.current.reset}
               >
                 <CarouselContent>
-                  {['/images/home/lab-students-1.jpeg','/images/home/lab-students-2.jpeg','/images/home/lab-students-3.jpeg','/images/home/lab-students-4.jpeg','/images/home/lab-students-5.jpeg','/images/home/lab-students-6.jpeg','/images/home/lab-students-7.jpeg','/images/home/lab-students-8.jpeg'].map((src, idx) => (
+                  {['/images/home/lab-students-1.jpg','/images/home/lab-students-2.jpg','/images/home/lab-students-3.jpg','/images/home/lab-students-4.jpg','/images/home/lab-students-5.jpg','/images/home/lab-students-6.jpg','/images/home/lab-students-7.jpg','/images/home/lab-students-8.jpg'].map((src, idx) => (
                     <CarouselItem key={src+idx}>
                       <div className="p-1">
                         <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg group">
