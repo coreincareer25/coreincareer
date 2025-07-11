@@ -101,7 +101,7 @@ export default function ServicesPage() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative h-80 w-full overflow-hidden rounded-lg shadow-xl"
+        className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl"
       >
         <Image src={image} alt={imageAlt} fill className="object-cover" data-ai-hint={aiHint} />
       </MotionWrapper>
@@ -137,7 +137,7 @@ export default function ServicesPage() {
   return (
     <div className="bg-background">
       <MotionWrapper
-        as="section"
+        el="section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
@@ -145,7 +145,7 @@ export default function ServicesPage() {
       >
         <div className="absolute inset-0">
             <Image
-                src="/images/services/hero.jpg"
+                src="/images/about/about-header.jpeg"
                 alt="Person helping another person"
                 fill
                 className="object-cover"
@@ -229,7 +229,7 @@ export default function ServicesPage() {
       </section>
 
       <MotionWrapper
-        as="section"
+        el="section"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

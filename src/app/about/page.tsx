@@ -45,7 +45,7 @@ export default function AboutPage() {
             >
                 <div className="absolute inset-0">
                     <Image
-                        src="https://placehold.co/1920x1080.png"
+                        src="/images/about/about-header.jpeg"
                         alt="Abstract background"
                         fill
                         className="object-cover"
