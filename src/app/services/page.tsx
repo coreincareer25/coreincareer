@@ -157,7 +157,7 @@ export default function ServicesPage() {
         <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
             <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
                 <Balancer>
-                Our <span className="text-primary">Services</span>
+                Our <span className="text-[#ff81cc]">Services</span>
                 </Balancer>
             </h1>
             <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">

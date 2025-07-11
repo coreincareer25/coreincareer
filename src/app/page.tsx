@@ -105,7 +105,7 @@ export default function Home() {
           className="container relative mx-auto px-4"
         >
           <MotionWrapper variants={cardVariants}>
-            <p className="font-semibold uppercase tracking-widest text-primary">
+            <p className="font-semibold uppercase tracking-widest text-[#88ffe3]">
               EMPOWER YOUR FUTURE
             </p>
           </MotionWrapper>
@@ -114,7 +114,7 @@ export default function Home() {
               <Balancer>
                 Discover the Core of Your
                 <br />
-                <span className="text-primary">Career Path</span>
+                <span className="text-[#ff81cc]">Career Path</span>
               </Balancer>
             </h1>
           </MotionWrapper>

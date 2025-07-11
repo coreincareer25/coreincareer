@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
                     <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
                        <Balancer>
-                         About <span className="text-primary">Core in Career</span>
+                         About <span className="text-[#ff81cc]">Core in Career</span>
                        </Balancer>
                     </h1>
                     <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
