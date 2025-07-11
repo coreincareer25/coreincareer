@@ -147,7 +147,7 @@ export default function CollegesPage() {
             </Balancer>
           </h1>
           <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
-            Explore detailed profiles of top colleges and universities to find your ideal institution.
+            Explore detailed profiles of top colleges and universities to find your ideal institution
           </p>
         </div>
       </MotionWrapper>
