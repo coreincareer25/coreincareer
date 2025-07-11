@@ -143,7 +143,7 @@ export default function AboutPage() {
                             <MotionWrapper el="div" variants={cardVariants} key={prop.title}>
                                 <Card className={cn(
                                     'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full',
-                                    prop.highlight ? 'bg-secondary' : 'bg-card'
+                                    // prop.highlight ? 'bg-secondary' : 'bg-card'
                                 )}>
                                     <CardContent className="p-0 flex flex-col items-center flex-1">
                                         <p className="text-primary font-bold text-lg">{prop.number}</p>

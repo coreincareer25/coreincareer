@@ -169,7 +169,7 @@ export default function Home() {
                 <Card
                   className={cn(
                     'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full',
-                    advantage.highlight ? 'bg-purple-100 border-primary' : 'bg-card'
+                    // advantage.highlight ? 'bg-purple-100 border-primary' : 'bg-card'
                   )}
                 >
                   <CardContent className="p-0 flex flex-col items-center flex-1">
