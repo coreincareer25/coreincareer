@@ -43,7 +43,7 @@ export default function ScholarshipsPage() {
       >
         <div className="absolute inset-0">
             <Image
-                src="/images/scholarships/hero.jpg"
+                src="/images/scholarships/hero.jpeg"
                 alt="Graduation cap and money"
                 fill
                 className="object-cover"

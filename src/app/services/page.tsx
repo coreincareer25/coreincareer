@@ -292,7 +292,7 @@ export default function ServicesPage() {
         />
 
         <ServiceSection
-            image="/images/services/student-exam.jpg"
+            image="/images/psychometric-testing/student-exam.jpeg"
             imageAlt="Entrance exam illustration"
             aiHint="student exam illustration"
             number="05."

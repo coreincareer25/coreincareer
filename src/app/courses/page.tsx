@@ -20,7 +20,7 @@ export default function CoursesPage() {
   return (
     <div className="bg-background">
       <MotionWrapper
-        as="section"
+        el="section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
@@ -51,7 +51,7 @@ export default function CoursesPage() {
 
       <div className="bg-gradient-to-b from-purple-100/50 via-pink-100/50 to-transparent">
         <MotionWrapper
-          as="section"
+          el="section"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -71,7 +71,7 @@ export default function CoursesPage() {
             
             <div className="mt-8">
                 {(Object.keys(courseData) as Array<keyof typeof courseData>).map(tabName => (
-                    <TabsContent key={tabName} value={tabName} className="m-0">
+                    <TabsContent key={String(tabName)} value={String(tabName)} className="m-0">
                         <Accordion type="single" collapsible className="w-full space-y-2">
                             {courseData[tabName].map((course, index) => (
                                 <AccordionItem key={course.name} value={`item-${index}`} className="border rounded-lg bg-white/80 backdrop-blur-sm shadow-sm px-4">

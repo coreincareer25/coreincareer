@@ -74,7 +74,7 @@ export default function PsychometricTestingPage() {
     return (
         <div className="bg-background">
             <MotionWrapper
-                as="section"
+                el="section"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.7 }}
@@ -82,7 +82,7 @@ export default function PsychometricTestingPage() {
             >
                 <div className="absolute inset-0">
                     <Image
-                        src="/images/psychometric-testing/hero.jpg"
+                        src="/images/psychometric-testing/hero.jpeg"
                         alt="Brain with gears"
                         fill
                         className="object-cover"
@@ -143,7 +143,7 @@ export default function PsychometricTestingPage() {
             </section>
 
             <MotionWrapper
-                as="section"
+                el="section"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}

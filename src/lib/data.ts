@@ -308,7 +308,7 @@ export const scholarships = [
         subtitle: 'in',
         description: 'CSE with Aiml/ IOT/ Ds/ CS/ CSBS/ Robotics/ CC',
         amount: 'Up to 3,00,000/-',
-        image: '/images/scholarships/btech-cse.jpg',
+        image: '/images/scholarships/texture4.jpeg',
         aiHint: 'circuit board'
     },
     {
@@ -316,7 +316,7 @@ export const scholarships = [
         subtitle: 'in',
         description: 'ECE/ EE/ ME/ EEE/ IT/ Automobile',
         amount: 'Up to 3,00,000/-',
-        image: '/images/scholarships/btech-core.jpg',
+        image: '/images/scholarships/texture5.jpeg',
         aiHint: 'engineering gear'
     },
     {
@@ -324,7 +324,7 @@ export const scholarships = [
         subtitle: 'in',
         description: 'Biotechnology/ Biomedical/ SE',
         amount: 'Up to 3,00,000/-',
-        image: '/images/scholarships/btech-bio.jpg',
+        image: '/images/scholarships/texture6.jpeg',
         aiHint: 'dna strand'
     },
     {
@@ -332,7 +332,7 @@ export const scholarships = [
         subtitle: 'in',
         description: 'Digital marketing/ Travel & tourism management/ Enterpreneurship/ Sports management',
         amount: 'Up to 2,50,000/-',
-        image: '/images/scholarships/bba.jpg',
+        image: '/images/scholarships/bba.jpeg',
         aiHint: 'business chart'
     },
     {
@@ -340,7 +340,7 @@ export const scholarships = [
         subtitle: '',
         description: 'culinary Technology/ catering service',
         amount: 'Up to 1,00,000/-',
-        image: '/images/scholarships/hotel-management.jpg',
+        image: '/images/scholarships/hotel.jpeg',
         aiHint: 'luxury hotel'
     },
     {
@@ -348,7 +348,7 @@ export const scholarships = [
         subtitle: '',
         description: '',
         amount: 'Up to 2,50,000/-',
-        image: '/images/scholarships/hospital-management.jpg',
+        image: '/images/scholarships/hospital.jpeg',
         aiHint: 'hospital corridor'
     },
     {
@@ -356,7 +356,7 @@ export const scholarships = [
         subtitle: '',
         description: '',
         amount: 'Up to 2,50,000/-',
-        image: '/images/scholarships/bca.jpg',
+        image: '/images/scholarships/bca.jpeg',
         aiHint: 'laptop code'
     },
     {
@@ -364,7 +364,7 @@ export const scholarships = [
         subtitle: 'in',
         description: 'BMLT/ OTT/ Optometry/ CCT/ Radiology',
         amount: 'Up to 2,00,000/-',
-        image: '/images/scholarships/bsc-paramedical.jpg',
+        image: '/images/scholarships/paramedical.jpeg',
         aiHint: 'medical equipment'
     },
     {
@@ -372,7 +372,7 @@ export const scholarships = [
         subtitle: '',
         description: '',
         amount: 'Up to 3,00,000/-',
-        image: '/images/scholarships/bsc-nursing.jpg',
+        image: '/images/scholarships/nursing.jpeg',
         aiHint: 'nurse care'
     },
     {
@@ -380,7 +380,7 @@ export const scholarships = [
         subtitle: 'in',
         description: 'B.pharm/ D.pharm',
         amount: 'Up to 3,00,000/-',
-        image: '/images/scholarships/pharmacy.jpg',
+        image: '/images/scholarships/pharmacy.jpeg',
         aiHint: 'pills medicine'
     },
     {
@@ -388,15 +388,15 @@ export const scholarships = [
         subtitle: '',
         description: '',
         amount: 'Up to 2,50,000/-',
-        image: '/images/scholarships/journalism.jpg',
+        image: '/images/scholarships/journalism.jpeg',
         aiHint: 'camera microphone'
     },
     {
         title: 'B.Sc',
         subtitle: 'in',
-        description: 'Animation & Vfx/ Gaming/ Film and television/ Fashion designing/ Grafix designing/ Interior designing',
+        description: 'Animation & Vfx/ Gaming/ Film and Television/ Fashion designing/ Graphics Designing/ Interior Designing',
         amount: 'Up to 3,00,000/-',
-        image: '/images/scholarships/bsc-design.jpg',
+        image: '/images/scholarships/design.jpeg',
         aiHint: 'art canvas'
     },
     {
@@ -404,7 +404,7 @@ export const scholarships = [
         subtitle: 'in',
         description: 'Nutrition/ Biotechnology/ microbiology/ Agriculture',
         amount: 'Up to 1,00,000/-',
-        image: '/images/scholarships/bsc-science.jpg',
+        image: '/images/scholarships/science.jpeg',
         aiHint: 'greenhouse plants'
     },
     {
@@ -412,7 +412,7 @@ export const scholarships = [
         subtitle: 'in',
         description: 'MBBS/ BDS/ veterinary',
         amount: 'Up to 4,00,000/-',
-        image: '/images/scholarships/medical.jpg',
+        image: '/images/scholarships/medical.jpeg',
         aiHint: 'doctor stethoscope'
     },
     {
@@ -420,15 +420,15 @@ export const scholarships = [
         subtitle: 'in',
         description: 'GNM/ ANM',
         amount: 'Up to 1,00,000/-',
-        image: '/images/scholarships/nursing.jpg',
+        image: '/images/scholarships/nursing2.jpeg',
         aiHint: 'nurse patient'
     },
     {
-        title: 'Master\'s (PG)',
+        title: 'Master\'s Degree',
         subtitle: 'in',
         description: 'MBA/ MCA/ MHA',
         amount: 'Up to 1,00,000/-',
-        image: '/images/scholarships/masters.jpg',
+        image: '/images/scholarships/masters.jpeg',
         aiHint: 'graduation cap'
     }
 ];

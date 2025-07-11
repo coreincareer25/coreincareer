@@ -40,7 +40,7 @@ export default function CollegesPage() {
       >
         <div className="absolute inset-0">
             <Image
-                src="/images/colleges/hero.jpg"
+                src="/images/colleges/hero1.jpg"
                 alt="Students walking on campus"
                 fill
                 className="object-cover"
