@@ -257,7 +257,7 @@ export default function ServicesPage() {
         />
 
         <ServiceSection
-            image="/images/services/classroom-lecture.jpg"
+            image="/images/services/classroom-lecture.png"
             imageAlt="Students in a classroom"
             aiHint="students classroom lecture"
             number="02."
@@ -267,7 +267,7 @@ export default function ServicesPage() {
         />
 
         <ServiceSection
-            image="/images/services/scholarship-money.jpg"
+            image="/images/services/scholarship-money.png"
             imageAlt="Scholarship assistance illustration"
             aiHint="scholarship money illustration"
             number="03."
@@ -282,7 +282,7 @@ export default function ServicesPage() {
         </ServiceSection>
     
         <ServiceSection
-            image="/images/services/student-loan.jpg"
+            image="/images/services/student-loan.png"
             imageAlt="Student loan guidance"
             aiHint="student loan concept"
             number="04."
@@ -316,7 +316,7 @@ export default function ServicesPage() {
       
 
       <MotionWrapper
-        as="section"
+        el="section"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
