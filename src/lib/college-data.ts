@@ -2,7 +2,7 @@ export const collegeData = {
     engineering: {
       title: 'Engineering',
       colleges: [
-        { name: 'IEM Salt Lake', image: 'https://placehold.co/600x400.png' },
+        { name: 'IEM Salt Lake', image: '' },
         { name: 'IEM Newtown', image: 'https://placehold.co/600x400.png' },
         { name: 'Manipal University', image: 'https://placehold.co/600x400.png' },
         { name: 'Adamas University', image: 'https://placehold.co/600x400.png' },
