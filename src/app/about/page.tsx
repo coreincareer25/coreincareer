@@ -45,7 +45,7 @@ export default function AboutPage() {
             >
                 <div className="absolute inset-0">
                     <Image
-                        src="/images/about/about-header.jpeg"
+                        src="/images/about/about-header.jpg"
                         alt="Abstract background"
                         fill
                         className="object-cover"
@@ -77,7 +77,7 @@ export default function AboutPage() {
                         >
                             <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
                                 <Image
-                                    src="/images/about/story-vision.jpg"
+                                    src="/images/about/story-vision.png"
                                     alt="Career counseling session"
                                     fill
                                     className="object-cover"
