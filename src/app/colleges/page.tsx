@@ -91,10 +91,10 @@ export default function CollegesPage() {
                                 <MotionWrapper el="div" variants={cardVariants} key={index}>
                                   <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
                                     <div className="relative h-40 w-full">
-                                      <Image src="/images/colleges/campus.jpg" alt={college} fill className="object-cover" data-ai-hint="university campus" />
+                                      <Image src={college.image} alt={college.name} fill className="object-cover" data-ai-hint="university campus" />
                                     </div>
                                     <CardHeader className="flex-grow">
-                                      <CardTitle className="text-lg font-semibold">{college}</CardTitle>
+                                      <CardTitle className="text-lg font-semibold">{college.name}</CardTitle>
                                     </CardHeader>
                                     <CardFooter>
                                       <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
@@ -124,10 +124,10 @@ export default function CollegesPage() {
                             <MotionWrapper el="div" variants={cardVariants} key={index}>
                               <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
                                 <div className="relative h-40 w-full">
-                                  <Image src="/images/colleges/campus.jpg" alt={college} fill className="object-cover" data-ai-hint="university campus" />
+                                  <Image src={college.image} alt={college.name} fill className="object-cover" data-ai-hint="university campus" />
                                 </div>
                                 <CardHeader className="flex-grow">
-                                  <CardTitle className="text-lg font-semibold">{college}</CardTitle>
+                                  <CardTitle className="text-lg font-semibold">{college.name}</CardTitle>
                                 </CardHeader>
                                 <CardFooter>
                                   <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
