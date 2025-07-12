@@ -500,14 +500,14 @@ const bcaColleges = [
     'Adamas University',
     'Supreme Knowledge Foundation',
     'Amity University',
-    'jis university',
+    'JIS University',
 ];
 
 const mcaColleges = [
     'IEM',
-    'JIS university',
+    'JIS University',
     'Brainware University',
-    'Adamas university',
+    'Adamas University',
     'Techno India Salt Lake',
     'GNIT',
     'Heritage',
@@ -553,14 +553,14 @@ const bhmColleges = [
 
 const hotelManagementColleges = [
     'EIILM',
-    'GNIHM',
+    'Guru Nanak Institute of Hotel Management',
     'IIHM',
     'IIIHM',
     'Techno India Salt Lake',
-    'SNU',
-    'NSHM kolkata',
+    'Sister Nivedita University (SNU)',
+    'NSHM Kolkata',
     'BSTM Chuchura',
-    'Supreme mankundu',
+    'Supreme Mankundu',
 ];
 
 const bbaSportsManagementColleges = [
@@ -594,140 +594,140 @@ const mbaColleges = [
     'EIILM',
     'IEM',
     'Techno India Salt Lake',
-    'BIBS',
-    'Asmi business School',
-    'CBS',
-    'FIEM',
-    'GLOBSYN',
+    'Bengal Institute of Business Studies (BIBS)',
+    'ASMi Business School',
+    'Calcutta Business School',
+    'Future Institute of Engineering and Management',
+    'Globsyn Business School',
     'Adamas University',
-    'Praxis',
-    'IMI-K',
+    'Praxis Business School',
+    'IMI-Kolkata',
     'St. Xavier\'s University',
     'Swami Vivekananda University (SVU)',
-    'MCKV',
+    'MCKV Institute of Engineering',
     'Sister Nivedita University (SNU)',
     'Brainware University',
-    'KIAMS',
-    'RCM',
-    'IBA',
-    'ISME',
-    'IIBS',
-    'ABBS',
-    'AIMS',
+    'Kirloskar Institute of Advanced Management Studies',
+    'Regional College of Management',
+    'Indus Business Academy (IBA)',
+    'International School of Management Excellence (ISME)',
+    'International Institute of Business Studies (IIBS)',
+    'Acharya Bangalore B-School (ABBS)',
+    'Acharya Institute of Management and Sciences (AIMS)',
     'Alliance University',
     'IZEE Business School',
-    'Jain University',
-    'GIBS',
-    'NITTE',
+    'JAIN (Deemed-to-be University)',
+    'GIBS Business School, Bangalore Campus',
+    'NITTE University',
     'CMR University',
-    'RIIM',
-    'PIBM',
-    'ISMS',
-    'ITM Navi Mumbai',
-    'UBS',
-    'DY Patil Pune',
-    'Lexicon MILE',
-    'PBS',
-    'Welingkar Mumbai',
+    'Ramachandran International Institute Of Management',
+    'Pune Institute of Business Management (PIBM)',
+    'ISMS Pune',
+    'ITM Business School Navi Mumbai',
+    'Universal Business School (UBS)',
+    'Dr. D. Y. Patil Vidyapeeth, Pune',
+    'Lexicon MILE - Management Institute of Leadership and Excellence',
+    'Pune Business School',
+    'Welingkar Institute of Management Development and Research',
     'Atlas University',
-    'FOSTIIMA',
-    'Jaipuria',
+    'FOSTIIMA Business School',
+    'Jaipuria Institute of Management',
     'IILM University',
     'Asia Pacific Institute of Management',
     'SOIL Institute of Management',
-    'GNIOT',
-    'GL Bajaj',
-    'ITS',
-    'VJIM',
+    'GNIOT MBA Institute',
+    'GL Bajaj Institute of Management and Research',
+    'I.T.S College Mohan Nagar Ghaziabad',
+    'Vignana Jyothi Institute Of Management',
     'Siva Sivani Institute of Management',
 ];
 
 const mhaColleges = [
-    'ISHM',
-    'NSHM kolkata',
-    'SVU',
+    'ISHM - International School Of Hospitality Management',
+    'NSHM Kolkata',
+    'Swami Vivekananda University (SVU)',
     'Brainware University',
-    'IIHM',
-    'IISWBM'
+    'IIHM Kolkata',
+    'IISWBM - Indian Institute of Social Welfare and Business Management',
 ];
 
 const bbaLlbColleges = [
-    'ADAMAS UNIVERSITY',
+    'Adamas University',
     'JIS University',
     'Brainware University',
-    'SVU',
-    'TNU',
-    'SNU',
+    'Swami Vivekananda University (SVU)',
+    'The Neotia University  (TNU)',
+    'Sister Nivedita University (SNU)',
     'Amity University'
 ];
 
 const baLlbColleges = [
-    'ADAMAS UNIVERSITY',
+    'Adamas University',
     'Brainware University',
-    'SVU',
-    'TNU',
-    'SNU',
+    'Swami Vivekananda University (SVU)',
+    'TThe Neotia University (TNU)',
+    'Sister Nivedita University (SNU)',
     'Amity University'
 ];
 
 const llbColleges = [
-    'ADAMAS UNIVERSITY',
+    'Adamas University',
     'JIS University',
     'Brainware University',
-    'SVU',
-    'TNU',
-    'SNU',
+    'Swami Vivekananda University (SVU)',
+    'The Neotia University (TNU)',
+    'Sister Nivedita University (SNU)',
     'Amity University'
 ];
 
 const bcomLlbColleges = [
-    'SNU',
+    'Sister Nivedita University (SNU)',
     'Amity University'
 ];
 
 const bscMicrobiologyColleges = [
-    'SVU',
+    'Swami Vivekananda University (SVU)',
     'Brainware University',
-    'Adamas university',
-    'jis university',
-    'SNU',
-    'TNU',
-    'GNIPST'
+    'Adamas University',
+    'JIS University',
+    'Sister Nivedita University (SNU)',
+    'The Neotia University (TNU)',
+    'Guru Nanak Institute of Pharmaceutical Science and Technology (GNIPST)',
 ];
 
 const bscBiotechnologyOthersColleges = [
-    'SVU',
+    'Swami Vivekananda University (SVU)',
     'Brainware University',
-    'Adamas university',
-    'jis university',
-    'SNU',
-    'TNU',
-    'GNIPST'
+    'Adamas University',
+    'JIS University',
+    'Sister Nivedita University (SNU)',
+    'The Neotia University (TNU)',
+    'Guru Nanak Institute of Pharmaceutical Science and Technology (GNIPST)'
 ];
 
 const bscForensicScienceColleges = [
-    'ADAMAS UNIVERSITY',
-    'SNU',
+    'Adamas University',
+    'Sister Nivedita University (SNU)',
 ];
 
 const bscAgricultureColleges = [
-    'ADAMAS UNIVERSITY',
+    'Adamas University',
     'Brainware University',
-    'SVU',
-    'SNU',
-    'JIS university',
-    'jis Kalyani',
-    'TNU',
+    'Swami Vivekananda University (SVU)',
+    'Sister Nivedita University (SNU)',
+    'JIS University',
+    'JIS Kalyani',
+    'The Neotia University (TNU)',
 ];
 
 const bscNutritionColleges = [
-    'ADAMAS UNIVERSITY',
+    'Adamas University',
     'Brainware University',
-    'SVU',
-    'SNU',
-    'JIS university',
-    'jis Kalyani',
-    'TNU',
+    'Swami Vivekananda University (SVU)',
+    'Sister Nivedita University (SNU)',
+    'JIS University',
+    'JIS Kalyani',
+    'The Neotia University (TNU)',
 ];
 
 export const courseData: { [key: string]: Course[] } = {
