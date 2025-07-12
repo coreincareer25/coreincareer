@@ -11,25 +11,25 @@ import { MotionWrapper } from "@/components/motion-wrapper";
 const qnaModel = [
     {
         number: "01.",
-        image: "/images/psychometric/career-passion.jpg",
+        image: "/images/psychometric-testing/career-passion.png",
         aiHint: "career passion",
         description: "Choosing a career based on interests ensures long-term passion and growth, while marks reflect current strengths. Passion fuels perseverance—choose interest for a fulfilling future."
     },
     {
         number: "02.",
-        image: "/images/psychometric/informed-decision.jpg",
+        image: "/images/psychometric-testing/informed-decision.png",
         aiHint: "informed decision",
         description: "Listen to friends and relatives, but make your own informed decision. It's your life—choose what aligns with your goals, values, and interests."
     },
     {
         number: "03.",
-        image: "/images/psychometric/career-questions.jpg",
+        image: "/images/psychometric-testing/career-questions.png",
         aiHint: "career questions",
         description: "After 12th, ask: What am I truly passionate about? Should I follow trends or my dreams? The right questions guide you to the right career path."
     },
     {
         number: "04.",
-        image: "/images/psychometric/offline-counseling.jpg",
+        image: "/images/psychometric-testing/offline-counseling.png",
         aiHint: "offline counseling",
         description: "Offline counselling offers face-to-face interaction, builds trust, and ensures deeper emotional connection—something online sessions often lack. Personal guidance feels more real and impactful in person."
     },
@@ -164,7 +164,7 @@ export default function PsychometricTestingPage() {
                         {qnaModel.map((item) => (
                             <MotionWrapper el="div" variants={cardVariants} key={item.number}>
                                 <Card className="flex flex-col overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300 ease-in-out h-full">
-                                    <div className="relative h-48 w-full">
+                                    <div className="relative h-64 w-full">
                                         <Image
                                             src={item.image}
                                             alt={item.description.substring(0, 50)}

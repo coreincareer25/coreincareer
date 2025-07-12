@@ -175,7 +175,7 @@ export const collegeData = {
           colleges: [
             { name: 'FOSTIIMA Business School', image: '/images/colleges/fostiima.jpeg' },
             { name: 'Jaipuria Institute of Management', image: '/images/colleges/jaipuria.jpeg' },
-            { name: 'IILM Institute for Higher Education', image: '/images/colleges/' },
+            { name: 'IILM Institute for Higher Education', image: '/images/colleges/iilm.jpeg' },
             { name: 'Asia Pacific Institute of Management (APIM)', image: '/images/colleges/asia-pacific.jpeg' }
           ]
         },
