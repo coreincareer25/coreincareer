@@ -404,7 +404,7 @@ const bscMedicalLabTechColleges = [
     'Brainware University',
     'iLEAD Kolkata',
     'Adamas University',
-    'GNIPST',
+    'Guru Nanak Institute of Pharmaceutical Science and Technology (GNIPST)',
     'Supreme Knowledge Foundation'
 ];
 
@@ -509,9 +509,9 @@ const mcaColleges = [
     'Brainware University',
     'Adamas University',
     'Techno India Salt Lake',
-    'GNIT',
-    'Heritage',
-    'Future',
+    'Guru Nanak Institute of Technology (GNIT)',
+    'Heritage Institute of Technology',
+    'Future Institute of Engineering and Management',
 ];
 
 const bbaColleges = [
@@ -554,13 +554,12 @@ const bhmColleges = [
 const hotelManagementColleges = [
     'EIILM',
     'Guru Nanak Institute of Hotel Management',
-    'IIHM',
-    'IIIHM',
+    'IIHM Kolkata',
     'Techno India Salt Lake',
     'Sister Nivedita University (SNU)',
-    'NSHM Kolkata',
-    'BSTM Chuchura',
-    'Supreme Mankundu',
+    'NSHM Knowledge Campus, Kolkata',
+    'Bengal School of Technology & Management Chuchura',
+    'Supreme Knowledge Foundation',
 ];
 
 const bbaSportsManagementColleges = [
