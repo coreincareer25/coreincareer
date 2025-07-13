@@ -118,12 +118,7 @@ export default function RecommendationsPageContent() {
       <section className="py-16 md:py-20 overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-              <MotionWrapper
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={sectionVariants}
-              >
+              <div>
                 <Card className="shadow-lg md:sticky md:top-24">
                     <CardHeader>
                     <CardTitle className="font-headline text-2xl">Tell Us About You</CardTitle>
@@ -178,7 +173,7 @@ export default function RecommendationsPageContent() {
                     </Form>
                     </CardContent>
                 </Card>
-              </MotionWrapper>
+              </div>
 
               <MotionWrapper
                   initial="hidden"
