@@ -14,42 +14,42 @@ const qnaModel = [
         icon: MessageSquareQuote,
         title: "Interest Over Marks",
         description: "Choosing a career based on interests ensures long-term passion and growth, while marks reflect current strengths. Passion fuels perseverance—choose interest for a fulfilling future.",
-        image: "https://placehold.co/600x400.png",
+        image: "/images/psychometric-testing/career-passion.png",
         aiHint: "student thinking career",
     },
     {
         icon: Users,
         title: "Informed Decision-Making",
         description: "Listen to friends and relatives, but make your own informed decision. It's your life—choose what aligns with your goals, values, and interests.",
-        image: "https://placehold.co/600x400.png",
+        image: "/images/psychometric-testing/informed-decision.png",
         aiHint: "crossroads sign decision",
     },
     {
         icon: HelpCircle,
         title: "Asking the Right Questions",
         description: "After 12th, ask: What am I truly passionate about? Should I follow trends or my dreams? The right questions guide you to the right career path.",
-        image: "https://placehold.co/600x400.png",
+        image: "/images/psychometric-testing/career-questions.png",
         aiHint: "question mark lightbulb",
     },
     {
         icon: ShieldCheck,
         title: "The Value of Personal Connection",
         description: "Offline counselling offers face-to-face interaction, builds trust, and ensures deeper emotional connection—something online sessions often lack. Personal guidance feels more real and impactful in person.",
-        image: "https://placehold.co/600x400.png",
+        image: "/images/psychometric-testing/offline-counseling.png",
         aiHint: "handshake trust",
     },
     {
         icon: BrainCircuit,
         title: "Character Defines Success",
         description: "True status isn't wealth or fame—it's character, integrity, and how you treat others. Respect, kindness, and values define real success, not material possessions or social media likes.",
-        image: "https://placehold.co/600x400.png",
+        image: "/images/psychometric-testing/character-integrity.jpeg",
         aiHint: "mountain peak success",
     },
     {
         icon: GraduationCap,
         title: "Education Empowers Minds",
         description: "Education empowers minds, opens doors to opportunity, and builds a better society. It's not just about marks—it's the foundation for critical thinking, growth, and lifelong success.",
-        image: "https://placehold.co/600x400.png",
+        image: "/images/psychometric-testing/education-empowerment.png",
         aiHint: "open book knowledge",
     }
 ];
@@ -75,7 +75,7 @@ const FeatureSection = ({
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-xl"
+        className="relative h-80 md:h-[30rem] w-full overflow-hidden rounded-lg shadow-xl"
       >
         <Image src={item.image} alt={item.title} fill className="object-cover object-center" data-ai-hint={item.aiHint} />
       </MotionWrapper>
