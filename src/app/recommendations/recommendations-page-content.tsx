@@ -32,6 +32,17 @@ const formSchema = z.object({
   careerAspirations: z.string().min(10, { message: "Please describe your career aspirations." }),
 });
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+};
+
+const heroSectionVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.7 }
+};
+
 export default function RecommendationsPageContent() {
   const { toast } = useToast();
   const [recommendations, setRecommendations] = useState<PersonalizedRecommendationsOutput | null>(null);
@@ -72,18 +83,13 @@ export default function RecommendationsPageContent() {
     }
   }
 
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-  };
-
   return (
     <div className="bg-background">
       <MotionWrapper
-        as="section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
+        el="section"
+        initial={heroSectionVariants.initial}
+        animate={heroSectionVariants.animate}
+        transition={heroSectionVariants.transition}
         className="relative py-20 overflow-hidden"
       >
         <div className="absolute inset-0 h-full w-full">
