@@ -28,7 +28,7 @@ export default function CoursesPageContent() {
       >
         <div className="absolute inset-0 h-full w-full">
             <Image
-                src="https://placehold.co/1920x1080.png"
+                src="/images/courses/hero.jpg"
                 alt="Open book in a library"
                 fill
                 className="object-cover object-center"

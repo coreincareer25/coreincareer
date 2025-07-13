@@ -145,7 +145,7 @@ export default function ServicesPageContent() {
       >
         <div className="absolute inset-0 h-full w-full">
             <Image
-                src="https://placehold.co/1920x1080.png"
+                src="/images/about/about-header.jpeg"
                 alt="Person helping another person"
                 fill
                 className="object-cover object-center"
@@ -217,7 +217,7 @@ export default function ServicesPageContent() {
                 className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-xl"
             >
               <Image
-                src="https://placehold.co/800x600.png"
+                src="/images/services/counseling-sign.jpg"
                 alt="Counselling Services Sign"
                 fill
                 className="object-cover object-center"
@@ -248,7 +248,7 @@ export default function ServicesPageContent() {
       </MotionWrapper>
 
         <ServiceSection
-            image="https://placehold.co/800x600.png"
+            image="/images/services/career-choice.jpg"
             imageAlt="Career counselling illustration"
             aiHint="career choice illustration"
             number="01."
@@ -257,7 +257,7 @@ export default function ServicesPageContent() {
         />
 
         <ServiceSection
-            image="https://placehold.co/800x600.png"
+            image="/images/services/classroom-lecture.png"
             imageAlt="Students in a classroom"
             aiHint="students classroom lecture"
             number="02."
@@ -267,7 +267,7 @@ export default function ServicesPageContent() {
         />
 
         <ServiceSection
-            image="https://placehold.co/800x600.png"
+            image="/images/services/scholarship-money.png"
             imageAlt="Scholarship assistance illustration"
             aiHint="scholarship money illustration"
             number="03."
@@ -282,7 +282,7 @@ export default function ServicesPageContent() {
         </ServiceSection>
     
         <ServiceSection
-            image="https://placehold.co/800x600.png"
+            image="/images/services/student-loan.png"
             imageAlt="Student loan guidance"
             aiHint="student loan concept"
             number="04."
@@ -292,7 +292,7 @@ export default function ServicesPageContent() {
         />
 
         <ServiceSection
-            image="https://placehold.co/800x600.png"
+            image="/images/psychometric-testing/student-exam.jpeg"
             imageAlt="Entrance exam illustration"
             aiHint="student exam illustration"
             number="05."

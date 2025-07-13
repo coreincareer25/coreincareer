@@ -45,7 +45,7 @@ export default function AboutPageContent() {
             >
                 <div className="absolute inset-0 h-full w-full">
                     <Image
-                        src="https://placehold.co/1920x1080.png"
+                        src="/images/about/about-header.jpg"
                         alt="Abstract background"
                         fill
                         className="object-cover object-center"
@@ -77,7 +77,7 @@ export default function AboutPageContent() {
                         >
                             <div className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-lg">
                                 <Image
-                                    src="https://placehold.co/800x600.png"
+                                    src="/images/about/story-vision.png"
                                     alt="Career counseling session"
                                     fill
                                     className="object-cover object-center"

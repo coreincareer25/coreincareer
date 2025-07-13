@@ -85,7 +85,7 @@ export default function PsychometricTestingPageContent() {
             >
                 <div className="absolute inset-0 h-full w-full">
                     <Image
-                        src="https://placehold.co/1920x1080.png"
+                        src="/images/psychometric-testing/hero.jpeg"
                         alt="Brain with gears"
                         fill
                         className="object-cover object-center"
@@ -134,7 +134,7 @@ export default function PsychometricTestingPageContent() {
                             className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-lg"
                         >
                             <Image
-                                src="https://placehold.co/800x600.png"
+                                src="/images/psychometric-testing/psychometric-test.jpeg"
                                 alt="Psychometric test concept"
                                 fill
                                 className="object-cover object-center"

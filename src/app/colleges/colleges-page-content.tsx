@@ -40,7 +40,7 @@ export default function CollegesPageContent() {
       >
         <div className="absolute inset-0 h-full w-full">
             <Image
-                src="https://placehold.co/1920x1080.png"
+                src="/images/courses/hero1.jpg"
                 alt="Students walking on campus"
                 fill
                 className="object-cover object-center"

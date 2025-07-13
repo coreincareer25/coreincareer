@@ -123,7 +123,7 @@ export default function ContactPageContent() {
         >
             <div className="absolute inset-0 h-full w-full">
                 <Image
-                    src="https://placehold.co/1920x1080.png"
+                    src="/images/contact/hero.jpg"
                     alt="Person on a call"
                     fill
                     className="object-cover object-center"

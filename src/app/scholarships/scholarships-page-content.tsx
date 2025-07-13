@@ -35,7 +35,7 @@ export default function ScholarshipsPageContent() {
   return (
     <div className="bg-background">
       <MotionWrapper
-        as="section"
+        el="section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
@@ -43,7 +43,7 @@ export default function ScholarshipsPageContent() {
       >
         <div className="absolute inset-0 h-full w-full">
             <Image
-                src="https://placehold.co/1920x1080.png"
+                src="/images/scholarships/hero.jpeg"
                 alt="Graduation cap and money"
                 fill
                 className="object-cover object-center"
@@ -65,7 +65,7 @@ export default function ScholarshipsPageContent() {
       </MotionWrapper>
 
       <MotionWrapper
-        as="section"
+        el="section"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
