@@ -86,12 +86,12 @@ export default function RecommendationsPage() {
         transition={{ duration: 0.7 }}
         className="relative py-20 overflow-hidden"
       >
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 h-full w-full">
             <Image
                 src="/images/recommendations/hero.jpg"
                 alt="AI brain illustration"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 data-ai-hint="ai brain"
                 priority
             />
@@ -109,7 +109,7 @@ export default function RecommendationsPage() {
         </div>
       </MotionWrapper>
 
-      <section className="py-20 overflow-hidden">
+      <section className="py-16 md:py-20 overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
             <MotionWrapper
                 initial="hidden"
@@ -118,7 +118,7 @@ export default function RecommendationsPage() {
                 variants={sectionVariants}
                 className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
             >
-            <Card className="shadow-lg sticky top-24">
+            <Card className="shadow-lg md:sticky md:top-24">
                 <CardHeader>
                 <CardTitle className="font-headline text-2xl">Tell Us About You</CardTitle>
                 <CardDescription>The more details you provide, the better the recommendations.</CardDescription>
@@ -224,4 +224,5 @@ export default function RecommendationsPage() {
     </div>
   );
 }
-      
+
+    

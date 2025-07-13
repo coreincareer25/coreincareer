@@ -41,12 +41,12 @@ export default function ScholarshipsPage() {
         transition={{ duration: 0.7 }}
         className="relative py-20 overflow-hidden"
       >
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 h-full w-full">
             <Image
                 src="/images/scholarships/hero.jpeg"
                 alt="Graduation cap and money"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 data-ai-hint="graduation cap"
                 priority
             />
@@ -70,7 +70,7 @@ export default function ScholarshipsPage() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         variants={sectionVariants}
-        className="py-20"
+        className="py-16 md:py-20"
       >
         <div className="container mx-auto max-w-7xl px-4">
           <MotionWrapper
@@ -82,30 +82,30 @@ export default function ScholarshipsPage() {
           >
             {scholarships.map((scholarship) => (
               <MotionWrapper el="div" variants={cardVariants} key={scholarship.title + scholarship.description}>
-                <div className="relative flex flex-col md:flex-row items-center justify-between rounded-lg shadow-lg overflow-hidden h-64 md:h-48 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-                    <div className="absolute inset-0">
+                <div className="relative flex flex-col md:flex-row items-stretch rounded-lg shadow-lg overflow-hidden h-auto md:h-48 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+                    <div className="relative h-48 md:h-full w-full md:w-2/3">
                         <Image
                             src={scholarship.image}
                             alt={scholarship.title}
                             fill
-                            className="object-cover"
+                            className="object-cover object-center"
                             data-ai-hint={scholarship.aiHint}
                         />
                          <div className="absolute inset-0 bg-black/40" />
                     </div>
-                    <div className="relative flex-1 p-6 text-white text-left h-full flex flex-col justify-center">
+                    <div className="absolute inset-0 md:relative md:inset-auto flex-1 p-6 text-white text-left h-full flex flex-col justify-center bg-black/40 md:bg-transparent">
                         <div>
-                            <span className="text-3xl font-bold text-primary font-serif">{scholarship.title}</span>
-                            {scholarship.subtitle && <span className="text-xl ml-2 text-gray-300 italic">{scholarship.subtitle}</span>}
+                            <span className="text-2xl md:text-3xl font-bold text-primary font-serif">{scholarship.title}</span>
+                            {scholarship.subtitle && <span className="text-lg md:text-xl ml-2 text-gray-300 italic">{scholarship.subtitle}</span>}
                         </div>
                         {scholarship.description && (
-                            <p className="text-gray-300 mt-2 max-w-sm">{scholarship.description}</p>
+                            <p className="text-gray-300 mt-2 max-w-sm text-sm md:text-base">{scholarship.description}</p>
                         )}
                     </div>
-                    <div className="relative p-6 bg-green-500 text-white font-bold h-full flex items-center justify-center text-center w-full md:w-56">
+                    <div className="relative p-4 md:p-6 bg-green-500 text-white font-bold h-auto md:h-full flex items-center justify-center text-center w-full md:w-56">
                         <div className="flex flex-col">
-                            <span className="text-lg">SCHOLARSHIP</span>
-                            <span className="text-xl">{scholarship.amount}</span>
+                            <span className="text-base md:text-lg">SCHOLARSHIP</span>
+                            <span className="text-lg md:text-xl">{scholarship.amount}</span>
                         </div>
                     </div>
                 </div>
@@ -127,4 +127,5 @@ export default function ScholarshipsPage() {
     </div>
   );
 }
-      
+
+    

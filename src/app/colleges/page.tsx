@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import Balancer from "react-wrap-balancer";
@@ -38,12 +38,12 @@ export default function CollegesPage() {
         transition={{ duration: 0.7 }}
         className="relative py-20 overflow-hidden"
       >
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 h-full w-full">
             <Image
                 src="/images/colleges/hero1.jpg"
                 alt="Students walking on campus"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 data-ai-hint="university building"
                 priority
             />
@@ -66,7 +66,7 @@ export default function CollegesPage() {
           <Tabs defaultValue="engineering" className="w-full">
               <TabsList className="flex h-auto flex-wrap justify-center gap-2 bg-transparent p-0">
                 {Object.entries(collegeData).map(([key, data]) => (
-                  <TabsTrigger key={key} value={key} className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">
+                  <TabsTrigger key={key} value={key} className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white px-3 py-1.5 text-sm md:px-4 md:py-2">
                     {data.title}
                   </TabsTrigger>
                 ))}
@@ -79,24 +79,24 @@ export default function CollegesPage() {
                       <div className="space-y-12">
                         {Object.values(data.subCategories).map(subCat => (
                           <div key={subCat.title}>
-                            <h2 className="text-xl font-semibold mb-6 text-center">{subCat.title}</h2>
+                            <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">{subCat.title}</h2>
                             <MotionWrapper
                               variants={cardContainerVariants}
                               initial="hidden"
                               whileInView="visible"
                               viewport={{ once: true, amount: 0.1 }}
-                              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                             >
                               {subCat.colleges.map((college, index) => (
                                 <MotionWrapper el="div" variants={cardVariants} key={index}>
                                   <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
                                     <div className="relative h-40 w-full">
-                                      <Image src={college.image} alt={college.name} fill className="object-cover" data-ai-hint="university campus" />
+                                      <Image src={college.image} alt={college.name} fill className="object-cover object-center" data-ai-hint="university campus" />
                                     </div>
-                                    <CardHeader className="flex-grow">
-                                      <CardTitle className="text-lg font-semibold">{college.name}</CardTitle>
+                                    <CardHeader className="flex-grow p-4">
+                                      <CardTitle className="text-base font-semibold">{college.name}</CardTitle>
                                     </CardHeader>
-                                    <CardFooter>
+                                    <CardFooter className="p-4">
                                       <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
                                         <Link href="/contact">Apply Now</Link>
                                       </Button>
@@ -118,18 +118,18 @@ export default function CollegesPage() {
                           initial="hidden"
                           whileInView="visible"
                           viewport={{ once: true, amount: 0.1 }}
-                          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                         >
                           {'colleges' in data && data.colleges && data.colleges.map((college, index) => (
                             <MotionWrapper el="div" variants={cardVariants} key={index}>
                               <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
                                 <div className="relative h-40 w-full">
-                                  <Image src={college.image} alt={college.name} fill className="object-cover" data-ai-hint="university campus" />
+                                  <Image src={college.image} alt={college.name} fill className="object-cover object-center" data-ai-hint="university campus" />
                                 </div>
-                                <CardHeader className="flex-grow">
-                                  <CardTitle className="text-lg font-semibold">{college.name}</CardTitle>
+                                <CardHeader className="flex-grow p-4">
+                                  <CardTitle className="text-base font-semibold">{college.name}</CardTitle>
                                 </CardHeader>
-                                <CardFooter>
+                                <CardFooter className="p-4">
                                   <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
                                     <Link href="/contact">Apply Now</Link>
                                   </Button>
@@ -149,4 +149,5 @@ export default function CollegesPage() {
     </div>
   );
 }
-      
+
+    

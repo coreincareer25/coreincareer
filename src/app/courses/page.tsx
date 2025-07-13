@@ -26,12 +26,12 @@ export default function CoursesPage() {
         transition={{ duration: 0.7 }}
         className="relative py-20 overflow-hidden"
       >
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 h-full w-full">
             <Image
                 src="/images/courses/hero.jpg"
                 alt="Open book in a library"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 data-ai-hint="lecture hall"
                 priority
             />
@@ -60,13 +60,13 @@ export default function CoursesPage() {
         >
           <Tabs defaultValue="engineering" className="w-full">
             <TabsList className="flex h-auto flex-wrap justify-center gap-2 bg-transparent p-0">
-              <TabsTrigger value="engineering" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Engineering</TabsTrigger>
-              <TabsTrigger value="medical" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Medical</TabsTrigger>
-              <TabsTrigger value="nursing" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Nursing</TabsTrigger>
-              <TabsTrigger value="paramedical" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Paramedical</TabsTrigger>
-              <TabsTrigger value="computational" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Computational</TabsTrigger>
-              <TabsTrigger value="management" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Management</TabsTrigger>
-              <TabsTrigger value="others" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white">Others</TabsTrigger>
+              <TabsTrigger value="engineering" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5">Engineering</TabsTrigger>
+              <TabsTrigger value="medical" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5">Medical</TabsTrigger>
+              <TabsTrigger value="nursing" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5">Nursing</TabsTrigger>
+              <TabsTrigger value="paramedical" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5">Paramedical</TabsTrigger>
+              <TabsTrigger value="computational" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5">Computational</TabsTrigger>
+              <TabsTrigger value="management" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5">Management</TabsTrigger>
+              <TabsTrigger value="others" className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5">Others</TabsTrigger>
             </TabsList>
             
             <div className="mt-8">
@@ -75,7 +75,7 @@ export default function CoursesPage() {
                         <Accordion type="single" collapsible className="w-full space-y-2">
                             {courseData[tabName].map((course, index) => (
                                 <AccordionItem key={course.name} value={`item-${index}`} className="border rounded-lg bg-white/80 backdrop-blur-sm shadow-sm px-4">
-                                    <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                                    <AccordionTrigger className="text-left font-semibold hover:no-underline text-sm md:text-base">
                                         {course.name}
                                     </AccordionTrigger>
                                     <AccordionContent>
@@ -235,8 +235,8 @@ export default function CoursesPage() {
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
                                                     {course.colleges.map((college, cIndex) => (
                                                         <div key={cIndex} className="bg-secondary/30 border border-secondary p-3 rounded-lg text-sm text-center font-medium text-secondary-foreground flex items-center justify-center gap-2">
-                                                            <School className="h-4 w-4 text-primary" />
-                                                            {college}
+                                                            <School className="h-4 w-4 text-primary flex-shrink-0" />
+                                                            <span className="flex-1">{college}</span>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -266,4 +266,5 @@ export default function CoursesPage() {
     </div>
   );
 }
-      
+
+    

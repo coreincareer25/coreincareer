@@ -121,12 +121,12 @@ export default function ContactPage() {
             transition={{ duration: 0.7 }}
             className="relative py-20 overflow-hidden"
         >
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 h-full w-full">
                 <Image
                     src="/images/contact/hero.jpg"
                     alt="Person on a call"
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                     data-ai-hint="customer support"
                     priority
                 />
@@ -144,7 +144,7 @@ export default function ContactPage() {
             </div>
         </MotionWrapper>
 
-        <section className="py-20 overflow-hidden">
+        <section className="py-16 md:py-20 overflow-hidden">
             <div className="container mx-auto max-w-7xl px-4">
                 <MotionWrapper
                     initial="hidden"
@@ -158,17 +158,17 @@ export default function ContactPage() {
                         <p className="text-muted-foreground">
                         Have any questions or inquiries? Reach out to us and we'll respond promptly. Your academic journey starts here.
                         </p>
-                        <div className="space-y-4 text-lg">
+                        <div className="space-y-4 text-base md:text-lg">
                             <div className="flex items-center gap-4">
-                                <Phone className="h-6 w-6 text-primary"/>
+                                <Phone className="h-6 w-6 text-primary flex-shrink-0"/>
                                 <span>Call Us: 9123307383 or 6289713594</span>
                             </div>
                             <div className="flex items-center gap-4">
-                                <Mail className="h-6 w-6 text-primary"/>
-                                <a href="mailto:coreincareer2025@gmail.com" className="hover:text-primary">coreincareer2025@gmail.com</a>
+                                <Mail className="h-6 w-6 text-primary flex-shrink-0"/>
+                                <a href="mailto:coreincareer2025@gmail.com" className="hover:text-primary break-all">coreincareer2025@gmail.com</a>
                             </div>
                             <div className="flex items-start gap-4">
-                                <MapPin className="h-6 w-6 text-primary mt-1"/>
+                                <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0"/>
                                 <span>Haridradanga Daspukur Dhar Prantik, Chandannagar(mc),Hooghly, West Bengal-712136</span>
                             </div>
                         </div>
@@ -322,13 +322,13 @@ export default function ContactPage() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="pb-20"
+        className="pb-16 md:pb-20"
       >
         <div className="container mx-auto max-w-7xl px-4">
             <h2 className="text-3xl font-bold font-headline text-center mb-12">
                 Find Us On The <span className="text-primary">Map</span>
             </h2>
-            <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl border">
+            <div className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-xl border">
                 <iframe
                     className="absolute top-0 left-0 h-full w-full"
                     src="https://maps.google.com/maps?q=Haridradanga%20Daspukur%20Dhar%20Prantik,%20Chandannagar,Hooghly,%20West%20Bengal-712136&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -344,4 +344,5 @@ export default function ContactPage() {
     </div>
   );
 }
-      
+
+    

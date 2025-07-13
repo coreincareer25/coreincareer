@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -6,7 +7,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import Balancer from 'react-wrap-balancer';
-import { advantages, testimonials, faqs, services, partners } from '@/lib/data';
+import { advantages, testimonials, faqs, partners } from '@/lib/data';
 import {
   Carousel,
   CarouselContent,
@@ -16,20 +17,10 @@ import {
 } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle, Award, FileText, Plane, School, Sparkles, UserCheck } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import React from 'react';
 import Autoplay from "embla-carousel-autoplay";
 import { MotionWrapper } from '@/components/motion-wrapper';
-
-
-const iconMap: { [key: string]: React.ElementType } = {
-  UserCheck,
-  School,
-  FileText,
-  Award,
-  Plane,
-  Sparkles,
-};
 
 const educationalPrograms = [
   {
@@ -87,12 +78,12 @@ export default function Home() {
   return (
     <main className="bg-white overflow-x-hidden">
       <section className="relative text-center pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 h-full w-full">
             <Image
                 src="/images/home/hero-group3.jpg"
                 alt="Empowered students"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 data-ai-hint="empowered students"
                 priority
             />
@@ -146,14 +137,14 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="py-20 bg-[#F3FAF7]"
+        className="py-16 md:py-20 bg-[#F3FAF7]"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <p className="font-semibold uppercase tracking-widest text-primary">
               WHAT WE OFFER
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+            <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">
               Our Unique Advantages Set Us Apart
             </h2>
           </div>
@@ -168,8 +159,7 @@ export default function Home() {
               <MotionWrapper el="div" variants={cardVariants} key={advantage.title}>
                 <Card
                   className={cn(
-                    'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full',
-                    // advantage.highlight ? 'bg-purple-100 border-primary' : 'bg-card'
+                    'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full'
                   )}
                 >
                   <CardContent className="p-0 flex flex-col items-center flex-1">
@@ -184,7 +174,7 @@ export default function Home() {
         </div>
       </MotionWrapper>
 
-      <section className="py-20 overflow-hidden">
+      <section className="py-16 md:py-20 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <MotionWrapper
@@ -202,7 +192,7 @@ export default function Home() {
                   {['/images/home/lab-students-1.jpeg','/images/home/lab-students-2.jpeg','/images/home/lab-students-3.jpeg','/images/home/lab-students-4.jpeg','/images/home/lab-students-5.jpeg','/images/home/lab-students-6.jpeg','/images/home/lab-students-7.jpeg','/images/home/lab-students-8.jpeg'].map((src, idx) => (
                     <CarouselItem key={src+idx}>
                       <div className="p-1">
-                        <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg group">
+                        <div className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-lg group">
                           <Image
                             src={src}
                             alt="Students in a lab"
@@ -215,8 +205,8 @@ export default function Home() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-4" />
-                <CarouselNext className="right-4" />
+                <CarouselPrevious className="left-2 md:left-4" />
+                <CarouselNext className="right-2 md:right-4" />
               </Carousel>
             </MotionWrapper>
             <MotionWrapper
@@ -226,7 +216,7 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <p className="font-semibold uppercase tracking-widest text-primary">WHO ARE WE</p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Our Journey and Commitment</h2>
+              <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">Our Journey and Commitment</h2>
               <p className="mt-4 text-muted-foreground">Core in Career was founded to bridge the gap between education and industry needs, providing students with the skills and knowledge to excel. We believe the foundation of a successful career lies in understanding yourself. Let us help you explore your inner strengths and match them to the right career path.</p>
               <Button asChild size="lg" className="mt-8 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
                 <Link href="/about">Read More</Link>
@@ -242,14 +232,14 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="py-20 bg-[#f9f4ff]"
+        className="py-16 md:py-20 bg-[#f9f4ff]"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <p className="font-semibold uppercase tracking-widest text-primary">
               OUR SERVICES
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+            <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">
               Explore Our Educational Programs
             </h2>
           </div>
@@ -265,12 +255,12 @@ export default function Home() {
                 <Card 
                   className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out flex flex-col h-full"
                 >
-                  <div className="relative h-64 w-full">
+                  <div className="relative h-56 w-full">
                     <Image
                       src={program.image}
                       alt={program.title}
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                       data-ai-hint={program.aiHint}
                     />
                   </div>
@@ -292,7 +282,7 @@ export default function Home() {
         </div>
       </MotionWrapper>
 
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-16 md:py-20 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <MotionWrapper
@@ -304,7 +294,7 @@ export default function Home() {
               <p className="font-semibold uppercase tracking-widest text-primary">
                 OUR PARTNERS
               </p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+              <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">
                 Our Partner Colleges And Institutions
               </h2>
               <p className="mt-4 text-muted-foreground">
@@ -320,7 +310,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap- md:gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
                 {partners.map((partner) => (
                   <div key={partner.name} className="flex items-center justify-center p-4 bg-purple-50 rounded-lg shadow-sm transition-transform hover:-translate-y-1 aspect-square">
                     <div className="relative w-full h-full">
@@ -340,7 +330,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#F3FAF7] overflow-hidden">
+      <section className="py-16 md:py-20 bg-[#F3FAF7] overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <MotionWrapper
@@ -349,12 +339,12 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="relative h-[30rem] w-full overflow-hidden rounded-lg shadow-lg">
+              <div className="relative h-80 md:h-[30rem] w-full overflow-hidden rounded-lg shadow-lg">
                 <Image
                   src="/images/home/education-innovation.jpeg"
                   alt="Innovative education solutions"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   data-ai-hint="education innovation"
                 />
               </div>
@@ -366,7 +356,7 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <p className="font-semibold uppercase tracking-widest text-primary">WHY WE STAND OUT</p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+              <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">
                 <Balancer>
                   Distinct Advantages of Partnering with Us
                 </Balancer>
@@ -397,12 +387,12 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="py-20 bg-secondary"
+        className="py-16 md:py-20 bg-secondary"
       >
           <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                   <p className="font-semibold uppercase tracking-widest text-primary">TESTIMONIALS</p>
-                  <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">What Our Students Say</h2>
+                  <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">What Our Students Say</h2>
               </div>
               <Carousel
                   opts={{ align: "start", loop: true }}
@@ -412,7 +402,7 @@ export default function Home() {
                   <CarouselContent>
                       {testimonials.map((testimonial, index) => (
                           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                              <div className="p-1">
+                              <div className="p-1 h-full">
                                   <Card className="h-full flex flex-col transition-shadow hover:shadow-xl">
                                       <CardContent className="p-6 flex-grow flex flex-col justify-between">
                                           <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
@@ -432,8 +422,8 @@ export default function Home() {
                           </CarouselItem>
                       ))}
                   </CarouselContent>
-                  <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2" />
-                  <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2" />
+                  <CarouselPrevious className="absolute left-[-20px] md:left-[-50px] top-1/2 -translate-y-1/2" />
+                  <CarouselNext className="absolute right-[-20px] md:right-[-50px] top-1/2 -translate-y-1/2" />
               </Carousel>
           </div>
       </MotionWrapper>
@@ -444,12 +434,12 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="py-20 bg-background"
+        className="py-16 md:py-20 bg-background"
       >
           <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center mb-12">
                   <p className="font-semibold uppercase tracking-widest text-primary">FAQs</p>
-                  <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Frequently Asked Questions</h2>
+                  <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">Frequently Asked Questions</h2>
               </div>
               <Accordion type="single" collapsible className="w-full">
                   {faqs.map((faq, index) => (
@@ -466,3 +456,5 @@ export default function Home() {
     </main>
   );
 }
+
+    

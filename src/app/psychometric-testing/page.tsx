@@ -5,7 +5,6 @@ import Balancer from "react-wrap-balancer";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { BrainCircuit } from "lucide-react";
 import React from "react";
@@ -92,9 +91,9 @@ export default function PsychometricTestingPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative h-[30rem] w-full overflow-hidden rounded-lg shadow-xl"
+            className="relative h-80 md:h-[30rem] w-full overflow-hidden rounded-lg shadow-xl"
           >
-            <Image src={image} alt={imageAlt} fill className="object-cover" data-ai-hint={aiHint} />
+            <Image src={image} alt={imageAlt} fill className="object-cover object-center" data-ai-hint={aiHint} />
           </MotionWrapper>
         );
       
@@ -133,12 +132,12 @@ export default function PsychometricTestingPage() {
                 transition={{ duration: 0.7 }}
                 className="relative py-20 overflow-hidden"
             >
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 h-full w-full">
                     <Image
                         src="/images/psychometric-testing/hero.jpeg"
                         alt="Brain with gears"
                         fill
-                        className="object-cover"
+                        className="object-cover object-center"
                         data-ai-hint="brain gears"
                         priority
                     />
@@ -156,7 +155,7 @@ export default function PsychometricTestingPage() {
                 </div>
             </MotionWrapper>
 
-            <section className="py-20 overflow-hidden">
+            <section className="py-16 md:py-20 overflow-hidden">
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <MotionWrapper
@@ -165,7 +164,7 @@ export default function PsychometricTestingPage() {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
                         >
-                            <h2 className="text-4xl font-black tracking-tight text-gray-900">Unlock Your Potential</h2>
+                            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900">Unlock Your Potential</h2>
                             <p className="mt-6 text-muted-foreground">
                                 Psychometric tests are a standard and scientific method used to measure your mental capabilities and behavioral style. These tests are designed to assess your suitability for different career paths based on your personality characteristics and cognitive abilities.
                             </p>
@@ -181,13 +180,13 @@ export default function PsychometricTestingPage() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg"
+                            className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-lg"
                         >
                             <Image
                                 src="/images/services/psychometric-test.jpeg"
                                 alt="Psychometric test concept"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-center"
                                 data-ai-hint="psychometric test concept"
                             />
                         </MotionWrapper>
@@ -205,7 +204,7 @@ export default function PsychometricTestingPage() {
             >
                 <div className="container mx-auto max-w-7xl px-4">
                     <BrainCircuit className="mx-auto h-12 w-12 text-primary" />
-                    <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Understand Yourself Better, Choose Smarter</h2>
+                    <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">Understand Yourself Better, Choose Smarter</h2>
                     <div className="mt-2 flex items-center justify-center gap-4 text-muted-foreground">
                         <WavyLine />
                         <span className="text-lg font-medium">Self-Discovery</span>
@@ -231,4 +230,5 @@ export default function PsychometricTestingPage() {
         </div>
     );
 }
-      
+
+    

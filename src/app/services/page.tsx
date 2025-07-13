@@ -101,9 +101,9 @@ export default function ServicesPage() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl"
+        className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-xl"
       >
-        <Image src={image} alt={imageAlt} fill className="object-cover" data-ai-hint={aiHint} />
+        <Image src={image} alt={imageAlt} fill className="object-cover object-center" data-ai-hint={aiHint} />
       </MotionWrapper>
     );
   
@@ -143,12 +143,12 @@ export default function ServicesPage() {
         transition={{ duration: 0.7 }}
         className="relative py-20 overflow-hidden"
       >
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 h-full w-full">
             <Image
                 src="/images/about/about-header.jpeg"
                 alt="Person helping another person"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 data-ai-hint="helping hand"
                 priority
             />
@@ -166,7 +166,7 @@ export default function ServicesPage() {
         </div>
       </MotionWrapper>
 
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-16 md:py-20 bg-white overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
           <MotionWrapper
               initial="hidden"
@@ -214,13 +214,13 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl"
+                className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-xl"
             >
               <Image
                 src="/images/services/counseling-sign.jpg"
                 alt="Counselling Services Sign"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 data-ai-hint="counselling services sign"
               />
             </MotionWrapper>
@@ -238,7 +238,7 @@ export default function ServicesPage() {
       >
           <div className="container mx-auto max-w-7xl px-4">
               <Snowflake className="mx-auto h-12 w-12 text-primary" />
-              <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Your Ambition, Our Mission</h2>
+              <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">Your Ambition, Our Mission</h2>
               <div className="mt-2 flex items-center justify-center gap-4 text-muted-foreground">
                   <WavyLine />
                   <span className="text-lg font-medium">Offerings</span>
@@ -321,7 +321,7 @@ export default function ServicesPage() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="py-20"
+        className="py-16 md:py-20"
       >
         <div className="container mx-auto max-w-7xl px-4">
             <MotionWrapper
@@ -356,4 +356,5 @@ export default function ServicesPage() {
     </div>
   );
 }
-      
+
+    

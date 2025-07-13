@@ -43,12 +43,12 @@ export default function AboutPage() {
                 transition={{ duration: 0.7 }}
                 className="relative py-20 overflow-hidden"
             >
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 h-full w-full">
                     <Image
                         src="/images/about/about-header.jpg"
                         alt="Abstract background"
                         fill
-                        className="object-cover"
+                        className="object-cover object-center"
                         data-ai-hint="team working"
                         priority
                     />
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 </div>
             </MotionWrapper>
 
-            <section className="py-20 overflow-hidden">
+            <section className="py-16 md:py-20 overflow-hidden">
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <MotionWrapper
@@ -75,12 +75,12 @@ export default function AboutPage() {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
                         >
-                            <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg">
+                            <div className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-lg">
                                 <Image
                                     src="/images/about/story-vision.png"
                                     alt="Career counseling session"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover object-center"
                                     data-ai-hint="career counseling illustration"
                                 />
                             </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                              viewport={{ once: true, amount: 0.3 }}
                              transition={{ duration: 0.5, ease: "easeOut" }}
                         >
-                            <h2 className="text-4xl font-black tracking-tight text-gray-900">Our Story and Vision</h2>
+                            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900">Our Story and Vision</h2>
                             <p className="mt-6 text-muted-foreground">
                                 Core in Career is a career counselling platform dedicated to helping individuals discover their true potential and align it with the right career path. We believe that successful careers are built from a strong understanding of one's core—skills, interests, values, and personality.
                             </p>
@@ -121,14 +121,14 @@ export default function AboutPage() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
-                className="py-20 bg-cyan-50"
+                className="py-16 md:py-20 bg-cyan-50"
             >
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="text-center mb-12">
                         <p className="font-semibold uppercase tracking-widest text-muted-foreground">
                             WHY CHOOSE US
                         </p>
-                        <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">
+                        <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">
                             Unique Value Propositions
                         </h2>
                     </div>
@@ -142,8 +142,7 @@ export default function AboutPage() {
                         {valuePropositions.map((prop) => (
                             <MotionWrapper el="div" variants={cardVariants} key={prop.title}>
                                 <Card className={cn(
-                                    'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full',
-                                    // prop.highlight ? 'bg-secondary' : 'bg-card'
+                                    'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full'
                                 )}>
                                     <CardContent className="p-0 flex flex-col items-center flex-1">
                                         <p className="text-primary font-bold text-lg">{prop.number}</p>
@@ -163,11 +162,11 @@ export default function AboutPage() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
-                className="py-20 bg-white"
+                className="py-16 md:py-20 bg-white"
             >
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-black tracking-tight text-gray-900">Our Mentors</h2>
+                        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900">Our Mentors</h2>
                         <p className="mt-4 text-lg text-muted-foreground max-w-4xl mx-auto">
                             At Core in Career, our mentors are the backbone of our success. They bring a wealth of experience, industry knowledge, and compassion to guide students and professionals at every stage of their journey.
                         </p>
@@ -201,7 +200,7 @@ export default function AboutPage() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
-                className="py-20 bg-primary/10"
+                className="py-16 md:py-20 bg-primary/10"
             >
                 <div className="container mx-auto max-w-7xl px-4 text-center">
                     <h2 className="text-3xl font-black tracking-tight text-gray-900">
@@ -220,8 +219,5 @@ export default function AboutPage() {
         </div>
     );
 }
-      
-
-    
 
     
