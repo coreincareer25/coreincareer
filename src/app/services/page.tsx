@@ -10,6 +10,16 @@ import Balancer from "react-wrap-balancer";
 import Image from "next/image";
 import Link from "next/link";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Services',
+  description: 'Explore the comprehensive services offered by Core in Career, including career counseling, college admission support, scholarship assistance, and entrance exam preparation.',
+  openGraph: {
+    title: 'Our Services | Core in Career',
+    description: 'Personalized guidance for every step of your educational journey.',
+  },
+};
 
 const iconMap: { [key: string]: React.ElementType } = {
   UserCheck,

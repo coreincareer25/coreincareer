@@ -11,8 +11,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Core in Career by JP Educational Service',
-  description: 'Your guide to educational options and services.',
+  title: {
+    default: 'Core in Career by JP Educational Service | Career Counseling',
+    template: '%s | Core in Career',
+  },
+  description: 'Expert career counseling, college guidance, and scholarship assistance. Discover your potential with Core in Career, powered by JP Educational Service.',
+  keywords: ['career counseling', 'college admission', 'scholarship assistance', 'psychometric testing', 'educational guidance', 'JP Educational Service'],
+  openGraph: {
+    title: 'Core in Career by JP Educational Service',
+    description: 'Your guide to educational options and services.',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.coreincareer.in', // Replace with your actual domain
+    siteName: 'Core in Career',
+    images: [
+      {
+        url: 'https://www.coreincareer.in/og-image.jpg', // Replace with your actual OG image URL
+        width: 1200,
+        height: 630,
+        alt: 'Core in Career Logo',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

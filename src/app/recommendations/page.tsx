@@ -25,6 +25,16 @@ import type { PersonalizedRecommendationsOutput } from "@/ai/flows/personalized-
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI-Powered Recommendations',
+  description: 'Get personalized course, college, and scholarship recommendations based on your interests, academic background, and career goals using our advanced AI tool.',
+  openGraph: {
+    title: 'AI-Powered Recommendations | Core in Career',
+    description: 'Let our AI guide you to the perfect educational path.',
+  },
+};
 
 const formSchema = z.object({
   interests: z.string().min(5, { message: "Please describe your interests." }),

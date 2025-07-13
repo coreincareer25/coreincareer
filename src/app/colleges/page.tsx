@@ -9,6 +9,16 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { collegeData } from "@/lib/college-data";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'College Profiles',
+  description: 'Explore detailed profiles of top colleges and universities for Engineering, Medical, Management, and more. Find your ideal institution with Core in Career.',
+  openGraph: {
+    title: 'College Profiles | Core in Career',
+    description: 'Find your ideal institution for Engineering, Medical, Management, and more.',
+  },
+};
 
 export default function CollegesPage() {
   const cardContainerVariants = {

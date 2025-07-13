@@ -9,6 +9,16 @@ import { cn } from "@/lib/utils";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about Core in Career\'s mission to empower individuals through personalized career counseling, our story, and the expert team dedicated to your success.',
+  openGraph: {
+    title: 'About Us | Core in Career',
+    description: 'Discover our story, vision, and the values that drive us to provide the best career guidance.',
+  },
+};
 
 export default function AboutPage() {
     const sectionVariants = {

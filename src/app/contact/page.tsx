@@ -23,6 +23,16 @@ import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 import Image from "next/image";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with the Core in Career team for a free consultation. Ask questions, get information, and start your journey to a successful career.',
+  openGraph: {
+    title: 'Contact Us | Core in Career',
+    description: 'Reach out for a free consultation and let us help you build your future.',
+  },
+};
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required." }),

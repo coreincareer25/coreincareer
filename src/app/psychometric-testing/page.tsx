@@ -8,6 +8,16 @@ import Link from "next/link";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { BrainCircuit } from "lucide-react";
 import React from "react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Psychometric Testing',
+  description: 'Discover your strengths and find the perfect career path with our science-backed psychometric assessments, including the Holland RIASEC model.',
+  openGraph: {
+    title: 'Psychometric Testing | Core in Career',
+    description: 'Unlock your potential and make informed career choices with our assessments.',
+  },
+};
 
 const qnaModel = [
     {

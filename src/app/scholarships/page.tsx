@@ -7,6 +7,16 @@ import Balancer from "react-wrap-balancer";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Scholarship Database',
+  description: 'Find financial aid and scholarship opportunities to support your educational journey. Explore our database for B.Tech, Medical, MBA, and other programs.',
+  openGraph: {
+    title: 'Scholarship Database | Core in Career',
+    description: 'Explore financial aid opportunities to support your education.',
+  },
+};
 
 export default function ScholarshipsPage() {
   const sectionVariants = {
