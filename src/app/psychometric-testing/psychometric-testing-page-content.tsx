@@ -9,7 +9,6 @@ import { MotionWrapper } from "@/components/motion-wrapper";
 import { BrainCircuit, GraduationCap, HelpCircle, MessageSquareQuote, ShieldCheck, Users } from "lucide-react";
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 const qnaModel = [
     {
