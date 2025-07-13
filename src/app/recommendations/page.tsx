@@ -90,7 +90,7 @@ export default function RecommendationsPage() {
   return (
     <div className="bg-background">
       <MotionWrapper
-        as="section"
+        el="section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
@@ -98,7 +98,7 @@ export default function RecommendationsPage() {
       >
         <div className="absolute inset-0 h-full w-full">
             <Image
-                src="/images/recommendations/hero.jpg"
+                src="/images/recommendations/hero.jpeg"
                 alt="AI brain illustration"
                 fill
                 className="object-cover object-center"
