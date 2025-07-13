@@ -1,18 +1,38 @@
 
-import type { Metadata } from 'next';
-import RecommendationsPageContent from './recommendations-page-content';
+"use client";
 
-export const metadata: Metadata = {
-  title: 'AI-Powered Recommendations',
-  description: 'Get personalized course, college, and scholarship recommendations based on your interests, academic background, and career goals using our advanced AI tool.',
-  openGraph: {
-    title: 'AI-Powered Recommendations | Core in Career',
-    description: 'Let our AI guide you to the perfect educational path.',
-  },
-};
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Loader2, Sparkles, BookOpen, School, Award } from "lucide-react";
+import { generateRecommendations } from "./actions";
+import type { PersonalizedRecommendationsOutput } from "@/ai/flows/personalized-recommendations";
+import Balancer from "react-wrap-balancer";
+import Image from "next/image";
+import { MotionWrapper } from "@/components/motion-wrapper";
 
-export default function RecommendationsPage() {
-<<<<<<< HEAD
+const formSchema = z.object({
+  interests: z.string().min(5, { message: "Please describe your interests." }),
+  academicBackground: z.string().min(10, { message: "Please provide your academic background." }),
+  careerAspirations: z.string().min(10, { message: "Please describe your career aspirations." }),
+});
+
+export default function RecommendationsPageContent() {
   const { toast } = useToast();
   const [recommendations, setRecommendations] = useState<PersonalizedRecommendationsOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -60,7 +80,7 @@ export default function RecommendationsPage() {
   return (
     <div className="bg-background">
       <MotionWrapper
-        el="section"
+        as="section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
@@ -68,7 +88,7 @@ export default function RecommendationsPage() {
       >
         <div className="absolute inset-0 h-full w-full">
             <Image
-                src="/images/recommendations/hero.jpeg"
+                src="https://placehold.co/1920x1080.png"
                 alt="AI brain illustration"
                 fill
                 className="object-cover object-center"
@@ -203,7 +223,4 @@ export default function RecommendationsPage() {
       </section>
     </div>
   );
-=======
-  return <RecommendationsPageContent />;
->>>>>>> fe5952386958f083e29493a21c88c077d4cd1e91
 }
