@@ -13,42 +13,42 @@ import React from "react";
 const qnaModel = [
     {
         number: "01.",
-        image: "/images/psychometric/career-passion.jpg",
+        image: "/images/psychometric-testing/career-passion.png",
         aiHint: "career passion",
         title: "Interest Over Marks",
         description: "Choosing a career based on interests ensures long-term passion and growth, while marks reflect current strengths. Passion fuels perseverance—choose interest for a fulfilling future."
     },
     {
         number: "02.",
-        image: "/images/psychometric/informed-decision.jpg",
+        image: "/images/psychometric-testing/informed-decision.png",
         aiHint: "informed decision",
         title: "Informed Decision-Making",
         description: "Listen to friends and relatives, but make your own informed decision. It's your life—choose what aligns with your goals, values, and interests."
     },
     {
         number: "03.",
-        image: "/images/psychometric/career-questions.jpg",
+        image: "/images/psychometric-testing/career-questions.png",
         aiHint: "career questions",
         title: "Asking the Right Questions",
         description: "After 12th, ask: What am I truly passionate about? Should I follow trends or my dreams? The right questions guide you to the right career path."
     },
     {
         number: "04.",
-        image: "/images/psychometric/offline-counseling.jpg",
+        image: "/images/psychometric-testing/offline-counseling.png",
         aiHint: "offline counseling",
         title: "The Value of Personal Connection",
         description: "Offline counselling offers face-to-face interaction, builds trust, and ensures deeper emotional connection—something online sessions often lack. Personal guidance feels more real and impactful in person."
     },
     {
         number: "05.",
-        image: "/images/psychometric/character-integrity.jpg",
+        image: "/images/psychometric-testing/character-integrity.jpeg",
         aiHint: "character integrity",
         title: "Character Defines Success",
         description: "True status isn't wealth or fame—it's character, integrity, and how you treat others. Respect, kindness, and values define real success, not material possessions or social media likes."
     },
     {
         number: "06.",
-        image: "/images/psychometric/education-empowerment.jpg",
+        image: "/images/psychometric-testing/education-empowerment.png",
         aiHint: "education empowerment",
         title: "Education Empowers Minds",
         description: "Education empowers minds, opens doors to opportunity, and builds a better society. It's not just about marks—it's the foundation for critical thinking, growth, and lifelong success."
@@ -92,7 +92,7 @@ export default function PsychometricTestingPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl"
+            className="relative h-[30rem] w-full overflow-hidden rounded-lg shadow-xl"
           >
             <Image src={image} alt={imageAlt} fill className="object-cover" data-ai-hint={aiHint} />
           </MotionWrapper>
