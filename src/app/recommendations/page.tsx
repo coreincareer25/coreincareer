@@ -13,4 +13,6 @@ export const metadata: Metadata = {
 
 export default function RecommendationsPage() {
   return <RecommendationsPageContent />;
+
 }
+

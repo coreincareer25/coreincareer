@@ -94,7 +94,7 @@ export default function RecommendationsPageContent() {
       >
         <div className="absolute inset-0 h-full w-full">
             <Image
-                src="https://placehold.co/1920x1080.png"
+                src="/images/recommendations/hero.jpeg"
                 alt="AI brain illustration"
                 fill
                 className="object-cover object-center"
