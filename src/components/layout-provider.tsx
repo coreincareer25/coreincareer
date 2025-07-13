@@ -48,7 +48,7 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
             </div>
             <Toaster />
             <Link
-            href="https://wa.me/919123783438"
+            href="https://wa.me/919123307383"
             className="fixed top-1/2 -translate-y-1/2 right-4 z-50 bg-[#25D366] text-white rounded-full p-2 md:p-2.5 shadow-lg hover:bg-[#128C7E] transition-colors flex items-center justify-center"
             target="_blank"
             rel="noopener noreferrer"
