@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import { BrainCircuit } from "lucide-react";
 
 const qnaModel = [
     {
@@ -46,6 +47,12 @@ const qnaModel = [
         description: "Education empowers minds, opens doors to opportunity, and builds a better society. It's not just about marks—it's the foundation for critical thinking, growth, and lifelong success."
     }
 ];
+
+const WavyLine = () => (
+    <svg width="80" height="10" viewBox="0 0 100 10" className="inline-block text-muted-foreground" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 5 Q 12.5 0, 25 5 T 50 5 T 75 5 T 100 5" stroke="currentColor" fill="transparent" strokeWidth="2"/>
+    </svg>
+);
 
 export default function PsychometricTestingPage() {
     const sectionVariants = {
@@ -141,6 +148,25 @@ export default function PsychometricTestingPage() {
                     </div>
                 </div>
             </section>
+            
+            <MotionWrapper
+                el="section"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={sectionVariants}
+                className="py-12 bg-cyan-50/50 text-center"
+            >
+                <div className="container mx-auto max-w-7xl px-4">
+                    <BrainCircuit className="mx-auto h-12 w-12 text-primary" />
+                    <h2 className="mt-4 text-4xl font-black tracking-tight text-gray-900">Understand Yourself Better, Choose Smarter</h2>
+                    <div className="mt-2 flex items-center justify-center gap-4 text-muted-foreground">
+                        <WavyLine />
+                        <span className="text-lg font-medium">Self-Discovery</span>
+                        <WavyLine />
+                    </div>
+                </div>
+            </MotionWrapper>
 
             <MotionWrapper
                 el="section"
@@ -151,9 +177,6 @@ export default function PsychometricTestingPage() {
                 className="py-20 bg-secondary/50"
             >
                 <div className="container mx-auto max-w-7xl px-4">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl font-black tracking-tight text-gray-900">Understand Yourself Better, Choose Smarter</h2>
-                    </div>
                     <MotionWrapper
                         variants={cardContainerVariants}
                         initial="hidden"
