@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Provider as BalancerProvider } from 'react-wrap-balancer';
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
+import { TopBar } from '@/components/top-bar';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -33,7 +34,10 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <BalancerProvider>
           <div className="flex min-h-screen flex-col">
-            <Header />
+            <div className="sticky top-0 z-50">
+              <TopBar />
+              <Header />
+            </div>
             <main className="flex-grow">{children}</main>
             <Footer />
           </div>
