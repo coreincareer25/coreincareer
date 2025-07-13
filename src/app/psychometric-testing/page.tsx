@@ -131,7 +131,7 @@ export default function PsychometricTestingPage() {
                             className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg"
                         >
                             <Image
-                                src="/images/services/psychometric-test.jpg"
+                                src="/images/services/psychometric-test.jpeg"
                                 alt="Psychometric test concept"
                                 fill
                                 className="object-cover"
