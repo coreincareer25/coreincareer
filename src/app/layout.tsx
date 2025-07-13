@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Core in Career',
     images: [
       {
-        url: 'https://www.coreincareer.in/og-image.jpg', // Replace with your actual OG image URL
+        url: 'https://www.coreincareer.in/og-image.jpg', // 
         width: 1200,
         height: 630,
         alt: 'Core in Career Logo',
