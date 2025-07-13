@@ -115,7 +115,7 @@ export default function ContactPage() {
   return (
     <div className="bg-background">
         <MotionWrapper
-            as="section"
+            el="section"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
@@ -161,7 +161,7 @@ export default function ContactPage() {
                         <div className="space-y-4 text-base md:text-lg">
                             <div className="flex items-center gap-4">
                                 <Phone className="h-6 w-6 text-primary flex-shrink-0"/>
-                                <span>Call Us: 9123307383 or 6289713594</span>
+                                <span>Call Us: 9123783438 or 6289713594</span>
                             </div>
                             <div className="flex items-center gap-4">
                                 <Mail className="h-6 w-6 text-primary flex-shrink-0"/>
@@ -317,7 +317,7 @@ export default function ContactPage() {
       </section>
 
       <MotionWrapper
-        as="section"
+        el="section"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

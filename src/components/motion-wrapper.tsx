@@ -10,7 +10,7 @@ type MotionWrapperProps = MotionProps & {
 };
 
 export function MotionWrapper({ children, className, el = 'div', ...props }: MotionWrapperProps) {
-    const MotionElement = motion[el];
+    const MotionElement = motion(el);
     return (
         <MotionElement className={className} {...props}>
             {children}

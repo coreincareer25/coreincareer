@@ -14,7 +14,7 @@ export function TopBar({ className }: { className?: string }) {
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
             <Phone className="h-4 w-4" />
-            <span className="hidden sm:inline">9123307383</span>
+            <span className="hidden sm:inline">+91 9123783438</span>
           </a>
           <div className="h-4 w-px bg-primary-foreground/50" />
           <a
