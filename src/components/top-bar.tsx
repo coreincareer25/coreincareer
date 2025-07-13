@@ -1,11 +1,12 @@
 
 "use client";
 
+import { cn } from "@/lib/utils";
 import { Mail, Phone } from "lucide-react";
 
-export function TopBar() {
+export function TopBar({ className }: { className?: string }) {
   return (
-    <div className="bg-primary text-primary-foreground">
+    <div className={cn("bg-primary text-primary-foreground", className)}>
       <div className="container mx-auto flex h-10 max-w-7xl items-center justify-center px-4 sm:justify-end">
         <div className="flex items-center gap-4 text-xs font-medium sm:gap-6 sm:text-sm">
           <a
