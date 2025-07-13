@@ -55,12 +55,12 @@ export default function AboutUsPage() {
                     <div className="absolute inset-0 bg-black/50" />
                 </div>
                 <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-                    <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
+                    <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
                        <Balancer>
                          About <span className="text-primary">Core in Career</span>
                        </Balancer>
                     </h1>
-                    <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+                    <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                         We are dedicated to empowering individuals to discover and pursue their ideal career paths. Our mission is to provide comprehensive, personalized guidance and resources for a successful future.
                     </p>
                 </div>
@@ -142,7 +142,7 @@ export default function AboutUsPage() {
                         {valuePropositions.map((prop) => (
                              <MotionWrapper el="div" variants={cardVariants} key={prop.title}>
                                 <Card className={cn(
-                                    'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full',
+                                    'p-6 md:p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full',
                                     prop.highlight ? 'bg-secondary' : 'bg-card'
                                 )}>
                                     <CardContent className="p-0 flex flex-col items-center flex-1">
@@ -220,5 +220,3 @@ export default function AboutUsPage() {
         </div>
     );
 }
-
-    

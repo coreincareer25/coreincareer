@@ -110,7 +110,7 @@ export default function Home() {
             </h1>
           </MotionWrapper>
           <MotionWrapper variants={cardVariants}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-300">
+            <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
               We provide expert guidance and personalized support to help you navigate your educational and professional journey with confidence.
             </p>
           </MotionWrapper>
@@ -159,7 +159,7 @@ export default function Home() {
               <MotionWrapper el="div" variants={cardVariants} key={advantage.title}>
                 <Card
                   className={cn(
-                    'p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full'
+                    'p-6 md:p-8 text-center flex flex-col items-center shadow-lg transition-transform hover:-translate-y-2 h-full'
                   )}
                 >
                   <CardContent className="p-0 flex flex-col items-center flex-1">
@@ -187,6 +187,8 @@ export default function Home() {
                 className="w-full max-w-lg mx-auto" 
                 opts={{ loop: true, align: "start" }}
                 plugins={[plugin.current]}
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
               >
                 <CarouselContent>
                   {['/images/home/lab-students-1.jpeg','/images/home/lab-students-2.jpeg','/images/home/lab-students-3.jpeg','/images/home/lab-students-4.jpeg','/images/home/lab-students-5.jpeg','/images/home/lab-students-6.jpeg','/images/home/lab-students-7.jpeg','/images/home/lab-students-8.jpeg'].map((src, idx) => (
@@ -456,5 +458,3 @@ export default function Home() {
     </main>
   );
 }
-
-    

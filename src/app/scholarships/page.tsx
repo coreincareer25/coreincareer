@@ -53,12 +53,12 @@ export default function ScholarshipsPage() {
             <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-          <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
+          <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
             <Balancer>
               Scholarship <span className="text-primary">Database</span>
             </Balancer>
           </h1>
-          <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
             Find financial aid opportunities to support your educational journey.
           </p>
         </div>
@@ -127,5 +127,3 @@ export default function ScholarshipsPage() {
     </div>
   );
 }
-
-    

@@ -155,12 +155,12 @@ export default function ServicesPage() {
             <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-            <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl">
+            <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
                 <Balancer>
                 Our <span className="text-[#ff81cc]">Services</span>
                 </Balancer>
             </h1>
-            <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
             We provide comprehensive support to ensure you make the best decisions for your academic and professional future. Our goal is to empower you at every step of your educational journey.
             </p>
         </div>
@@ -335,7 +335,7 @@ export default function ServicesPage() {
                 const IconComponent = iconMap[service.icon];
                 return (
                   <MotionWrapper el="div" variants={cardVariants} key={service.title}>
-                    <Card className="transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl h-full">
+                    <Card className="transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl h-full p-4">
                         <CardHeader className="items-center text-center">
                             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                                 {IconComponent && <IconComponent className="h-8 w-8" />}
@@ -356,5 +356,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-
-    
