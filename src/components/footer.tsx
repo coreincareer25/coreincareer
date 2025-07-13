@@ -122,7 +122,7 @@ export function Footer() {
                     render={({ field }) => (
                       <FormItem className="flex-grow">
                         <FormControl>
-                          <Input type="email" placeholder="Enter your email" {...field} className="bg-white-800 border-gray-700 text-white placeholder-gray-500" />
+                          <Input type="email" placeholder="Enter your email" {...field} className="bg-white-800 border-gray-700 text-black placeholder-gray-500" />
                         </FormControl>
                         <FormMessage className="text-red-500"/>
                       </FormItem>
