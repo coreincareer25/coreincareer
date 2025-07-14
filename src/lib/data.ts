@@ -498,19 +498,19 @@ export const partners = [
     logo: '/images/partners/iem-logo.png',
     aiHint: 'institute logo'
   },
-  {
-    name: 'Techno International Newtown',
-    logo: '/images/partners/techno-international-newtown-logo.jpg',
-    aiHint: 'education logo'
-  },
+  // {
+  //   name: 'Techno International Newtown',
+  //   logo: '/images/partners/techno-logo.jpg',
+  //   aiHint: 'education logo'
+  // },
   {
     name: 'Eiilm',
     logo: '/images/partners/eiilm-logo.png',
     aiHint: 'institute logo'
   },
   {
-    name: 'SVU',
-    logo: '/images/partners/svu-logo.png',
+    name: 'JIS University',
+    logo: '/images/partners/jis-logo.jpeg',
     aiHint: 'university logo'
   }
 ];

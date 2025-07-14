@@ -312,7 +312,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-6">
                 {partners.map((partner) => (
                   <div key={partner.name} className="flex items-center justify-center p-4 bg-purple-50 rounded-lg shadow-sm transition-transform hover:-translate-y-1 aspect-square">
                     <div className="relative w-full h-full">
