@@ -46,10 +46,37 @@ const educationalPrograms = [
   }
 ];
 
+const heroSlides = [
+    {
+        src: '/images/home/hero-group3.jpg',
+        alt: 'Empowered students celebrating their success',
+        aiHint: 'empowered students'
+    },
+    {
+        src: '/images/home/lab-students-1.jpeg',
+        alt: 'Students working together in a science lab',
+        aiHint: 'students laboratory'
+    },
+    {
+        src: '/images/home/college-guidance.jpg',
+        alt: 'A group of students studying together on a campus',
+        aiHint: 'students studying group'
+    },
+    {
+        src: '/images/about/about-header.jpeg',
+        alt: 'A person offering a helping hand to another',
+        aiHint: 'helping hand'
+    },
+];
+
 
 export default function Home() {
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+
+  const heroPlugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   const sectionVariants = {
@@ -77,59 +104,72 @@ export default function Home() {
 
   return (
     <main className="bg-white overflow-x-hidden">
-      <section className="relative text-center pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
-        <div className="absolute inset-0 h-full w-full">
-            <Image
-                src="/images/home/hero-group3.jpg"
-                alt="Empowered students"
-                fill
-                className="object-cover object-center"
-                data-ai-hint="empowered students"
-                priority
-            />
-            <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <MotionWrapper
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", staggerChildren: 0.2 }}
-          className="container relative mx-auto px-4"
-        >
-          <MotionWrapper variants={cardVariants}>
-            <p className="font-semibold uppercase tracking-widest text-[#88ffe3]">
-              EMPOWER YOUR FUTURE
-            </p>
-          </MotionWrapper>
-           <MotionWrapper variants={cardVariants}>
-            <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight">
-              <Balancer>
-                Discover the Core of Your
-                <br />
-                <span className="text-[#ff81cc]">Career Path</span>
-              </Balancer>
-            </h1>
-          </MotionWrapper>
-          <MotionWrapper variants={cardVariants}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
-              We provide expert guidance and personalized support to help you navigate your educational and professional journey with confidence.
-            </p>
-          </MotionWrapper>
-          <MotionWrapper variants={cardVariants}>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
-                <Link href="/contact">
-                  Get your free consult today
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all border-primary text-white hover:bg-primary hover:text-primary-foreground bg-transparent">
-                <Link href="/brochure.pdf" target="_blank" rel="noopener noreferrer">
-                  Download Brochure
-                </Link>
-              </Button>
-            </div>
-          </MotionWrapper>
-        </MotionWrapper>
-      </section>
+        <section className="relative text-center h-[60vh] md:h-[80vh] flex items-center justify-center text-white overflow-hidden">
+            <Carousel
+                plugins={[heroPlugin.current]}
+                className="absolute inset-0 h-full w-full"
+                opts={{ loop: true }}
+            >
+                <CarouselContent>
+                    {heroSlides.map((slide, index) => (
+                        <CarouselItem key={index}>
+                            <div className="relative h-[60vh] md:h-[80vh] w-full">
+                                <Image
+                                    src={slide.src}
+                                    alt={slide.alt}
+                                    fill
+                                    className="object-cover object-center"
+                                    data-ai-hint={slide.aiHint}
+                                    priority={index === 0}
+                                />
+                                <div className="absolute inset-0 bg-black/50" />
+                            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+            </Carousel>
+
+            <MotionWrapper
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut", staggerChildren: 0.2 }}
+                className="container relative mx-auto px-4"
+            >
+                <MotionWrapper variants={cardVariants}>
+                    <p className="font-semibold uppercase tracking-widest text-[#88ffe3]">
+                    EMPOWER YOUR FUTURE
+                    </p>
+                </MotionWrapper>
+                <MotionWrapper variants={cardVariants}>
+                    <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight">
+                    <Balancer>
+                        Discover the Core of Your
+                        <br />
+                        <span className="text-[#ff81cc]">Career Path</span>
+                    </Balancer>
+                    </h1>
+                </MotionWrapper>
+                <MotionWrapper variants={cardVariants}>
+                    <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
+                    We provide expert guidance and personalized support to help you navigate your educational and professional journey with confidence.
+                    </p>
+                </MotionWrapper>
+                <MotionWrapper variants={cardVariants}>
+                    <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
+                        <Link href="/contact">
+                        Get your free consult today
+                        </Link>
+                    </Button>
+                    <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all border-primary text-white hover:bg-primary hover:text-primary-foreground bg-transparent">
+                        <Link href="/brochure.pdf" target="_blank" rel="noopener noreferrer">
+                        Download Brochure
+                        </Link>
+                    </Button>
+                    </div>
+                </MotionWrapper>
+            </MotionWrapper>
+        </section>
 
       <MotionWrapper
         el="section"
