@@ -48,24 +48,54 @@ const educationalPrograms = [
 
 const heroSlides = [
     {
-        src: '/images/home/hero-group3.jpg',
-        alt: 'Empowered students celebrating their success',
-        aiHint: 'empowered students'
-    },
-    {
-        src: '/images/home/lab-students-1.jpeg',
+        src: '/images/home/hero-group.png',
         alt: 'Students working together in a science lab',
         aiHint: 'students laboratory'
     },
     {
-        src: '/images/home/college-guidance.jpg',
+        src: '/images/home/1.jpg',
         alt: 'A group of students studying together on a campus',
         aiHint: 'students studying group'
     },
     {
-        src: '/images/about/about-header.jpeg',
+        src: '/images/home/2.jpg',
         alt: 'A person offering a helping hand to another',
         aiHint: 'helping hand'
+    },
+    {
+        src: '/images/home/3.jpg',
+        alt: 'A group of students studying together on a campus',
+        aiHint: 'students studying group'
+    },
+    {
+        src: '/images/home/4.jpg',
+        alt: 'A group of students studying together on a campus',
+        aiHint: 'students studying group'
+    },
+    {
+        src: '/images/home/5.jpg',
+        alt: 'A group of students studying together on a campus',
+        aiHint: 'students studying group'
+    },
+    {
+        src: '/images/home/6.jpg',
+        alt: 'A group of students studying together on a campus',
+        aiHint: 'students studying group'
+    },
+    {
+        src: '/images/home/7.jpg',
+        alt: 'A group of students studying together on a campus',
+        aiHint: 'students studying group'
+    },
+    {
+        src: '/images/home/8.jpg',
+        alt: 'A group of students studying together on a campus',
+        aiHint: 'students studying group'
+    },
+    {
+        src: '/images/home/9.jpg',
+        alt: 'A group of students studying together on a campus',
+        aiHint: 'students studying group'
     },
 ];
 
