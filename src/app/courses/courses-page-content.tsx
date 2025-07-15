@@ -44,7 +44,7 @@ export default function CoursesPageContent() {
             </Balancer>
           </h1>
           <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Browse our extensive catalog of courses to find the perfect fit for your academic and career aspirations.
+            Explore our wide range of courses to discover the ideal match for your academic goals and career ambitions, helping you build the skills needed for a successful future.
           </p>
         </div>
       </MotionWrapper>

@@ -141,7 +141,7 @@ export default function PsychometricTestingPageContent() {
                         </Balancer>
                     </h1>
                     <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                        Discover your strengths and find the career path that's right for you through our science-backed assessments.
+                        Uncover your unique strengths and interests with our science-backed assessments, guiding you toward the career path that aligns best with your skills, passions, and long-term professional goals.
                     </p>
                 </div>
             </MotionWrapper>

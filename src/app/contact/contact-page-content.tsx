@@ -139,7 +139,7 @@ export default function ContactPageContent() {
                 </Balancer>
                 </h1>
                 <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                    Have questions or need a free consultation? We'd love to hear from you.
+                    Have questions or looking for a free consultation? Our team is here to help—reach out anytime. We’re happy to assist and guide you toward the right educational decisions.
                 </p>
             </div>
         </MotionWrapper>

@@ -56,7 +56,7 @@ export default function CollegesPageContent() {
             </Balancer>
           </h1>
           <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Explore detailed profiles of top colleges and universities to find your ideal institution
+            Explore in-depth profiles of leading colleges and universities to discover the institution that best fits your academic interests, career goals, and personal preferences for a successful future.
           </p>
         </div>
       </MotionWrapper>

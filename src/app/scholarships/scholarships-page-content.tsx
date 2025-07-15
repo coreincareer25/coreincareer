@@ -59,7 +59,7 @@ export default function ScholarshipsPageContent() {
             </Balancer>
           </h1>
           <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Find financial aid opportunities to support your educational journey.
+            Discover a variety of financial aid opportunities designed to support your educational journey, including scholarships, grants, and loans, helping you achieve your academic goals without financial burden.
           </p>
         </div>
       </MotionWrapper>

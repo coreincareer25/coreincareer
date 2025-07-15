@@ -110,7 +110,7 @@ export default function RecommendationsPageContent() {
                 </Balancer>
             </h1>
             <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Tell us about yourself, and our AI will generate personalized suggestions for courses, colleges, and scholarships to guide your educational path.
+            Share your background and goals, and our AI will provide personalized recommendations for courses, colleges, and scholarships to help you navigate and succeed on your educational journey.
             </p>
         </div>
       </MotionWrapper>
