@@ -44,7 +44,7 @@ export default function ScholarshipsPageContent() {
         <div className="absolute inset-0 h-full w-full">
             <Image
                 src="/images/scholarships/hero.jpeg"
-                alt="Graduation cap and money"
+                alt="Graduation money"
                 fill
                 className="object-cover object-center"
                 data-ai-hint="graduation cap"
