@@ -53,7 +53,7 @@ export default function ScholarshipsPageContent() {
             <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-          <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
+          <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out">
             <Balancer>
               Scholarship <span className="text-primary">Database</span>
             </Balancer>
@@ -70,7 +70,7 @@ export default function ScholarshipsPageContent() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         variants={sectionVariants}
-        className="py-16 md:py-20"
+        className="py-16 md:py-20 bg-gradient-to-b from-green-100 to-rose-200"
       >
         <div className="container mx-auto max-w-7xl px-4">
           <MotionWrapper
@@ -91,14 +91,14 @@ export default function ScholarshipsPageContent() {
                             className="object-cover object-center"
                             data-ai-hint={scholarship.aiHint}
                         />
-                         <div className="absolute inset-0 bg-black/40" />
+                         <div className="absolute inset-0 bg-black/70" />
                          <div className="absolute inset-0 p-6 text-white text-left h-full flex flex-col justify-center">
                             <div>
-                                <span className="text-2xl md:text-3xl font-bold text-primary font-serif">{scholarship.title}</span>
-                                {scholarship.subtitle && <span className="text-lg md:text-xl ml-2 text-gray-300 italic">{scholarship.subtitle}</span>}
+                                <span className="text-2xl md:text-3xl font-bold text-[#eeee49] font-serif">{scholarship.title}</span>
+                                {scholarship.subtitle && <span className="text-lg md:text-xl ml-2 text-white italic">{scholarship.subtitle}</span>}
                             </div>
                             {scholarship.description && (
-                                <p className="text-gray-300 mt-2 max-w-sm text-sm md:text-base">{scholarship.description}</p>
+                                <p className="text-white mt-2 max-w-sm text-sm md:text-base">{scholarship.description}</p>
                             )}
                         </div>
                     </div>

@@ -135,7 +135,7 @@ export default function PsychometricTestingPageContent() {
                     <div className="absolute inset-0 bg-black/50" />
                 </div>
                 <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-                    <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
+                    <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out">
                         <Balancer>
                             Psychometric <span className="text-primary">Testing</span>
                         </Balancer>
@@ -162,7 +162,7 @@ export default function PsychometricTestingPageContent() {
                             <p className="mt-4 text-muted-foreground">
                                 At Core in Career, we use proven models like the Holland RIASEC model to help you understand your interests, personality, and the kind of work environments where you would thrive. This journey of self-discovery is the first and most crucial step towards building a fulfilling and successful career.
                             </p>
-                            <Button asChild size="lg" className="mt-8 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
+                            <Button asChild size="lg" className="mt-8 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg hover:from-fuchsia-700 hover:to-cyan-700 hover:opacity-90 transition-all duration-300 ease-in-out">
                                 <Link href="/contact">Get Your Free Consultation</Link>
                             </Button>
                         </MotionWrapper>

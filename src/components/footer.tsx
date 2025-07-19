@@ -72,22 +72,22 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-t from-violet-800 to-purple-400 text-black-300">
+    <footer className="bg-gradient-to-t from-fuchsia-700 to-pink-600 text-white">
       <div className="container mx-auto max-w-7xl px-4 py-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="md:col-span-2 lg:col-span-1">
             <Logo showSubtitle={false} />
-            <p className="mt-4 text-sm font-medium text-gray-900">
+            <p className="mt-4 text-sm text-white">
               Guiding you on your educational journey with expert advice and personalized recommendations.
             </p>
           </div>
 
           <div>
-            <h3 className="font-bold font-headline text-black">Quick Links</h3>
+            <h3 className="font-medium font-headline text-black">Quick Links</h3>
             <ul className="mt-4 space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="font-semibold text-sm hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-black transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -96,11 +96,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold font-headline text-black">Support</h3>
+            <h3 className="font-medium font-headline text-black">Support</h3>
             <ul className="mt-4 space-y-2">
               {supportLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="font-semibold text-sm hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-black transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -109,8 +109,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold font-headline text-black">Stay Updated</h3>
-            <p className="mt-4 text-sm font-semibold text-gray-900">
+            <h3 className="font-medium font-headline text-black">Stay Updated</h3>
+            <p className="mt-4 text-sm text-white">
               Subscribe to our newsletter for the latest updates on courses, scholarships, and more.
             </p>
             <Form {...form}>
@@ -137,7 +137,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-gray-800 pt-8 text-center text-sm text-black">
+        <div className="mt-12 border-t border-gray-300 pt-8 text-center font-medium text-sm text-white">
           <p>&copy; 2025 Core in Career powered by JP Educational Service. All rights reserved.</p>
         </div>
       </div>

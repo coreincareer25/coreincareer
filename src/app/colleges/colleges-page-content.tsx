@@ -50,7 +50,7 @@ export default function CollegesPageContent() {
             <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-          <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
+          <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out">
             <Balancer>
               College <span className="text-primary">Profiles</span>
             </Balancer>
@@ -61,7 +61,7 @@ export default function CollegesPageContent() {
         </div>
       </MotionWrapper>
 
-      <div className="bg-gradient-to-b from-purple-100/50 via-pink-100/50 to-transparent">
+      <div className="bg-gradient-to-b from-cyan-50 to-cyan-300">
         <section className="py-12 container mx-auto max-w-6xl px-4">
           <Tabs defaultValue="engineering" className="w-full">
               <TabsList className="flex h-auto flex-wrap justify-center gap-2 bg-transparent p-0">
@@ -97,7 +97,7 @@ export default function CollegesPageContent() {
                                       <CardTitle className="text-base font-semibold">{college.name}</CardTitle>
                                     </CardHeader>
                                     <CardFooter className="p-4">
-                                      <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
+                                      <Button asChild className="w-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white font-semibold hover:from-fuchsia-700 hover:to-cyan-700 hover:opacity-90 transition-all duration-300 ease-in-out">
                                         <Link href="/contact">Apply Now</Link>
                                       </Button>
                                     </CardFooter>
@@ -130,7 +130,7 @@ export default function CollegesPageContent() {
                                   <CardTitle className="text-base font-semibold">{college.name}</CardTitle>
                                 </CardHeader>
                                 <CardFooter className="p-4">
-                                  <Button asChild className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity font-semibold">
+                                  <Button asChild className="w-full bg-gradient-to-r from-fuchsia-400 to-cyan-400 text-white hover:opacity-90 transition-opacity font-semibold">
                                     <Link href="/contact">Apply Now</Link>
                                   </Button>
                                 </CardFooter>

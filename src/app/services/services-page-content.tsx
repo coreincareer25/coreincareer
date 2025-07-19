@@ -4,7 +4,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { services } from "@/lib/data";
-import { Award, FileText, Plane, School, Sparkles, UserCheck, Snowflake, ChevronRight } from "lucide-react";
+import { Award, FileText, Plane, School, Sparkles, UserCheck, Snowflake, ChevronRight, Banknote } from "lucide-react";
 import React from "react";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
@@ -18,6 +18,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   Award,
   Plane,
   Sparkles,
+  Banknote
 };
 
 const admissionProcessSteps = [
@@ -155,7 +156,7 @@ export default function ServicesPageContent() {
             <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-            <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
+            <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out">
                 <Balancer>
                 Our <span className="text-primary">Services</span>
                 </Balancer>

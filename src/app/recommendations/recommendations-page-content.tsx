@@ -104,7 +104,7 @@ export default function RecommendationsPageContent() {
             <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-            <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
+            <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out">
                 <Balancer>
                 AI-Powered <span className="text-primary">Recommendations</span>
                 </Balancer>

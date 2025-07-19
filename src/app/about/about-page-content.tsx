@@ -55,7 +55,7 @@ export default function AboutPageContent() {
                     <div className="absolute inset-0 bg-black/50" />
                 </div>
                 <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-                    <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
+                    <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out">
                        <Balancer>
                          About <span className="text-primary">Core in Career</span>
                        </Balancer>
@@ -66,9 +66,9 @@ export default function AboutPageContent() {
                 </div>
             </MotionWrapper>
 
-            <section className="py-16 md:py-20 overflow-hidden">
-                <div className="container mx-auto max-w-7xl px-4">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
+            <section className="py-16 md:py-20 overflow-hidden bg-[#E1F3F1]">
+                <div className="container mx-auto max-w-7xl px-4 ">
+                    <div className="grid md:grid-cols-2 gap-12 items-center ">
                         <MotionWrapper
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -121,7 +121,7 @@ export default function AboutPageContent() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
-                className="py-16 md:py-20 bg-cyan-50"
+                className="py-16 md:py-20 bg-[#F2DDF3]"
             >
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="text-center mb-12">
@@ -162,7 +162,7 @@ export default function AboutPageContent() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
-                className="py-16 md:py-20 bg-white"
+                className="py-16 md:py-20 bg-[#E1F3F1]"
             >
                 <div className="container mx-auto max-w-7xl px-4">
                     <div className="text-center mb-12">
@@ -200,7 +200,7 @@ export default function AboutPageContent() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
-                className="py-16 md:py-20 bg-primary/10"
+                className="py-16 md:py-20 bg-[#F2DDF3]"
             >
                 <div className="container mx-auto max-w-7xl px-4 text-center">
                     <h2 className="text-3xl font-black tracking-tight text-gray-900">

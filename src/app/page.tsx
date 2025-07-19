@@ -166,12 +166,12 @@ export default function Home() {
                 className="container relative mx-auto px-4"
             >
                 <MotionWrapper variants={cardVariants}>
-                    <p className="font-semibold uppercase tracking-widest text-[#88ffe3]">
+                    <p className="font-semibold uppercase md:text-xl tracking-widest text-[#57ff39] drop-shadow-[0_0_10px_#FFFFFF]">
                     EMPOWER YOUR FUTURE
                     </p>
                 </MotionWrapper>
                 <MotionWrapper variants={cardVariants}>
-                    <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight">
+                    <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out">
                     <Balancer>
                         Discover the Core of Your
                         <br />
@@ -186,12 +186,12 @@ export default function Home() {
                 </MotionWrapper>
                 <MotionWrapper variants={cardVariants}>
                     <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
+                    <Button asChild size="lg" className="bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
                         <Link href="/contact">
                         Get your free consult today
                         </Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all border-primary text-white hover:bg-primary hover:text-primary-foreground bg-transparent">
+                    <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
                         <Link href="/brochure.pdf" target="_blank" rel="noopener noreferrer">
                         Download Brochure
                         </Link>
@@ -290,7 +290,7 @@ export default function Home() {
               <p className="font-semibold uppercase tracking-widest text-primary">WHO ARE WE</p>
               <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">Our Journey and Commitment</h2>
               <p className="mt-4 text-muted-foreground">Core in Career was founded to bridge the gap between education and industry needs, providing students with the skills and knowledge to excel. We believe the foundation of a successful career lies in understanding yourself. Let us help you explore your inner strengths and match them to the right career path.</p>
-              <Button asChild size="lg" className="mt-8 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
+              <Button asChild size="lg" className="mt-8 bg-gradient-to-r from-fuchsia-400 to-cyan-400 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg transition-colors duration-300 ease-in-out hover:from-fuchsia-600 hover:to-cyan-600">
                 <Link href="/about">Read More</Link>
               </Button>
             </MotionWrapper>
@@ -343,7 +343,7 @@ export default function Home() {
                     <p className="text-muted-foreground">{program.description}</p>
                   </CardContent>
                   <CardFooter className="justify-center p-6">
-                    <Button asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-6 py-2 font-semibold hover:opacity-90 transition-opacity">
+                    <Button asChild className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-md px-6 py-2 font-semibold transition-all duration-300 ease-in-out hover:from-fuchsia-700 hover:to-cyan-700 hover:opacity-90">
                       <Link href={program.href}>Read More</Link>
                     </Button>
                   </CardFooter>
@@ -372,7 +372,7 @@ export default function Home() {
               <p className="mt-4 text-muted-foreground">
                 We offer reliable guidance on higher education opportunities across various states, including Odisha, Pune, Bangalore, Uttar Pradesh, Mumbai, and many more. At Core in Career, our commitment is to provide high-quality career counselling and services by thoroughly understanding the needs of both students and institutions. Our mission is to uplift educational standards across the nation — because we believe in "Sabka Saath, Sabka Education."
               </p>
-              <Button asChild size="lg" className="mt-8 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg hover:opacity-90 transition-opacity">
+              <Button asChild size="lg" className="mt-8 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-md px-8 py-3 text-base font-semibold shadow-lg transition-all duration-300 ease-in-out hover:from-fuchsia-700 hover:to-cyan-700 hover:opacity-90">
                 <Link href="/colleges">Read More</Link>
               </Button>
             </MotionWrapper>

@@ -133,7 +133,7 @@ export default function ContactPageContent() {
                 <div className="absolute inset-0 bg-black/50" />
             </div>
             <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
-                <h1 className="text-4xl font-black tracking-tight font-headline sm:text-5xl md:text-6xl">
+                <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out">
                 <Balancer>
                     Contact <span className="text-primary">Us</span>
                 </Balancer>
@@ -169,17 +169,17 @@ export default function ContactPageContent() {
                             </div>
                             <div className="flex items-start gap-4">
                                 <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0"/>
-                                <span>Haridradanga Daspukur Dhar Prantik, Chandannagar(mc),Hooghly, West Bengal-712136</span>
+                                <span>Chandannagar, Hooghly, West Bengal-712136</span>
                             </div>
                         </div>
                         <div>
                             <h3 className="text-xl font-bold">Follow Us</h3>
                             <div className="flex items-center gap-4 mt-2">
-                                <Link href="#" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
-                                <Link href="#" className="text-muted-foreground hover:text-primary"><WhatsAppIcon /></Link>
-                                <Link href="#" className="text-muted-foreground hover:text-primary"><Linkedin /></Link>
-                                <Link href="#" className="text-muted-foreground hover:text-primary"><Instagram /></Link>
-                                <Link href="#" className="text-muted-foreground hover:text-primary"><Youtube /></Link>
+                                <Link href="https://www.facebook.com/profile.php?id=61576556115264" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
+                                <Link href="https://wa.me/9123783438" className="text-muted-foreground hover:text-primary"><WhatsAppIcon /></Link>
+                                <Link href="https://www.linkedin.com/in/core-in-career-by-jp-educational-service-4a8aa8375" className="text-muted-foreground hover:text-primary"><Linkedin /></Link>
+                                {/* <Link href="#" className="text-muted-foreground hover:text-primary"><Instagram /></Link> */}
+                                {/* <Link href="#" className="text-muted-foreground hover:text-primary"><Youtube /></Link> */}
                             </div>
                         </div>
                     </div>

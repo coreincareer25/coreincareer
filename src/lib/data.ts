@@ -123,12 +123,16 @@ export const faqs = [
         answer: 'We provide end-to-end guidance, from choosing the right course and university to application assistance and scholarship support. Our experienced counselors and AI-powered tools ensure you receive personalized and data-driven advice for a successful future.'
     },
     {
-        question: 'Do you provide assistance for studying abroad?',
-        answer: 'Yes, we offer comprehensive support for students aspiring to study abroad. This includes university selection, application assistance, visa guidance, and pre-departure briefings to ensure a smooth transition to a new country.'
+        question: 'What documents are needed for applying to colleges or universities?',
+        answer: 'Requirements vary, but commonly needed documents include mark sheets, identity proof, passport-sized photos, caste/income certificates (if applicable), and admission forms. We guide you through the entire process.'
     },
     {
         question: 'What are psychometric assessments?',
         answer: 'Psychometric assessments are scientific tools designed to evaluate your personality, interests, and cognitive skills. These tests provide valuable insights into your strengths and help you choose a career path that aligns with your natural abilities and preferences.'
+    },
+    {
+        question:'Do you help with admission to private colleges?',
+        answer:'Yes, we assist students in getting admission to top private colleges across India, depending on your budget, interest, and eligibility'
     }
 ];
 
@@ -456,9 +460,9 @@ export const services = [
         icon: 'Award'
     },
     {
-        title: 'Visa & Pre-Departure Support',
-        description: 'We offer comprehensive assistance with visa applications and pre-departure briefings to ensure a smooth transition.',
-        icon: 'Plane'
+        title: 'Education Loan Guidance',
+        description: 'We provide personalized support to help students and parents secure education loans from selecting the right government and bank or scheme.',
+        icon: 'Banknote'
     },
     {
         title: 'AI-Powered Recommendations',

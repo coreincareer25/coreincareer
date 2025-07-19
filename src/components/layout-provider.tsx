@@ -49,7 +49,7 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
             <Toaster />
             <Link
             href="https://wa.me/9123783438"
-            className="fixed top-1/2 -translate-y-1/2 right-4 z-50 bg-[#25D366] text-white rounded-full p-2 md:p-2.5 shadow-lg hover:bg-[#128C7E] transition-colors flex items-center justify-center"
+            className="fixed top-[95%] -translate-y-1/2 right-4 z-50 bg-[#25D366] text-white rounded-full p-2 md:p-2.5 shadow-lg hover:bg-[#128C7E] transition-colors flex items-center justify-center"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
