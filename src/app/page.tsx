@@ -459,7 +459,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="py-16 md:py-20 bg-secondary"
+        className="py-16 md:py-20 bg-white"
       >
           <div className="container mx-auto px-4">
               <div className="text-center mb-12">
@@ -506,7 +506,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="py-16 md:py-20 bg-background"
+        className="py-16 md:py-20 bg-[#f9f4ff]"
       >
           <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center mb-12">
