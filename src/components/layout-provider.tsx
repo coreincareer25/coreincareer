@@ -39,12 +39,12 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
     return (
         <BalancerProvider>
             <div className="flex min-h-screen flex-col">
-            <header className={cn("sticky top-0 z-50 transition-shadow duration-300", isScrolled ? 'shadow-md' : '')}>
                 <TopBar isScrolled={isScrolled} />
-                <Header />
-            </header>
-            <main className="flex-grow">{children}</main>
-            <Footer />
+                <header className={cn("sticky top-0 z-50 transition-shadow duration-300", isScrolled ? 'shadow-md' : '')}>
+                    <Header />
+                </header>
+                <main className="flex-grow">{children}</main>
+                <Footer />
             </div>
             <Toaster />
             <Link
