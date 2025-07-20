@@ -24,11 +24,12 @@ const navLinks = [
 export function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   return (
     <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
-        <Logo />
+        <Logo className={cn(isHomePage ? 'md:h-40 md:w-40' : 'md:h-28 md:w-28')} />
         
         <div className="hidden lg:flex items-center gap-10">
             <nav className="flex items-center gap-6 text-sm font-medium">

@@ -1,8 +1,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
-export function Logo({ showSubtitle = true }: { showSubtitle?: boolean }) {
+export function Logo({ className, showSubtitle = true }: { className?: string; showSubtitle?: boolean }) {
   return (
     <Link href="/" aria-label="Core in Career Home" className="flex items-center gap-2 flex-shrink-0">
       <Image
@@ -10,7 +11,7 @@ export function Logo({ showSubtitle = true }: { showSubtitle?: boolean }) {
         alt="Core in Career Logo"
         width={160}
         height={160}
-        className="h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40"
+        className={cn("h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40", className)}
         priority
       />
       {showSubtitle && (
@@ -21,5 +22,3 @@ export function Logo({ showSubtitle = true }: { showSubtitle?: boolean }) {
     </Link>
   );
 }
-
-    

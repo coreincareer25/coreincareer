@@ -30,7 +30,7 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
         lastScrollY = window.scrollY;
       };
   
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll, { passive: true });
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
@@ -39,8 +39,8 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
     return (
         <BalancerProvider>
             <div className="flex min-h-screen flex-col">
-            <header className={cn("sticky top-0 z-50 transition-all duration-300", isScrolled ? 'shadow-md' : '')}>
-                <TopBar className={cn("transition-all duration-300", isScrolled ? "max-h-0 py-0 opacity-0" : "max-h-10 opacity-100 py-2.5")} />
+            <header className={cn("sticky top-0 z-50 transition-shadow duration-300", isScrolled ? 'shadow-md' : '')}>
+                <TopBar isScrolled={isScrolled} />
                 <Header />
             </header>
             <main className="flex-grow">{children}</main>
