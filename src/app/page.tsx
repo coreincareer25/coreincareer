@@ -101,12 +101,16 @@ const heroSlides = [
 
 
 export default function Home() {
-  const plugin = React.useRef(
+  const testimonialsPlugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   const heroPlugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
+  );
+
+  const whoAreWePlugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
 
   const sectionVariants = {
@@ -256,9 +260,9 @@ export default function Home() {
               <Carousel 
                 className="w-full max-w-lg mx-auto" 
                 opts={{ loop: true, align: "start" }}
-                plugins={[plugin.current]}
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
+                plugins={[whoAreWePlugin.current]}
+                onMouseEnter={whoAreWePlugin.current.stop}
+                onMouseLeave={whoAreWePlugin.current.reset}
               >
                 <CarouselContent>
                   {['/images/home/lab-students-1.jpeg','/images/home/lab-students-2.jpeg','/images/home/lab-students-3.jpeg','/images/home/lab-students-4.jpeg','/images/home/lab-students-5.jpeg','/images/home/lab-students-6.jpeg','/images/home/lab-students-7.jpeg','/images/home/lab-students-8.jpeg'].map((src, idx) => (
@@ -468,7 +472,7 @@ export default function Home() {
               </div>
               <Carousel
                   opts={{ align: "start", loop: true }}
-                  plugins={[plugin.current]}
+                  plugins={[testimonialsPlugin.current]}
                   className="w-full max-w-5xl mx-auto"
               >
                   <CarouselContent>
