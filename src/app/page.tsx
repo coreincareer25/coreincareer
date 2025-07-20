@@ -268,7 +268,7 @@ export default function Home() {
                   {['/images/home/lab-students-1.jpeg','/images/home/lab-students-2.jpeg','/images/home/lab-students-3.jpeg','/images/home/lab-students-4.jpeg','/images/home/lab-students-5.jpeg','/images/home/lab-students-6.jpeg','/images/home/lab-students-7.jpeg','/images/home/lab-students-8.jpeg'].map((src, idx) => (
                     <CarouselItem key={src+idx}>
                       <div className="p-1">
-                        <div className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-lg group">
+                        <div className="relative w-full aspect-video overflow-hidden rounded-lg shadow-lg group">
                           <Image
                             src={src}
                             alt="Students in a lab"
