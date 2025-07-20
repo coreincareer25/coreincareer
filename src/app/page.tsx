@@ -102,7 +102,7 @@ const heroSlides = [
 
 export default function Home() {
   const testimonialsPlugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   const heroPlugin = React.useRef(
@@ -110,7 +110,7 @@ export default function Home() {
   );
 
   const whoAreWePlugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
 
   const sectionVariants = {
