@@ -133,7 +133,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-white">
+    <main>
         <section className="relative text-center h-[60vh] md:h-[80vh] flex items-center justify-center text-white overflow-hidden">
             <Carousel
                 plugins={[heroPlugin.current]}
