@@ -7,10 +7,10 @@ import { Mail, Phone } from "lucide-react";
 export function TopBar({ isScrolled }: { isScrolled: boolean }) {
   return (
     <div className={cn(
-        "bg-primary text-primary-foreground transition-all duration-300 ease-in-out",
-        isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-10 opacity-100 py-2.5"
+        "bg-primary text-primary-foreground transition-transform duration-300 ease-in-out",
+        isScrolled ? "-translate-y-full" : "translate-y-0"
     )}>
-      <div className="container mx-auto flex h-full max-w-7xl items-center justify-center px-4 sm:justify-end">
+      <div className="container mx-auto flex h-10 max-w-7xl items-center justify-center px-4 sm:justify-end">
         <div className="flex items-center gap-4 text-xs font-medium sm:gap-6 sm:text-sm">
           <a
             href="tel:+919123307383"
