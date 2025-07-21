@@ -12,7 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Core in Career by JP Educational Service | Career Counseling',
+    default: 'Core in Career by JP Educational Service',
     template: '%s | Core in Career',
   },
   description: 'Expert career counseling, college guidance, and scholarship assistance. Discover your potential with Core in Career, powered by JP Educational Service.',
