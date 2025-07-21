@@ -40,10 +40,10 @@ const FloatingActionButtons = () => {
             </Link>
             <Link
                 href="/recommendations"
-                className="flex h-14 w-14 items-center justify-center rounded-full bg-primary p-2 text-primary-foreground shadow-lg transition-transform hover:scale-105"
+                className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105"
                 aria-label="AI Assistant"
             >
-                <Image src="/logo.png" alt="AI Assistant" width={48} height={48} className="rounded-full" />
+                <Image src="/logo3.png" alt="AI Assistant" width={56} height={56} className="rounded-full" />
             </Link>
         </div>
     );
