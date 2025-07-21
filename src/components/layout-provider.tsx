@@ -51,13 +51,6 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
             <Toaster />
             <div className="fixed bottom-4 right-4 z-50 flex flex-col items-center gap-3">
                 <Link
-                    href="/recommendations"
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-primary p-2 text-primary-foreground shadow-lg transition-transform hover:scale-105"
-                    aria-label="AI Assistant"
-                >
-                    <Image src="/logo.png" alt="AI Assistant" width={48} height={48} className="rounded-full" />
-                </Link>
-                <Link
                     href="https://wa.me/9123783438"
                     className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] p-2 text-white shadow-lg transition-transform hover:scale-105"
                     target="_blank"
@@ -65,6 +58,13 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
                     aria-label="Chat on WhatsApp"
                 >
                     <WhatsAppIcon className="h-8 w-8" />
+                </Link>
+                <Link
+                    href="/recommendations"
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-primary p-2 text-primary-foreground shadow-lg transition-transform hover:scale-105"
+                    aria-label="AI Assistant"
+                >
+                    <Image src="/logo.png" alt="AI Assistant" width={48} height={48} className="rounded-full" />
                 </Link>
             </div>
         </BalancerProvider>
