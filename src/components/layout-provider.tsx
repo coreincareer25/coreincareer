@@ -59,12 +59,12 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
                 </Link>
                 <Link
                     href="https://wa.me/9123783438"
-                    className="bg-[#25D366] text-white rounded-full p-2.5 shadow-lg hover:bg-[#128C7E] transition-colors flex items-center justify-center"
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] p-2 text-white shadow-lg transition-transform hover:scale-105"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Chat on WhatsApp"
                 >
-                    <WhatsAppIcon className="h-6 w-6" />
+                    <WhatsAppIcon className="h-8 w-8" />
                 </Link>
             </div>
         </BalancerProvider>
