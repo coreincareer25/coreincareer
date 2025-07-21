@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Provider as BalancerProvider } from 'react-wrap-balancer';
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from '@/components/header';
@@ -51,11 +52,10 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
             <div className="fixed bottom-4 right-4 z-50 flex flex-col items-center gap-3">
                 <Link
                     href="/recommendations"
-                    className="flex h-14 items-center gap-3 rounded-full bg-primary pl-4 pr-5 text-primary-foreground shadow-lg transition-transform hover:scale-105"
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-primary p-2 text-primary-foreground shadow-lg transition-transform hover:scale-105"
                     aria-label="AI Assistant"
                 >
-                    <Sparkles className="h-6 w-6" />
-                    <span className="text-sm font-medium">AI Assistant</span>
+                    <Image src="/logo.png" alt="AI Assistant" width={48} height={48} className="rounded-full" />
                 </Link>
                 <Link
                     href="https://wa.me/9123783438"
