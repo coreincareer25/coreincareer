@@ -144,13 +144,6 @@ export default function CollegesPageContent() {
                 ))}
               </div>
           </Tabs>
-          <div className="mt-12 text-center">
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link href="/colleges">
-                Explore More Colleges
-              </Link>
-            </Button>
-          </div>
         </section>
       </div>
     </div>
