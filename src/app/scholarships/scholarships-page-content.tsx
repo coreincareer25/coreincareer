@@ -91,7 +91,7 @@ export default function ScholarshipsPageContent() {
                             className="object-cover object-center"
                             data-ai-hint={scholarship.aiHint}
                         />
-                         <div className="absolute inset-0 bg-black/70" />
+                         <div className="absolute inset-0 bg-black/50" />
                          <div className="absolute inset-0 p-6 text-white text-left h-full flex flex-col justify-center">
                             <div>
                                 <span className="text-2xl md:text-3xl font-bold text-[#eeee49] font-serif">{scholarship.title}</span>
