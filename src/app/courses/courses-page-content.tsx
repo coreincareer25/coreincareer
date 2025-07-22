@@ -262,7 +262,7 @@ export default function CoursesPageContent() {
             </div>
           </Tabs>
           <div className="mt-12 text-center">
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild size="lg" className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-primary-foreground hover:bg-primary/90">
                 <Link href="/colleges">
                     Explore More Colleges
                 </Link>

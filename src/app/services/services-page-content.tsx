@@ -123,7 +123,7 @@ export default function ServicesPageContent() {
     );
 
     return (
-      <section className="py-12 bg-white overflow-hidden">
+      <section className="py-12 bg-[#F2DDF3] overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {imageFirst ? textContent : imageContent}
@@ -167,7 +167,7 @@ export default function ServicesPageContent() {
         </div>
       </MotionWrapper>
 
-      <section className="py-16 md:py-20 bg-white overflow-hidden">
+      <section className="py-16 md:py-20 bg-[#F2DDF3] overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
           <MotionWrapper
               initial="hidden"
@@ -235,9 +235,9 @@ export default function ServicesPageContent() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="py-12 bg-cyan-50/50 text-center"
+        className="py-12 bg-[#E1F3F1] text-center"
       >
-          <div className="container mx-auto max-w-7xl px-4">
+          <div className="container mx-auto max-w-7xl px-4 ">
               <Snowflake className="mx-auto h-12 w-12 text-primary" />
               <h2 className="mt-4 text-3xl md:text-4xl font-black tracking-tight text-gray-900">Your Ambition, Our Mission</h2>
               <div className="mt-2 flex items-center justify-center gap-4 text-muted-foreground">
@@ -322,7 +322,7 @@ export default function ServicesPageContent() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="py-16 md:py-20"
+        className="py-16 md:py-20 bg-[#E1F3F1]"
       >
         <div className="container mx-auto max-w-7xl px-4">
             <MotionWrapper
