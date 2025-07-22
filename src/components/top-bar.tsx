@@ -17,7 +17,7 @@ export function TopBar({ isScrolled }: { isScrolled: boolean }) {
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
             <Phone className="h-4 w-4" />
-            <span className="hidden sm:inline">+91 9123783438</span>
+            <span className="sm:inline">+91 9123783438</span>
           </a>
           <div className="h-4 w-px bg-primary-foreground/50" />
           <a
@@ -25,7 +25,7 @@ export function TopBar({ isScrolled }: { isScrolled: boolean }) {
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
             <Mail className="h-4 w-4" />
-            <span className="hidden sm:inline">coreincareer2025@gmail.com</span>
+            <span className="sm:inline">coreincareer2025@gmail.com</span>
           </a>
         </div>
       </div>
