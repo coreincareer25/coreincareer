@@ -10,6 +10,7 @@ import Balancer from "react-wrap-balancer";
 import Image from "next/image";
 import Link from "next/link";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import { Button } from "@/components/ui/button";
 
 const iconMap: { [key: string]: React.ElementType } = {
   UserCheck,
@@ -288,9 +289,20 @@ export default function ServicesPageContent() {
             aiHint="student loan concept"
             number="04."
             title="Education Loan Guidance"
-            description="At Core in Career, we provide personalized support to help students and parents secure education loans from government and private institutions. From selecting the right bank or scheme to understanding interest rates, documentation, and eligibility, we guide you through every step—ensuring a smooth and hassle-free loan application process for studies in India or abroad."
             imageFirst
-        />
+        >
+            <p className="mt-4 text-muted-foreground">
+                At Core in Career, we provide personalized support to help students and parents secure education loans from government and private institutions. From selecting the right bank or scheme to understanding interest rates, documentation, and eligibility, we guide you through every step—ensuring a smooth and hassle-free loan application process for studies in India or abroad.
+            </p>
+            <p className="mt-4 font-semibold text-gray-800">
+                For check your student credit score send your HS Admit/ result, Aadhar card in whatsapp.
+            </p>
+            <Button asChild size="sm" className="mt-4">
+                <Link href="https://wa.me/9123783438" target="_blank" rel="noopener noreferrer">
+                    Read More
+                </Link>
+            </Button>
+        </ServiceSection>
 
         <ServiceSection
             image="/images/psychometric-testing/student-exam.jpeg"
