@@ -297,9 +297,9 @@ export default function ServicesPageContent() {
             <p className="mt-4 font-semibold text-gray-800">
                 For check your student credit score send your HS Admit/ result, Aadhar card in whatsapp.
             </p>
-            <Button asChild size="sm" className="mt-4">
+            <Button asChild size="sm" className="mt-4 bg-gradient-to-r from-fuchsia-400 to-cyan-400">
                 <Link href="https://wa.me/9123783438" target="_blank" rel="noopener noreferrer">
-                    Read More
+                    Click Here
                 </Link>
             </Button>
         </ServiceSection>
