@@ -294,8 +294,8 @@ export default function ServicesPageContent() {
             <p className="mt-4 text-muted-foreground">
                 At Core in Career, we provide personalized support to help students and parents secure education loans from government and private institutions. From selecting the right bank or scheme to understanding interest rates, documentation, and eligibility, we guide you through every step—ensuring a smooth and hassle-free loan application process for studies in India or abroad.
             </p>
-            <p className="mt-4 font-semibold text-gray-800">
-                For check your student credit score send your HS Admit/ result, Aadhar card in whatsapp.
+            <p className="mt-4 font-semibold text-primary">
+                To check your credit score for Student Credit Card, send your HS ADMIT/RESULT, AADHAAR CARD in Whatsapp.
             </p>
             <Button asChild size="sm" className="mt-4 bg-gradient-to-r from-fuchsia-400 to-cyan-400">
                 <Link href="https://wa.me/9123783438" target="_blank" rel="noopener noreferrer">
