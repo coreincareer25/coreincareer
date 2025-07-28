@@ -156,7 +156,7 @@ export default function AboutPageContent() {
                 </div>
             </MotionWrapper>
 
-            <MotionWrapper
+            {/* <MotionWrapper
                 el="section"
                 initial="hidden"
                 whileInView="visible"
@@ -192,7 +192,7 @@ export default function AboutPageContent() {
                         ))}
                     </MotionWrapper>
                 </div>
-            </MotionWrapper>
+            </MotionWrapper> */}
 
             <MotionWrapper
                 el="section"
@@ -200,7 +200,7 @@ export default function AboutPageContent() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={sectionVariants}
-                className="py-16 md:py-20 bg-[#F2DDF3]"
+                className="py-16 md:py-20 bg-[#E1F3F1]"
             >
                 <div className="container mx-auto max-w-7xl px-4 text-center">
                     <h2 className="text-3xl font-black tracking-tight text-gray-900">
