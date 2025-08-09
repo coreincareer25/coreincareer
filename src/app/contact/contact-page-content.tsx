@@ -178,7 +178,7 @@ export default function ContactPageContent() {
                                 <Link href="https://www.facebook.com/profile.php?id=61576556115264" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
                                 <Link href="https://wa.me/9123783438" className="text-muted-foreground hover:text-primary"><WhatsAppIcon /></Link>
                                 <Link href="https://www.linkedin.com/in/core-in-career-by-jp-educational-service-4a8aa8375" className="text-muted-foreground hover:text-primary"><Linkedin /></Link>
-                                {/* <Link href="#" className="text-muted-foreground hover:text-primary"><Instagram /></Link> */}
+                                <Link href="https://www.instagram.com/core_in_career/" className="text-muted-foreground hover:text-primary"><Instagram /></Link>
                                 {/* <Link href="#" className="text-muted-foreground hover:text-primary"><Youtube /></Link> */}
                             </div>
                         </div>
