@@ -1,73 +1,69 @@
 // src/ai/flows/personalized-recommendations.ts
 'use server';
 /**
- * @fileOverview Provides personalized recommendations for courses, colleges, and scholarships.
+ * @fileOverview An informational AI assistant for the Core in Career project.
  *
- * - getPersonalizedRecommendations - A function that returns personalized recommendations.
- * - PersonalizedRecommendationsInput - The input type for the getPersonalizedRecommendations function.
- * - PersonalizedRecommendationsOutput - The return type for the getPersonalizedRecommendations function.
+ * - getProjectInfo - A function that answers questions about the project.
+ * - ProjectInfoInput - The input type for the getProjectInfo function.
+ * - ProjectInfoOutput - The return type for the getProjectInfo function.
  */
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { courseData } from '@/lib/course-data';
+import { collegeData } from '@/lib/college-data';
 
-const PersonalizedRecommendationsInputSchema = z.object({
-  interests: z
+const ProjectInfoInputSchema = z.object({
+  query: z
     .string()
-    .describe('The user\'s interests, separated by commas.'),
-  academicBackground: z
-    .string()
-    .describe('The user\'s academic background, including degrees and GPA.'),
-  careerAspirations: z
-    .string()
-    .describe('The user\'s career aspirations and goals.'),
+    .describe('The user\'s question about the Core in Career project.'),
 });
-export type PersonalizedRecommendationsInput = z.infer<
-  typeof PersonalizedRecommendationsInputSchema
+export type ProjectInfoInput = z.infer<
+  typeof ProjectInfoInputSchema
 >;
 
-const PersonalizedRecommendationsOutputSchema = z.object({
-  courseRecommendations: z
-    .array(z.string())
-    .describe('A list of recommended courses.'),
-  collegeRecommendations: z
-    .array(z.string())
-    .describe('A list of recommended colleges.'),
-  scholarshipRecommendations: z
-    .array(z.string())
-    .describe('A list of recommended scholarships.'),
+const ProjectInfoOutputSchema = z.object({
+  answer: z
+    .string()
+    .describe('A helpful and concise answer to the user\'s question.'),
 });
-export type PersonalizedRecommendationsOutput = z.infer<
-  typeof PersonalizedRecommendationsOutputSchema
+export type ProjectInfoOutput = z.infer<
+  typeof ProjectInfoOutputSchema
 >;
 
-export async function getPersonalizedRecommendations(
-  input: PersonalizedRecommendationsInput
-): Promise<PersonalizedRecommendationsOutput> {
-  return personalizedRecommendationsFlow(input);
+export async function getProjectInfo(
+  input: ProjectInfoInput
+): Promise<ProjectInfoOutput> {
+  return projectInfoFlow(input);
 }
 
+const coursesContext = JSON.stringify(courseData, null, 2);
+const collegesContext = JSON.stringify(collegeData, null, 2);
+
 const prompt = ai.definePrompt({
-  name: 'personalizedRecommendationsPrompt',
-  input: {schema: PersonalizedRecommendationsInputSchema},
-  output: {schema: PersonalizedRecommendationsOutputSchema},
-  prompt: `Based on the user's interests, academic background, and career aspirations, provide personalized recommendations for courses, colleges, and scholarships.
+  name: 'projectInfoPrompt',
+  input: {schema: ProjectInfoInputSchema},
+  output: {schema: ProjectInfoOutputSchema},
+  prompt: `You are a helpful AI assistant for the "Core in Career" website. Your goal is to answer user questions about the project, its services, courses, and college offerings.
 
-User Interests: {{{interests}}}
-Academic Background: {{{academicBackground}}}
-Career Aspirations: {{{careerAspirations}}}
+Base your answers on the following information. Do not invent information. If the answer is not in the context, say that you don't have information on that topic. Be concise and friendly.
 
-Format the output as a JSON object with the following keys:
-- courseRecommendations: A list of recommended courses.
-- collegeRecommendations: A list of recommended colleges.
-- scholarshipRecommendations: A list of recommended scholarships.`,
+User's Question: {{{query}}}
+
+Available Courses Context:
+${coursesContext}
+
+Available Colleges Context:
+${collegesContext}
+
+Format the output as a JSON object with a single key: "answer".`,
 });
 
-const personalizedRecommendationsFlow = ai.defineFlow(
+const projectInfoFlow = ai.defineFlow(
   {
-    name: 'personalizedRecommendationsFlow',
-    inputSchema: PersonalizedRecommendationsInputSchema,
-    outputSchema: PersonalizedRecommendationsOutputSchema,
+    name: 'projectInfoFlow',
+    inputSchema: ProjectInfoInputSchema,
+    outputSchema: ProjectInfoOutputSchema,
   },
   async input => {
     const {output} = await prompt(input);

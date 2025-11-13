@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -15,21 +14,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Loader2, Sparkles, BookOpen, School, Award } from "lucide-react";
-import { generateRecommendations } from "./actions";
-import type { PersonalizedRecommendationsOutput } from "@/ai/flows/personalized-recommendations";
+import { Loader2, Sparkles, Wand } from "lucide-react";
+import { generateAnswer } from "./actions";
+import type { ProjectInfoOutput } from "@/ai/flows/personalized-recommendations";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
 import { MotionWrapper } from "@/components/motion-wrapper";
 
 const formSchema = z.object({
-  interests: z.string().min(5, { message: "Please describe your interests." }),
-  academicBackground: z.string().min(10, { message: "Please provide your academic background." }),
-  careerAspirations: z.string().min(10, { message: "Please describe your career aspirations." }),
+  query: z.string().min(10, { message: "Please ask a question about our project." }),
 });
 
 const sectionVariants = {
@@ -45,28 +40,26 @@ const heroSectionVariants = {
 
 export default function RecommendationsPageContent() {
   const { toast } = useToast();
-  const [recommendations, setRecommendations] = useState<PersonalizedRecommendationsOutput | null>(null);
+  const [answer, setAnswer] = useState<ProjectInfoOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      interests: "",
-      academicBackground: "",
-      careerAspirations: "",
+      query: "",
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
-    setRecommendations(null);
+    setAnswer(null);
     try {
-      const result = await generateRecommendations(values);
+      const result = await generateAnswer(values);
       if (result.success && result.data) {
-        setRecommendations(result.data);
+        setAnswer(result.data);
         toast({
-          title: "Recommendations Ready!",
-          description: "We've generated your personalized recommendations.",
+          title: "Answer Ready!",
+          description: "We've generated an answer to your question.",
         });
       } else {
         throw new Error(result.error || "An unknown error occurred.");
@@ -76,7 +69,7 @@ export default function RecommendationsPageContent() {
       toast({
         variant: "destructive",
         title: "Generation Failed",
-        description: "We couldn't generate recommendations. Please try again.",
+        description: "We couldn't generate an answer. Please try again.",
       });
     } finally {
       setIsLoading(false);
@@ -106,11 +99,11 @@ export default function RecommendationsPageContent() {
         <div className="container relative mx-auto max-w-7xl px-4 text-center text-white">
             <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.6)] transition-all duration-300 ease-in-out">
                 <Balancer>
-                AI-Powered <span className="text-primary">Recommendations</span>
+                Project AI <span className="text-primary">Assistant</span>
                 </Balancer>
             </h1>
             <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Share your background and goals, and our AI will provide personalized recommendations for courses, colleges, and scholarships to help you navigate and succeed on your educational journey.
+              Have a question about Core in Career? Ask our AI assistant about our services, courses, or college partnerships.
             </p>
         </div>
       </MotionWrapper>
@@ -121,53 +114,27 @@ export default function RecommendationsPageContent() {
               <div>
                 <Card className="shadow-lg md:sticky md:top-24">
                     <CardHeader>
-                    <CardTitle className="font-headline text-2xl">Tell Us About You</CardTitle>
-                    <CardDescription>The more details you provide, the better the recommendations.</CardDescription>
+                    <CardTitle className="font-headline text-2xl">Ask a Question</CardTitle>
+                    <CardDescription>Ask anything about our project, and our AI will help.</CardDescription>
                     </CardHeader>
                     <CardContent>
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                         <FormField
                             control={form.control}
-                            name="interests"
+                            name="query"
                             render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Your Interests</FormLabel>
+                                <FormLabel>Your Question</FormLabel>
                                 <FormControl>
-                                <Textarea placeholder="e.g., coding, painting, machine learning, sustainable energy" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="academicBackground"
-                            render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Academic Background</FormLabel>
-                                <FormControl>
-                                <Textarea placeholder="e.g., High School Diploma with 3.8 GPA, major in Sciences. B.Sc. in Physics with 3.5 GPA." {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="careerAspirations"
-                            render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Career Aspirations</FormLabel>
-                                <FormControl>
-                                <Textarea placeholder="e.g., I want to become a software engineer at a top tech company, or start my own design studio." {...field} />
+                                <Input placeholder="e.g., Which colleges offer B.Tech in CSE?" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                             )}
                         />
                         <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
-                            {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Generating...</> : <><Sparkles className="mr-2 h-4 w-4" /> Get Recommendations</>}
+                            {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Thinking...</> : <><Wand className="mr-2 h-4 w-4" /> Ask AI</>}
                         </Button>
                         </form>
                     </Form>
@@ -182,47 +149,26 @@ export default function RecommendationsPageContent() {
                   variants={sectionVariants}
                   className="space-y-8"
               >
-                  <h2 className="text-2xl font-bold font-headline">Your AI-Powered Suggestions</h2>
+                  <h2 className="text-2xl font-bold font-headline">AI Response</h2>
                   {isLoading && (
                   <div className="flex flex-col items-center justify-center rounded-lg border border-dashed p-12 text-center h-full">
                       <Loader2 className="h-12 w-12 animate-spin text-primary" />
-                      <p className="mt-4 text-lg font-medium">Generating your personalized path...</p>
+                      <p className="mt-4 text-lg font-medium">Generating your answer...</p>
                       <p className="text-muted-foreground">This may take a moment.</p>
                   </div>
                   )}
-                  {recommendations && (
-                  <Accordion type="multiple" defaultValue={['courses', 'colleges', 'scholarships']} className="w-full space-y-4">
-                      <AccordionItem value="courses" className="border rounded-lg bg-card px-4 shadow-sm">
-                      <AccordionTrigger className="text-lg font-headline hover:no-underline"><BookOpen className="mr-3 h-5 w-5 text-primary"/> Course Recommendations</AccordionTrigger>
-                      <AccordionContent>
-                          <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                          {recommendations.courseRecommendations.map((item, index) => <li key={index}>{item}</li>)}
-                          </ul>
-                      </AccordionContent>
-                      </AccordionItem>
-                      <AccordionItem value="colleges" className="border rounded-lg bg-card px-4 shadow-sm">
-                      <AccordionTrigger className="text-lg font-headline hover:no-underline"><School className="mr-3 h-5 w-5 text-primary"/> College Recommendations</AccordionTrigger>
-                      <AccordionContent>
-                          <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                          {recommendations.collegeRecommendations.map((item, index) => <li key={index}>{item}</li>)}
-                          </ul>
-                      </AccordionContent>
-                      </AccordionItem>
-                      <AccordionItem value="scholarships" className="border rounded-lg bg-card px-4 shadow-sm">
-                      <AccordionTrigger className="text-lg font-headline hover:no-underline"><Award className="mr-3 h-5 w-5 text-primary"/> Scholarship Recommendations</AccordionTrigger>
-                      <AccordionContent>
-                          <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                          {recommendations.scholarshipRecommendations.map((item, index) => <li key={index}>{item}</li>)}
-                          </ul>
-                      </AccordionContent>
-                      </AccordionItem>
-                  </Accordion>
+                  {answer && (
+                    <Card className="shadow-sm">
+                        <CardContent className="p-6">
+                            <p className="text-muted-foreground whitespace-pre-wrap">{answer.answer}</p>
+                        </CardContent>
+                    </Card>
                   )}
-              {!isLoading && !recommendations && (
+                  {!isLoading && !answer && (
                       <div className="flex flex-col items-center justify-center rounded-lg border border-dashed p-12 text-center h-full">
                           <Sparkles className="h-12 w-12 text-muted-foreground" />
-                          <p className="mt-4 text-lg font-medium">Your recommendations will appear here.</p>
-                          <p className="text-muted-foreground">Fill out the form to get started.</p>
+                          <p className="mt-4 text-lg font-medium">The AI's answer will appear here.</p>
+                          <p className="text-muted-foreground">Ask a question to get started.</p>
                       </div>
                   )}
               </MotionWrapper>

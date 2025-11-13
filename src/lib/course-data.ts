@@ -54,7 +54,6 @@ const btechCseAimColleges = [
     'Galgotias University',
     'Sharda University',
     'Shiv Nadar Institution of Eminence',
-    'Shivalik College, Dehradun',
     'Graphic Era Deemed to be University',
 ];
 
