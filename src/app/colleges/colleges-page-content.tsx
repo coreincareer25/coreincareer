@@ -86,7 +86,7 @@ export default function CollegesPageContent() {
                   <TabsContent key={key} value={key} forceMount={false} className="m-0">
                     {activeTab === key && (
                       <div>
-                        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900 text-center mb-4">{collegeData[key as keyof typeof collegeData].title}</h2>
+                        {/* <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900 text-center mb-4">{collegeData[key as keyof typeof collegeData].title}</h2> */}
                         {"description" in collegeData[key as keyof typeof collegeData] && typeof collegeData[key as keyof typeof collegeData].description === "string" && (
                             <p className="text-center text-muted-foreground mb-8">{collegeData[key as keyof typeof collegeData].description}</p>
                         )}
