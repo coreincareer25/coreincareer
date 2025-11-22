@@ -12,16 +12,12 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Logo } from '@/components/logo';
 
 export default function AdminLoginPage() {
   const [errorMessage, dispatch] = useFormState(login, undefined);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
-      <div className="mb-8">
-        <Logo />
-      </div>
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Admin Login</CardTitle>
