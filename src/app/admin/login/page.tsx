@@ -17,12 +17,12 @@ export default function AdminLoginPage() {
   const [errorMessage, dispatch] = useFormState(login, undefined);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100 p-4">
       <Card className="w-full max-w-sm">
-        <CardHeader>
+        <CardHeader className="text-center">
           <CardTitle className="text-2xl">Admin Login</CardTitle>
           <CardDescription>
-            Enter your email and password to access the dashboard.
+            Enter your credentials to access the dashboard.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -33,7 +33,7 @@ export default function AdminLoginPage() {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="admin@example.com"
+                placeholder="admin@coreincareer.in"
                 required
               />
             </div>
@@ -42,7 +42,9 @@ export default function AdminLoginPage() {
               <Input id="password" type="password" name="password" required />
             </div>
             {errorMessage && (
-              <div className="text-sm text-red-500">{errorMessage}</div>
+              <div className="text-sm font-medium text-destructive">
+                {errorMessage}
+              </div>
             )}
             <Button type="submit" className="w-full">
               Login
