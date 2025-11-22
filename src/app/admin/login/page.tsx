@@ -17,7 +17,7 @@ export default function AdminLoginPage() {
   const [errorMessage, dispatch] = useFormState(login, undefined);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100 p-4">
+    <div className="flex h-[80vh] flex-col items-center justify-center bg-gray-100 p-4">
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl">Admin Login</CardTitle>
