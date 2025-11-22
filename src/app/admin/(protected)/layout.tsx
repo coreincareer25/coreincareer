@@ -23,7 +23,7 @@ function AdminSidebar() {
   ];
 
   return (
-    <aside className="w-64 flex-shrink-0 bg-gray-800 text-white p-4 flex flex-col">
+    <aside className="w-64 flex-shrink-0 bg-card text-card-foreground p-4 flex flex-col border-r">
       <div className="mb-8">
         <Logo />
       </div>
@@ -37,7 +37,7 @@ function AdminSidebar() {
                   'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
                   pathname.startsWith(item.href)
                     ? 'bg-primary text-primary-foreground'
-                    : 'hover:bg-gray-700'
+                    : 'hover:bg-muted'
                 )}
               >
                 <item.icon className="h-5 w-5" />
@@ -50,7 +50,7 @@ function AdminSidebar() {
       <form action={logout}>
         <Button
           variant="ghost"
-          className="w-full justify-start gap-3 text-left font-medium hover:bg-gray-700"
+          className="w-full justify-start gap-3 text-left font-medium hover:bg-muted"
         >
           <LogOut className="h-5 w-5" />
           <span>Logout</span>
@@ -66,7 +66,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-muted/40">
       <AdminSidebar />
       <main className="flex-1 p-4 md:p-8 overflow-y-auto">{children}</main>
     </div>
