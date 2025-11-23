@@ -1,0 +1,86 @@
+{
+  "entities": {
+    "course": {
+      "title": "Course",
+      "description": "Represents a single course offered.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the course."
+        },
+        "colleges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "A list of colleges offering this course."
+        },
+        "category": {
+          "type": "string",
+          "description": "The category of the course (e.g., Engineering, Medical)."
+        }
+      },
+      "required": ["name", "category"]
+    },
+    "college": {
+      "title": "College",
+      "description": "Represents a single college or university.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The title or category of the college group."
+        },
+        "colleges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "image": { "type": "string", "format": "uri" }
+            },
+            "required": ["name", "image"]
+          },
+          "description": "A list of colleges in this category."
+        },
+        "subCategories": {
+            "type": "object",
+            "description": "Nested sub-categories of colleges."
+        }
+      },
+      "required": ["title"]
+    },
+    "scholarship": {
+      "title": "Scholarship",
+      "description": "Represents a scholarship opportunity.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "description": { "type": "string" },
+        "amount": { "type": "string" },
+        "image": { "type": "string", "format": "uri" },
+        "aiHint": { "type": "string" }
+      },
+      "required": ["title", "amount", "image"]
+    }
+  },
+  "auth": {
+    "providers": ["email"]
+  },
+  "firestore": {
+    "/courses/{courseId}": {
+      "schema": { "$ref": "#/entities/course" },
+      "description": "Stores individual course documents."
+    },
+    "/colleges/{collegeId}": {
+      "schema": { "$ref": "#/entities/college" },
+      "description": "Stores individual college documents."
+    },
+    "/scholarships/{scholarshipId}": {
+        "schema": { "$ref": "#/entities/scholarship" },
+        "description": "Stores individual scholarship documents."
+    }
+  }
+}

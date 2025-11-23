@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { LayoutProvider } from '@/components/layout-provider';
+import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -47,7 +48,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} !scroll-smooth`}>
       <head />
       <body className="font-body antialiased">
-        <LayoutProvider>{children}</LayoutProvider>
+        <FirebaseClientProvider>
+          <LayoutProvider>{children}</LayoutProvider>
+        </FirebaseClientProvider>
       </body>
     </html>
   );
