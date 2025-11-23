@@ -35,6 +35,7 @@ interface CourseDialogProps {
 
 const categories = [
   'engineering',
+  'medical',
   'computational',
   'nursing',
   'paramedical',
