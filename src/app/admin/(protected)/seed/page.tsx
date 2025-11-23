@@ -1,13 +1,12 @@
 // src/app/admin/(protected)/seed/page.tsx
 'use client';
 
-import { useFormState } from 'react-dom';
+import { useActionState, useEffect } from 'react';
 import {
   seedCourses,
   seedColleges,
   seedScholarships,
 } from '@/app/admin/(protected)/seed/actions';
-import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -16,16 +15,14 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { useEffect } from 'react';
-import { Loader2 } from 'lucide-react';
 import { SeederButton } from './seeder-button';
 
 export default function SeedPage() {
   const { toast } = useToast();
 
-  const [coursesState, coursesAction] = useFormState(seedCourses, null);
-  const [collegesState, collegesAction] = useFormState(seedColleges, null);
-  const [scholarshipsState, scholarshipsAction] = useFormState(
+  const [coursesState, coursesAction, isCoursesPending] = useActionState(seedCourses, null);
+  const [collegesState, collegesAction, isCollegesPending] = useActionState(seedColleges, null);
+  const [scholarshipsState, scholarshipsAction, isScholarshipsPending] = useActionState(
     seedScholarships,
     null
   );
@@ -74,13 +71,13 @@ export default function SeedPage() {
         </CardHeader>
         <CardContent className="space-y-4">
           <form action={coursesAction}>
-            <SeederButton actionName="Courses" />
+            <SeederButton actionName="Courses" pending={isCoursesPending} />
           </form>
           <form action={collegesAction}>
-            <SeederButton actionName="Colleges" />
+            <SeederButton actionName="Colleges" pending={isCollegesPending} />
           </form>
           <form action={scholarshipsAction}>
-            <SeederButton actionName="Scholarships" />
+            <SeederButton actionName="Scholarships" pending={isScholarshipsPending} />
           </form>
         </CardContent>
       </Card>

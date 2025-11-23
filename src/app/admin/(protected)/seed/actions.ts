@@ -1,8 +1,7 @@
 // src/app/admin/(protected)/seed/actions.ts
 'use server';
 
-import { getFirestore, collection, writeBatch } from 'firebase/firestore';
-import { initializeFirebase } from '@/firebase';
+import { getAdminApp, getAdminFirestore } from '@/lib/firebase-admin';
 import { courseData } from '@/lib/course-data';
 import { collegeData } from '@/lib/college-data';
 import { scholarships } from '@/lib/data';
@@ -18,22 +17,22 @@ async function seedCollection(
   transform: (item: any) => any = (item) => item
 ): Promise<ActionResponse> {
   try {
-    const { firestore } = initializeFirebase();
-    const collectionRef = collection(firestore, collectionName);
-    const batch = writeBatch(firestore);
+    getAdminApp(); // Ensure admin app is initialized
+    const firestore = getAdminFirestore();
+    const collectionRef = firestore.collection(collectionName);
+    const batch = firestore.batch();
 
     if (Array.isArray(data)) {
       data.forEach((item) => {
-        const docRef = collectionRef.doc();
+        const docRef = collectionRef.doc(); // Auto-generate ID
         batch.set(docRef, transform(item));
       });
     } else if (typeof data === 'object' && data !== null) {
       Object.entries(data).forEach(([key, value]) => {
-        const docRef = collection(firestore, collectionName).doc(key);
+        const docRef = collectionRef.doc(key);
         batch.set(docRef, transform(value));
       });
     }
-
 
     await batch.commit();
 
@@ -56,10 +55,11 @@ export async function seedCourses(
   prevState: ActionResponse | null,
   formData: FormData
 ): Promise<ActionResponse> {
-    const coursesToSeed = Object.entries(courseData).flatMap(([category, courses]) => 
-        courses.map(course => ({...course, category}))
-    );
-    return seedCollection('courses', coursesToSeed);
+  const coursesToSeed = Object.entries(courseData).flatMap(
+    ([category, courses]) =>
+      courses.map((course) => ({ ...course, category }))
+  );
+  return seedCollection('courses', coursesToSeed);
 }
 
 export async function seedColleges(
@@ -72,6 +72,6 @@ export async function seedColleges(
 export async function seedScholarships(
   prevState: ActionResponse | null,
   formData: FormData
-): Promise  <ActionResponse> {
+): Promise<ActionResponse> {
   return seedCollection('scholarships', scholarships);
 }
