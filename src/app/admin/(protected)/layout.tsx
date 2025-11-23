@@ -7,6 +7,7 @@ import {
   Award,
   LayoutDashboard,
   LogOut,
+  Database,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
@@ -20,6 +21,7 @@ function AdminSidebar() {
     { href: '/admin/courses', icon: BookOpen, label: 'Courses' },
     { href: '/admin/colleges', icon: School, label: 'Colleges' },
     { href: '/admin/scholarships', icon: Award, label: 'Scholarships' },
+    { href: '/admin/seed', icon: Database, label: 'Seed Data' },
   ];
 
   return (
@@ -28,7 +30,7 @@ function AdminSidebar() {
         <Logo />
       </div>
       <nav className="flex-grow">
-        <ul>
+        <ul className="space-y-1">
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
