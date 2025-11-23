@@ -29,7 +29,10 @@ export default function CoursesPageContent({ courseData }: CoursesPageContentPro
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
-  const courseCategories = Object.keys(courseData);
+  const orderedCategories = ['engineering', 'computational', 'nursing', 'paramedical', 'management', 'others'];
+  
+  // Filter out categories that might not have data, but keep the order
+  const courseCategories = orderedCategories.filter(cat => courseData[cat] && courseData[cat].length > 0);
 
   return (
     <div className="bg-background">
