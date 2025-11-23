@@ -5,6 +5,7 @@ import { z } from 'zod';
 
 const CourseSchema = z.object({
   name: z.string().min(1, 'Name is required'),
+  description: z.string().optional(),
   category: z.string().min(1, 'Category is required'),
   colleges: z.string().transform((str) => str.split(',').map(s => s.trim()).filter(Boolean)),
 });
@@ -12,6 +13,7 @@ const CourseSchema = z.object({
 type Course = {
     id: string;
     name: string;
+    description?: string;
     category: string;
     colleges: string[];
 }
@@ -33,6 +35,7 @@ type ActionResponse = {
 export async function createCourse(prevState: any, formData: FormData): Promise<ActionResponse> {
     const validatedFields = CourseSchema.safeParse({
         name: formData.get('name'),
+        description: formData.get('description'),
         category: formData.get('category'),
         colleges: formData.get('colleges'),
     });
@@ -45,6 +48,7 @@ export async function createCourse(prevState: any, formData: FormData): Promise<
         const firestore = getAdminFirestore();
         await firestore.collection('courses').add(validatedFields.data);
         revalidatePath('/admin/courses');
+        revalidatePath('/courses');
         return { success: true, message: 'Course created successfully.' };
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
@@ -55,6 +59,7 @@ export async function createCourse(prevState: any, formData: FormData): Promise<
 export async function updateCourse(id: string, prevState: any, formData: FormData): Promise<ActionResponse> {
     const validatedFields = CourseSchema.safeParse({
         name: formData.get('name'),
+        description: formData.get('description'),
         category: formData.get('category'),
         colleges: formData.get('colleges'),
     });
@@ -67,6 +72,7 @@ export async function updateCourse(id: string, prevState: any, formData: FormDat
         const firestore = getAdminFirestore();
         await firestore.collection('courses').doc(id).update(validatedFields.data);
         revalidatePath('/admin/courses');
+        revalidatePath('/courses');
         return { success: true, message: 'Course updated successfully.' };
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
@@ -79,6 +85,7 @@ export async function deleteCourse(id: string): Promise<ActionResponse> {
         const firestore = getAdminFirestore();
         await firestore.collection('courses').doc(id).delete();
         revalidatePath('/admin/courses');
+        revalidatePath('/courses');
         return { success: true, message: 'Course deleted successfully.' };
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';

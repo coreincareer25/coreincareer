@@ -12,6 +12,7 @@ import { MotionWrapper } from "@/components/motion-wrapper";
 
 type Course = {
     name: string;
+    description?: string;
     colleges: string[];
 };
 
@@ -92,6 +93,9 @@ export default function CoursesPageContent({ courseData }: CoursesPageContentPro
                                         {course.name}
                                     </AccordionTrigger>
                                     <AccordionContent>
+                                        {course.description && (
+                                            <p className="mb-4 text-muted-foreground">{course.description}</p>
+                                        )}
                                         {course.colleges.length > 0 ? (
                                             <>
                                                 <h4 className="font-bold mb-4 text-foreground">Colleges Offering this Course:</h4>

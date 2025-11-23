@@ -9,6 +9,10 @@
           "type": "string",
           "description": "The name of the course."
         },
+        "description": {
+          "type": "string",
+          "description": "A brief summary of the course."
+        },
         "colleges": {
           "type": "array",
           "items": {
