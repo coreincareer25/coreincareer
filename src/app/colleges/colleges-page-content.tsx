@@ -7,12 +7,39 @@ import Balancer from "react-wrap-balancer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { MotionWrapper } from "@/components/motion-wrapper";
-import { collegeData } from "@/lib/college-data";
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export default function CollegesPageContent() {
-  const [activeTab, setActiveTab] = useState("engineering");
+type College = {
+    name: string;
+    image: string;
+};
+  
+type SubCategory = {
+    title: string;
+    colleges: College[];
+};
+
+type CollegeCategory = {
+    id: string;
+    title: string;
+    description?: string;
+    colleges?: College[];
+    subCategories?: { [key: string]: SubCategory };
+};
+
+type CollegeData = {
+    [id: string]: CollegeCategory;
+}
+
+interface CollegesPageContentProps {
+    collegeData: CollegeData;
+}
+
+
+export default function CollegesPageContent({ collegeData }: CollegesPageContentProps) {
+  const collegeCategories = Object.keys(collegeData);
+  const [activeTab, setActiveTab] = useState(collegeCategories[0] || "");
 
   const cardContainerVariants = {
     hidden: {},
@@ -31,8 +58,6 @@ export default function CollegesPageContent() {
       transition: { duration: 0.5, ease: "easeOut" }
     },
   };
-
-  const collegeCategories = Object.keys(collegeData);
 
   return (
     <div className="bg-background">
@@ -93,7 +118,7 @@ export default function CollegesPageContent() {
 
                         {"subCategories" in collegeData[key as keyof typeof collegeData] && collegeData[key as keyof typeof collegeData].subCategories ? (
                           <div className="space-y-12">
-                            {Object.values(collegeData[key as keyof typeof collegeData].subCategories).map(subCat => (
+                            {Object.values(collegeData[key as keyof typeof collegeData].subCategories!).map(subCat => (
                               <div key={subCat.title}>
                                 <h3 className="text-xl md:text-2xl font-semibold mb-6 text-center">{subCat.title}</h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
