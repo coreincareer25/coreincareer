@@ -9,7 +9,7 @@ export async function login(prevState: string | undefined, formData: FormData) {
   const password = formData.get('password') as string;
 
   // WARNING: Hardcoded credentials. In a real app, use a database.
-  if (email !== 'admin@coreincareer.in' || password !== 'password123') {
+  if (email !== 'coreincareer2025@gmail.com' || password !== 'coreincareer#25') {
     return 'Invalid email or password.';
   }
 
