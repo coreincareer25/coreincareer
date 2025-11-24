@@ -1,6 +1,7 @@
 
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 import {
   Table,
   TableHeader,
@@ -28,45 +29,52 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { useToast } from '@/hooks/use-toast';
-import { deleteCourse, createCourse, updateCourse } from './actions';
-import { CourseDialog } from './course-dialog';
+import {
+  deleteScholarship,
+  createScholarship,
+  updateScholarship,
+} from './actions';
+import { ScholarshipDialog } from './scholarship-dialog';
 
-export type Course = {
+export type Scholarship = {
   id: string;
-  name: string;
+  title: string;
+  subtitle?: string;
   description?: string;
-  category: string;
-  colleges: string[];
+  amount: string;
+  image: string;
+  aiHint?: string;
 };
 
-interface CoursesTableProps {
-  courses: Course[];
+interface ScholarshipsTableProps {
+  scholarships: Scholarship[];
 }
 
-export function CoursesTable({ courses }: CoursesTableProps) {
+export function ScholarshipsTable({ scholarships }: ScholarshipsTableProps) {
   const { toast } = useToast();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isAlertOpen, setIsAlertOpen] = useState(false);
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [selectedScholarship, setSelectedScholarship] =
+    useState<Scholarship | null>(null);
 
-  const handleEdit = (course: Course) => {
-    setSelectedCourse(course);
+  const handleEdit = (scholarship: Scholarship) => {
+    setSelectedScholarship(scholarship);
     setIsDialogOpen(true);
   };
 
   const handleAdd = () => {
-    setSelectedCourse(null);
+    setSelectedScholarship(null);
     setIsDialogOpen(true);
   };
 
-  const handleDelete = (course: Course) => {
-    setSelectedCourse(course);
+  const handleDelete = (scholarship: Scholarship) => {
+    setSelectedScholarship(scholarship);
     setIsAlertOpen(true);
   };
 
   const confirmDelete = async () => {
-    if (!selectedCourse) return;
-    const result = await deleteCourse(selectedCourse.id);
+    if (!selectedScholarship) return;
+    const result = await deleteScholarship(selectedScholarship.id);
     toast({
       title: result.success ? 'Success' : 'Error',
       description: result.message,
@@ -78,25 +86,33 @@ export function CoursesTable({ courses }: CoursesTableProps) {
   return (
     <>
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">Manage Courses</h1>
-        <Button onClick={handleAdd}>Add New Course</Button>
+        <h1 className="text-2xl font-bold">Manage Scholarships</h1>
+        <Button onClick={handleAdd}>Add New Scholarship</Button>
       </div>
       <div className="border rounded-lg">
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Name</TableHead>
-              <TableHead>Category</TableHead>
-              <TableHead>Colleges</TableHead>
+              <TableHead>Image</TableHead>
+              <TableHead>Title</TableHead>
+              <TableHead>Amount</TableHead>
               <TableHead className="w-16">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {courses.map((course) => (
-              <TableRow key={course.id}>
-                <TableCell className="font-medium">{course.name}</TableCell>
-                <TableCell>{course.category}</TableCell>
-                <TableCell>{course.colleges.join(', ')}</TableCell>
+            {scholarships.map((scholarship) => (
+              <TableRow key={scholarship.id}>
+                <TableCell>
+                  <Image
+                    src={scholarship.image}
+                    alt={scholarship.title}
+                    width={80}
+                    height={45}
+                    className="object-cover rounded-md"
+                  />
+                </TableCell>
+                <TableCell className="font-medium">{scholarship.title}</TableCell>
+                <TableCell>{scholarship.amount}</TableCell>
                 <TableCell>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -105,12 +121,12 @@ export function CoursesTable({ courses }: CoursesTableProps) {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuItem onClick={() => handleEdit(course)}>
+                      <DropdownMenuItem onClick={() => handleEdit(scholarship)}>
                         <Pencil className="mr-2 h-4 w-4" />
                         Edit
                       </DropdownMenuItem>
                       <DropdownMenuItem
-                        onClick={() => handleDelete(course)}
+                        onClick={() => handleDelete(scholarship)}
                         className="text-destructive"
                       >
                         <Trash2 className="mr-2 h-4 w-4" />
@@ -126,14 +142,14 @@ export function CoursesTable({ courses }: CoursesTableProps) {
       </div>
 
       {isDialogOpen && (
-        <CourseDialog
+        <ScholarshipDialog
           isOpen={isDialogOpen}
           onOpenChange={setIsDialogOpen}
-          course={selectedCourse}
+          scholarship={selectedScholarship}
           action={
-            selectedCourse
-              ? updateCourse.bind(null, selectedCourse.id)
-              : createCourse
+            selectedScholarship
+              ? updateScholarship.bind(null, selectedScholarship.id)
+              : createScholarship
           }
         />
       )}
@@ -144,7 +160,7 @@ export function CoursesTable({ courses }: CoursesTableProps) {
             <AlertDialogTitle>Are you sure?</AlertDialogTitle>
             <AlertDialogDescription>
               This action cannot be undone. This will permanently delete the
-              course &ldquo;{selectedCourse?.name}&rdquo;.
+              scholarship &ldquo;{selectedScholarship?.title}&rdquo;.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

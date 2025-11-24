@@ -1,3 +1,4 @@
+
 import { getCourses } from './actions';
 import { CoursesTable } from './courses-table';
 
