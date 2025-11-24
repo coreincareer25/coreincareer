@@ -38,8 +38,8 @@ interface CollegesPageContentProps {
 
 
 export default function CollegesPageContent({ collegeData }: CollegesPageContentProps) {
-  const collegeCategories = Object.keys(collegeData);
-  const [activeTab, setActiveTab] = useState(collegeCategories[0] || "");
+  const collegeCategories = Object.values(collegeData).sort((a, b) => a.title.localeCompare(b.title));
+  const [activeTab, setActiveTab] = useState(collegeCategories[0]?.id || "");
 
   const cardContainerVariants = {
     hidden: {},
@@ -95,30 +95,29 @@ export default function CollegesPageContent({ collegeData }: CollegesPageContent
         <section className="py-12 container mx-auto max-w-6xl px-4">
           <Tabs defaultValue={activeTab} value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="flex h-auto flex-wrap justify-center gap-2 bg-transparent p-0">
-                {collegeCategories.map(key => (
+                {collegeCategories.map(category => (
                     <TabsTrigger 
-                        key={key} 
-                        value={key}
+                        key={category.id} 
+                        value={category.id}
                         className="data-[state=active]:bg-pink-500 data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-md border bg-white text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5 capitalize"
                     >
-                        {collegeData[key as keyof typeof collegeData].title}
+                        {category.title}
                     </TabsTrigger>
                 ))}
             </TabsList>
             
             <div className="mt-8">
-              {collegeCategories.map(key => (
-                  <TabsContent key={key} value={key} forceMount={false} className="m-0">
-                    {activeTab === key && (
+              {collegeCategories.map(category => (
+                  <TabsContent key={category.id} value={category.id} forceMount={false} className="m-0">
+                    {activeTab === category.id && (
                       <div>
-                        {/* <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900 text-center mb-4">{collegeData[key as keyof typeof collegeData].title}</h2> */}
-                        {"description" in collegeData[key as keyof typeof collegeData] && typeof collegeData[key as keyof typeof collegeData].description === "string" && (
-                            <p className="text-center text-muted-foreground mb-8">{collegeData[key as keyof typeof collegeData].description}</p>
+                        {category.description && (
+                            <p className="text-center text-muted-foreground mb-8">{category.description}</p>
                         )}
 
-                        {"subCategories" in collegeData[key as keyof typeof collegeData] && collegeData[key as keyof typeof collegeData].subCategories ? (
+                        {category.subCategories ? (
                           <div className="space-y-12">
-                            {Object.values(collegeData[key as keyof typeof collegeData].subCategories!).map(subCat => (
+                            {Object.values(category.subCategories).map(subCat => (
                               <div key={subCat.title}>
                                 <h3 className="text-xl md:text-2xl font-semibold mb-6 text-center">{subCat.title}</h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -142,9 +141,9 @@ export default function CollegesPageContent({ collegeData }: CollegesPageContent
                             ))}
                           </div>
                         ) : (
-                          'colleges' in collegeData[key as keyof typeof collegeData] && collegeData[key as keyof typeof collegeData].colleges && (
+                          category.colleges && (
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                              {(collegeData[key as keyof typeof collegeData].colleges || []).map((college, index) => (
+                              {category.colleges.map((college, index) => (
                                 <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
                                   <div className="relative h-40 w-full">
                                     <Image src={college.image} alt={college.name} fill className="object-cover object-center" data-ai-hint="university campus" loading="lazy" />
