@@ -3,6 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { getAdminFirestore } from '@/lib/firebase-admin';
 import { z } from 'zod';
+import { FieldValue } from 'firebase-admin/firestore';
 
 // Simplified schema for the form
 const CollegeSchema = z.object({
@@ -89,9 +90,23 @@ export async function updateCollege(id: string, prevState: any, formData: FormDa
         const firestore = getAdminFirestore();
         const { title, colleges, subCategories } = validatedFields.data;
         
-        const dataToUpdate: {title: string, colleges?: any, subCategories?: any} = { title };
-        if (colleges) dataToUpdate.colleges = safeJsonParse(colleges, []);
-        if (subCategories) dataToUpdate.subCategories = safeJsonParse(subCategories, {});
+        const dataToUpdate: {[key: string]: any} = { title };
+
+        // Handle colleges field
+        if (colleges && colleges.trim() !== '') {
+            dataToUpdate.colleges = safeJsonParse(colleges, []);
+        } else {
+            // If the field is empty or just whitespace, remove it from the document
+            dataToUpdate.colleges = FieldValue.delete();
+        }
+
+        // Handle subCategories field
+        if (subCategories && subCategories.trim() !== '') {
+            dataToUpdate.subCategories = safeJsonParse(subCategories, {});
+        } else {
+            // If the field is empty or just whitespace, remove it from the document
+            dataToUpdate.subCategories = FieldValue.delete();
+        }
         
         await firestore.collection('colleges').doc(id).update(dataToUpdate);
 
