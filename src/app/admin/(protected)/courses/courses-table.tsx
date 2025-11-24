@@ -33,6 +33,7 @@ import { CourseDialog } from './course-dialog';
 export type Course = {
   id: string;
   name: string;
+  description?: string;
   category: string;
   colleges: string[];
 };
