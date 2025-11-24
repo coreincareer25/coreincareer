@@ -45,7 +45,11 @@ async function getColleges() {
   const colleges = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as CollegeCategory));
 
   const collegeData = colleges.reduce((acc, college) => {
-    acc[college.id] = college;
+    // The key should be the document ID (e.g., 'engineering')
+    const key = college.id;
+    if (key) {
+        acc[key] = college;
+    }
     return acc;
   }, {} as CollegeData);
 
