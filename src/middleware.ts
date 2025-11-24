@@ -1,3 +1,4 @@
+
 import { NextRequest, NextResponse } from 'next/server';
 import { unsealData } from '@/lib/session';
 
@@ -6,7 +7,7 @@ export async function middleware(request: NextRequest) {
 
   // If no session cookie, redirect to login
   if (!sessionCookie) {
-    return NextResponse.redirect(new URL('/admin/login', request.url));
+    return NextResponse.redirect(new URL('/61646d/login', request.url));
   }
 
   // Verify the session
@@ -14,7 +15,7 @@ export async function middleware(request: NextRequest) {
 
   if (expired || !payload?.isAdmin) {
     // If expired or not an admin, destroy cookie and redirect to login
-    const response = NextResponse.redirect(new URL('/admin/login', request.url));
+    const response = NextResponse.redirect(new URL('/61646d/login', request.url));
     response.cookies.set('session', '', { expires: new Date(0) });
     return response;
   }
@@ -25,5 +26,5 @@ export async function middleware(request: NextRequest) {
 
 // Apply middleware only to the protected admin paths
 export const config = {
-  matcher: '/admin/(protected)/:path*',
+  matcher: '/61646d/(protected)/:path*',
 };
