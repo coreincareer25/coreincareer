@@ -1,14 +1,27 @@
 
 "use client";
 
-import { scholarships } from "@/lib/data";
 import Image from "next/image";
 import Balancer from "react-wrap-balancer";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function ScholarshipsPageContent() {
+type Scholarship = {
+  id: string;
+  title: string;
+  subtitle?: string;
+  description?: string;
+  amount: string;
+  image: string;
+  aiHint?: string;
+};
+
+interface ScholarshipsPageContentProps {
+  scholarships: Scholarship[];
+}
+
+export default function ScholarshipsPageContent({ scholarships }: ScholarshipsPageContentProps) {
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
@@ -81,7 +94,7 @@ export default function ScholarshipsPageContent() {
             className="grid gap-8 sm:grid-cols-1 md:grid-cols-2"
           >
             {scholarships.map((scholarship) => (
-              <MotionWrapper el="div" variants={cardVariants} key={scholarship.title + scholarship.description}>
+              <MotionWrapper el="div" variants={cardVariants} key={scholarship.id}>
                 <div className="flex flex-col md:flex-row items-stretch rounded-lg shadow-lg overflow-hidden h-auto md:h-48 transform hover:-translate-y-2 transition-transform duration-300 ease-in-out bg-card">
                     <div className="relative w-full md:w-2/3 h-48 md:h-full">
                         <Image
